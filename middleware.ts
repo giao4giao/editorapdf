@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { detectPreferredLocale, isSupportedLocale } from './i18n/config';
+import { defaultLocale, detectPreferredLocale, isSupportedLocale } from './i18n/config';
 
 const PUBLIC_FILE = /\.(.*)$/;
-const LOCALE_AWARE_PATHS = new Set([
+const LOCALE_AWARE_PREFIXES = [
 	'/',
 	'/about',
 	'/contact',
@@ -12,11 +12,17 @@ const LOCALE_AWARE_PATHS = new Set([
 	'/blog',
 	'/faq',
 	'/terms',
-	'/privacy-policy'
-]);
+	'/privacy-policy',
+] as const;
 
 export function middleware(req: NextRequest) {
 	const { pathname } = req.nextUrl;
+	const userAgent = req.headers.get('user-agent') ?? '';
+	// Avoid locale redirects for crawlers; otherwise indexing can skew to a non-default locale.
+	const isBot =
+		/bot|crawler|spider|slurp|bingpreview|facebookexternalhit|facebot|twitterbot|linkedinbot|duckduckbot|baiduspider|yandex|yeti|sogou|exabot|semrush|ahrefs|mj12/i.test(
+			userAgent
+		);
 
 	// Skip public files and API routes
 	if (
@@ -32,21 +38,31 @@ export function middleware(req: NextRequest) {
 	}
 
 	const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value;
-	const detected = isSupportedLocale(cookieLocale)
-		? cookieLocale
-		: detectPreferredLocale(req.headers.get('accept-language'));
-
-	// Normalize locale-aware non-prefixed routes into the preferred locale path.
-	if (LOCALE_AWARE_PATHS.has(pathname)) {
-		const redirectPath = pathname === '/' ? `/${detected}` : `/${detected}${pathname}`;
-		const redirectUrl = new URL(redirectPath, req.url);
-		return NextResponse.redirect(redirectUrl);
-	}
+	const detected = isBot
+		? defaultLocale
+		: isSupportedLocale(cookieLocale)
+			? cookieLocale
+			: detectPreferredLocale(req.headers.get('accept-language'));
 
 	// If URL already has locale prefix, forward with x-locale and x-pathname headers
 	// so server components and generateMetadata can access locale + pathname.
 	const pathLocale = pathname.split('/')[1];
-	const activeLocale = isSupportedLocale(pathLocale) ? pathLocale : detected;
+	const hasLocalePrefix = isSupportedLocale(pathLocale);
+	const activeLocale = hasLocalePrefix ? pathLocale : detected;
+
+	// Normalize locale-aware non-prefixed routes into the preferred locale path.
+	if (!hasLocalePrefix) {
+		const shouldRedirect =
+			pathname === '/' ||
+			LOCALE_AWARE_PREFIXES.some((prefix) => prefix !== '/' && pathname.startsWith(prefix + '/')) ||
+			LOCALE_AWARE_PREFIXES.includes(pathname as (typeof LOCALE_AWARE_PREFIXES)[number]);
+
+		if (shouldRedirect) {
+			const redirectPath = pathname === '/' ? `/${detected}` : `/${detected}${pathname}`;
+			const redirectUrl = new URL(redirectPath, req.url);
+			return NextResponse.redirect(redirectUrl);
+		}
+	}
 
 	const requestHeaders = new Headers(req.headers);
 	requestHeaders.set('x-locale', activeLocale);

@@ -1,0 +1,19 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "react/no-unescaped-entities": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "app/blog/**/*.tsx",
+        "app/[locale]/blog/**/*.tsx",
+        "app/about/**/*.tsx",
+        "app/[locale]/about/**/*.tsx"
+      ],
+      "rules": {
+        "react/no-unescaped-entities": "off"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { supportedLocales } from '../../../../i18n/config';
 import ToolPageClient from './ToolPageClient';
 
 const siteUrl = 'https://editorapdf.com';
+const defaultLocale = 'en';
 
 export function generateStaticParams() {
   const params: { locale: string; toolId: string }[] = [];
@@ -36,7 +37,7 @@ export function generateMetadata({
   const url = `${siteUrl}/${locale}/tools/${tool.id}`;
 
   const hreflangAlternates: Record<string, string> = {
-    'x-default': `${siteUrl}/tools/${tool.id}`,
+    'x-default': `${siteUrl}/${defaultLocale}/tools/${tool.id}`,
     ...Object.fromEntries(
       supportedLocales.map((code) => [code, `${siteUrl}/${code}/tools/${tool.id}`])
     ),
@@ -97,7 +98,7 @@ export default function ToolPage({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: `${siteUrl}/`,
+            item: `${siteUrl}/${defaultLocale}`,
           },
           {
             '@type': 'ListItem',

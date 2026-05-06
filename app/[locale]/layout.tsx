@@ -58,9 +58,9 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   const subPath = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '') || '/';
 
   // Build per-locale alternate URLs for this specific page
-  // x-default points to the root (no locale prefix) — Google's recommended fallback
+  // x-default points to the default-locale URL to avoid redirects in hreflang.
   const hreflangAlternates: Record<string, string> = {
-    'x-default': `${siteUrl}${subPath === '/' ? '' : subPath}`,
+    'x-default': `${siteUrl}/${defaultLocale}${subPath === '/' ? '' : subPath}`,
     ...Object.fromEntries(
       supportedLocales.map((code) => [code, `${siteUrl}/${code}${subPath === '/' ? '' : subPath}`])
     ),

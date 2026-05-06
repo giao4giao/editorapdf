@@ -59,20 +59,6 @@ const blogPosts = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  // ── Non-locale (canonical root) pages ──────────────────────────────────────
-  const rootPages: MetadataRoute.Sitemap = [
-    { url: baseUrl,                    lastModified: now, changeFrequency: 'weekly',  priority: 1 },
-    { url: `${baseUrl}/edit`,          lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
-    { url: `${baseUrl}/tools`,         lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
-    { url: `${baseUrl}/how-it-works`,  lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/about`,         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/blog`,          lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${baseUrl}/faq`,           lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/contact`,       lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/privacy-policy`,lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/terms`,         lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-  ]
-
   // ── Locale-prefixed main pages ──────────────────────────────────────────────
   const localizedMainPages = [
     { path: '',               priority: 0.95, freq: 'weekly'  as const },
@@ -96,26 +82,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
-  // ── Non-locale tool pages ───────────────────────────────────────────────────
-  const toolUrls: MetadataRoute.Sitemap = tools.map((toolId) => ({
-    url: `${baseUrl}/tools/${toolId}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+  // ── Locale-prefixed tool pages ──────────────────────────────────────────────
+  const localizedToolUrls: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    tools.map((toolId) => ({
+      url: `${baseUrl}/${locale}/tools/${toolId}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
+  )
 
-  // ── Non-locale blog posts ───────────────────────────────────────────────────
-  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  // ── Locale-prefixed blog posts ──────────────────────────────────────────────
+  const localizedBlogUrls: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    blogPosts.map((slug) => ({
+      url: `${baseUrl}/${locale}/blog/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  )
 
   return [
-    ...rootPages,
     ...localizedPages,
-    ...toolUrls,
-    ...blogUrls,
+    ...localizedToolUrls,
+    ...localizedBlogUrls,
   ]
 }
