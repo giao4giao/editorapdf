@@ -7,6 +7,12 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'how-to-edit-pdfs-offline-in-browser',
+    title: 'How to Edit PDFs Offline in Your Browser — No Installation, No Upload',
+    description: 'Edit PDF files offline without installing software. Works even after you disconnect from the internet.',
+    tags: ['Privacy', 'Guide'],
+  },
+  {
     slug: 'how-to-redact-pdf-for-legal-compliance',
     title: 'How to Redact a PDF for Legal Compliance: GDPR, HIPAA & FOIA Guide',
     description: 'Permanently redact sensitive information to meet GDPR, HIPAA, FOIA, and court filing requirements.',

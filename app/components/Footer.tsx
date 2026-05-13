@@ -65,6 +65,9 @@ export default function Footer({ locale = 'en' as AppLocale }: { locale?: AppLoc
           <Link href={withLocale('/blog')} className="text-sm text-surface-400 hover:text-primary-400 transition-colors">
             {t('footer.blog')}
           </Link>
+          <Link href="/site-index" className="text-sm text-surface-400 hover:text-primary-400 transition-colors">
+            Site Index
+          </Link>
         </nav>
 
         {/* Social Media Links */}

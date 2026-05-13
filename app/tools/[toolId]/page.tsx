@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { allTools } from '../../components/ToolsPanel';
 import ToolView from '../../components/ToolView';
 import Header from '../../components/Header';
+import RelatedArticles from '../../components/RelatedArticles';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useAppTranslations } from '../../i18n/TranslationProvider';
@@ -45,6 +46,7 @@ export default function ToolPage() {
           onBack={() => router.push(`/${locale}/tools`)} 
         />
       </div>
+      <RelatedArticles toolId={tool.id} locale={locale} />
     </main>
   );
 }

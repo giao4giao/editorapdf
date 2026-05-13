@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { toolsMeta } from '../../../data/toolsMeta';
 import { supportedLocales } from '../../../../i18n/config';
 import ToolPageClient from './ToolPageClient';
+import RelatedArticles from '../../../components/RelatedArticles';
 
 const siteUrl = 'https://editorapdf.com';
 const defaultLocale = 'en';
@@ -321,6 +322,7 @@ export default function ToolPage({
         />
       )}
       <ToolPageClient />
+      {tool && <RelatedArticles toolId={tool.id} locale={params.locale} />}
     </>
   );
 }

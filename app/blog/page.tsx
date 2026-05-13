@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../components/Header'
 import {
-  Github, ShieldCheck, Lock, BarChart3, ArrowRight, Code, FileX, Database,
+  Github, ShieldCheck, Lock, BarChart3, ArrowRight, Code, FileX, Database, WifiOff,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -31,6 +31,34 @@ export default function BlogPage() {
 
             {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Blog Post: How to Edit PDFs Offline in Browser */}
+            <Link href="/blog/how-to-edit-pdfs-offline-in-browser" className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-success-500/20 to-info-500/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <WifiOff className="w-24 h-24 text-success-400/50" strokeWidth={1.5} />
+                </div>
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-500/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                  New
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 rounded bg-success-500/20 text-success-300 text-xs font-medium">Privacy</span>
+                  <span className="px-2 py-0.5 rounded bg-info-500/20 text-info-300 text-xs font-medium">Guide</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">
+                  How to Edit PDFs Offline in Your Browser
+                </h3>
+                <p className="text-surface-400 mb-4 line-clamp-3">
+                  Edit PDF files offline without installing software. Learn how browser-based PDF editors keep working even after you disconnect from the internet — and why that matters for privacy.
+                </p>
+                <span className="text-primary-400 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Read more
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
             {/* Blog Post: How to Redact PDF for Legal Compliance */}
             <Link href="/blog/how-to-redact-pdf-for-legal-compliance" className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-error-500/20 to-primary-500/20">

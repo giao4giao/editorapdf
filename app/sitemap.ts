@@ -56,6 +56,7 @@ const blogPosts = [
   'split-by-size',
   'how-to-redact-pdf-for-legal-compliance',
   'pdf-metadata-what-is-it-and-how-to-remove',
+  'how-to-edit-pdfs-offline-in-browser',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -105,9 +106,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
 
+  // ── Single canonical pages (no locale variants) ────────────────────────────
+  const canonicalPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/site-index`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
+  ]
+
   return [
     ...localizedPages,
     ...localizedToolUrls,
     ...localizedBlogUrls,
+    ...canonicalPages,
   ]
 }
