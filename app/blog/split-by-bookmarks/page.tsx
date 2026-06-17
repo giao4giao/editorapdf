@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/split-by-bookmarks`
+const postUrl = `${siteUrl}/en/blog/split-by-bookmarks`
 
 export const metadata: Metadata = {
   title: 'How to Split PDF by Bookmarks Online (Step-by-Step Guide)',
@@ -103,13 +103,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -741,7 +741,7 @@ export default function BlogPost() {
                   <li>Keep backups of original files until you're satisfied with the splits</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to split your PDFs by bookmarks? Try our <Link href="/split-by-bookmarks" className="text-primary-400 hover:text-primary-300 underline">free split by bookmarks tool</Link> and experience how simple dividing structured documents can be. And if you need to make edits to your PDFs before or after splitting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine PDFs later, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents back together.
+                  Ready to split your PDFs by bookmarks? Try our <Link href="/split-by-bookmarks" className="text-primary-400 hover:text-primary-300 underline">free split by bookmarks tool</Link> and experience how simple dividing structured documents can be. And if you need to make edits to your PDFs before or after splitting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine PDFs later, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents back together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle document splitting quickly and confidently, leaving more time for the work that actually matters. Splitting by bookmarks is just one example of how modern PDF tools can make your workflow more efficient—the key is knowing these features exist and how to use them effectively.

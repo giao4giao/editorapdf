@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-delete-pages-from-pdf`
+const postUrl = `${siteUrl}/en/blog/how-to-delete-pages-from-pdf`
 
 export const metadata: Metadata = {
   title: 'How to Delete Pages from PDF Online (Step-by-Step Guide)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -683,7 +683,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for deleting pages from PDFs online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF page removers support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to delete pages from very large PDFs, consider using desktop software designed for heavy-duty processing, or split the file first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>.
+                      File size limits vary by tool, but most online PDF page removers support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to delete pages from very large PDFs, consider using desktop software designed for heavy-duty processing, or split the file first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>.
                     </p>
                   </div>
 
@@ -730,7 +730,7 @@ export default function BlogPost() {
                   <li>Use page ranges when deleting consecutive pages for efficiency</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to delete pages from your PDFs? Try our <Link href="/deletepages" className="text-primary-400 hover:text-primary-300 underline">free PDF page remover tool</Link> and experience how simple removing pages can be. And if you need to make other edits to your PDFs, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For combining multiple PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents. And if you need to reduce file sizes, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help optimize your files.
+                  Ready to delete pages from your PDFs? Try our <Link href="/deletepages" className="text-primary-400 hover:text-primary-300 underline">free PDF page remover tool</Link> and experience how simple removing pages can be. And if you need to make other edits to your PDFs, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For combining multiple PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents. And if you need to reduce file sizes, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help optimize your files.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle page deletion quickly and confidently, leaving more time for the work that actually matters.

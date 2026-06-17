@@ -87,6 +87,9 @@ import { validatePdf } from '../lib/pdf/validatePdf';
 interface ToolViewProps {
   tool: PdfTool;
   onBack: () => void;
+  /** Heading level for the tool title. Use 'h1' when ToolView is the page's main
+   *  content (the /tools/[toolId] route); defaults to 'h2' when embedded elsewhere. */
+  titleAs?: 'h1' | 'h2';
 }
 // Tool-specific configurations
 const toolConfigs: Record<string, {
@@ -181,7 +184,8 @@ const OPTIMIZE_PROFILE_MAX_RES: Record<'screen' | 'ebook' | 'print', number> = {
   print: 3000,
 };
 
-export default function ToolView({ tool, onBack }: ToolViewProps) {
+export default function ToolView({ tool, onBack, titleAs = 'h2' }: ToolViewProps) {
+  const TitleTag = titleAs;
   const { t } = useAppTranslations();
   const tr = (key: string, fallback: string) => (t(key) === key ? fallback : t(key));
   const [files, setFiles] = useState<File[]>([]);
@@ -3054,7 +3058,7 @@ export default function ToolView({ tool, onBack }: ToolViewProps) {
             {tool.icon}
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-white">{tr(`tools.items.${tool.id}.title`, tool.title)}</h2>
+            <TitleTag className="text-2xl font-bold text-white">{tr(`tools.items.${tool.id}.title`, tool.title)}</TitleTag>
             <p className="text-surface-400 text-sm">{tr(`tools.items.${tool.id}.desc`, tool.description)}</p>
           </div>
         </div>

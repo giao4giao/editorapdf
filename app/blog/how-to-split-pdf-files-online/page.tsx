@@ -4,7 +4,7 @@ import Script from 'next/script'
 import MobileMenu from '../../components/MobileMenu'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-split-pdf-files-online`
+const postUrl = `${siteUrl}/en/blog/how-to-split-pdf-files-online`
 
 export const metadata: Metadata = {
   title: 'How to Split PDF Files Online: Complete Guide to Dividing PDF Documents',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -208,7 +208,7 @@ export default function BlogPost() {
                 <Link href="/contact" className="nav-link">Contact</Link>
               </nav>
               
-              <Link href="/splitpdf" className="btn-primary btn-md hidden sm:flex">
+              <Link href="/tools/split" className="btn-primary btn-md hidden sm:flex">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
@@ -346,7 +346,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF splitting works technically. The tool handles page extraction, content preservation, and file reconstruction automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
+                  Our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
                 </p>
               </section>
 
@@ -359,7 +359,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Splitter Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start splitting immediately.
+                    Navigate to our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start splitting immediately.
                   </p>
                 </div>
 
@@ -677,7 +677,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I split a PDF file online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can split a PDF file online for free by using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>. Simply upload your PDF file, choose how you want to split it (by page ranges, file size, or bookmarks), and click split. The tool divides your PDF into separate documents that you can download individually or as a ZIP file. No account creation, payment, or software installation required.
+                      You can split a PDF file online for free by using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>. Simply upload your PDF file, choose how you want to split it (by page ranges, file size, or bookmarks), and click split. The tool divides your PDF into separate documents that you can download individually or as a ZIP file. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -787,7 +787,7 @@ export default function BlogPost() {
                   <li>Download split files as a ZIP archive when creating multiple files</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to split your PDFs? Try our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">free PDF splitter tool</Link> and experience how simple dividing documents can be. And if you need to make edits to your PDFs before or after splitting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before splitting. And if you need to combine PDFs later, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents back together.
+                  Ready to split your PDFs? Try our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">free PDF splitter tool</Link> and experience how simple dividing documents can be. And if you need to make edits to your PDFs before or after splitting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before splitting. And if you need to combine PDFs later, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents back together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle document splitting quickly and confidently, leaving more time for the work that actually matters.

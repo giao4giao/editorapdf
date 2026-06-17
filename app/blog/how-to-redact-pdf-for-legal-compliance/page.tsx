@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-redact-pdf-for-legal-compliance`
+const postUrl = `${siteUrl}/en/blog/how-to-redact-pdf-for-legal-compliance`
 
 export const metadata: Metadata = {
   title: 'How to Redact a PDF for Legal Compliance: GDPR, HIPAA & FOIA Guide',

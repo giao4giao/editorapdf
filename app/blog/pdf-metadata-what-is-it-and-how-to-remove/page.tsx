@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/pdf-metadata-what-is-it-and-how-to-remove`
+const postUrl = `${siteUrl}/en/blog/pdf-metadata-what-is-it-and-how-to-remove`
 
 export const metadata: Metadata = {
   title: 'PDF Metadata: What It Is, What It Reveals, and How to Remove It',

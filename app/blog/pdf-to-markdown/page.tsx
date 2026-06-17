@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/pdf-to-markdown`
+const postUrl = `${siteUrl}/en/blog/pdf-to-markdown`
 
 export const metadata: Metadata = {
   title: 'PDF to Markdown Converter: Complete Guide to Transforming PDF Documents into Markdown Format',
@@ -127,13 +127,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',

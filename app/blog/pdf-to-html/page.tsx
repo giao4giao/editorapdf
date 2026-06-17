@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/pdf-to-html`
+const postUrl = `${siteUrl}/en/blog/pdf-to-html`
 
 export const metadata: Metadata = {
   title: 'How to Convert PDF to HTML Online: Complete Guide to PDF to HTML Conversion',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -323,7 +323,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF parsing or HTML generation works technically. The tool handles text extraction, formatting conversion, and HTML structure creation automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">PDF to HTML converter tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't. Whether you're converting a simple text document or a complex multi-page report, the tool handles the conversion process seamlessly.
+                  Our <Link href="/tools/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">PDF to HTML converter tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't. Whether you're converting a simple text document or a complex multi-page report, the tool handles the conversion process seamlessly.
                 </p>
               </section>
 
@@ -336,7 +336,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF to HTML Converter Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">PDF to HTML converter page</Link>. You'll see a clean, intuitive interface with a file upload area. No account creation, login, or registration required—you can start converting immediately. The interface is designed to be straightforward, so you can focus on your conversion rather than figuring out how the tool works.
+                    Navigate to our <Link href="/tools/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">PDF to HTML converter page</Link>. You'll see a clean, intuitive interface with a file upload area. No account creation, login, or registration required—you can start converting immediately. The interface is designed to be straightforward, so you can focus on your conversion rather than figuring out how the tool works.
                   </p>
                 </div>
 
@@ -710,7 +710,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I convert PDF to HTML online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can convert PDF to HTML online for free by using our <Link href="/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">PDF to HTML converter tool</Link>. Simply upload your PDF file, choose your conversion options (page range, formatting preferences), and click convert. The tool transforms your PDF into an HTML file that you can download and use on any website. No account creation, payment, or software installation required.
+                      You can convert PDF to HTML online for free by using our <Link href="/tools/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">PDF to HTML converter tool</Link>. Simply upload your PDF file, choose your conversion options (page range, formatting preferences), and click convert. The tool transforms your PDF into an HTML file that you can download and use on any website. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -731,7 +731,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for converting PDF to HTML online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF to HTML converters support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to convert very large PDFs, consider splitting them first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, or using desktop software designed for heavy-duty processing.
+                      File size limits vary by tool, but most online PDF to HTML converters support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to convert very large PDFs, consider splitting them first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, or using desktop software designed for heavy-duty processing.
                     </p>
                   </div>
 
@@ -829,7 +829,7 @@ export default function BlogPost() {
                   <li>Keep backups of original PDFs until you're satisfied with the conversion</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to convert your PDFs to HTML? Try our <Link href="/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">free PDF to HTML converter tool</Link> and experience how simple transforming documents can be. And if you need to make edits to your PDFs before converting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before conversion. And if you need to combine multiple PDFs before converting, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to convert your PDFs to HTML? Try our <Link href="/tools/pdf-to-html" className="text-primary-400 hover:text-primary-300 underline">free PDF to HTML converter tool</Link> and experience how simple transforming documents can be. And if you need to make edits to your PDFs before converting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before conversion. And if you need to combine multiple PDFs before converting, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF to HTML conversion doesn't have to be a chore. With the right tools and approach, you can transform documents quickly and confidently, making your content web-ready and accessible to a broader audience. The web is built on HTML, and converting your PDFs to HTML opens up endless possibilities for sharing, editing, and integrating your content online.

@@ -309,7 +309,7 @@ export default function ToolsPanel() {
     <div className="w-full max-w-5xl mx-auto animate-fade-in">
       {/* Header */}
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('tools.page.title')}</h2>
+        <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('tools.page.title')}</h1>
         <p className="text-surface-400 text-base max-w-2xl mx-auto mb-4">
           {t('tools.page.subtitle')}
         </p>

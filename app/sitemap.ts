@@ -1,7 +1,15 @@
 import { MetadataRoute } from 'next'
 
 const baseUrl = 'https://editorapdf.com'
+const defaultLocale = 'en'
 const locales = ['en', 'fr', 'de', 'es', 'it', 'uk']
+
+// Build hreflang alternates (xhtml:link) for a locale-varying path. x-default points
+// at the default-locale URL (which resolves 200, never a redirect).
+const altLanguages = (path: string): Record<string, string> => ({
+  'x-default': `${baseUrl}/${defaultLocale}${path}`,
+  ...Object.fromEntries(locales.map((locale) => [locale, `${baseUrl}/${locale}${path}`])),
+})
 
 const tools = [
   // Organize & Pages
@@ -83,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: freq,
       priority,
+      alternates: { languages: altLanguages(path) },
     }))
   )
 
@@ -93,18 +102,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+      alternates: { languages: altLanguages(`/tools/${toolId}`) },
     }))
   )
 
-  // ── Locale-prefixed blog posts ──────────────────────────────────────────────
-  const localizedBlogUrls: MetadataRoute.Sitemap = locales.flatMap((locale) =>
-    blogPosts.map((slug) => ({
-      url: `${baseUrl}/${locale}/blog/${slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }))
-  )
+  // ── Blog posts (English only) ───────────────────────────────────────────────
+  // Blog content is not translated, so every /<locale>/blog/<slug> canonicalizes to
+  // the /en URL. Advertise only the English URL here (no hreflang) until posts are
+  // translated, to avoid 175 duplicate near-identical locale URLs.
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((slug) => ({
+    url: `${baseUrl}/${defaultLocale}/blog/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
   // ── Single canonical pages (no locale variants) ────────────────────────────
   const canonicalPages: MetadataRoute.Sitemap = [
@@ -119,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...localizedPages,
     ...localizedToolUrls,
-    ...localizedBlogUrls,
+    ...blogUrls,
     ...canonicalPages,
   ]
 }

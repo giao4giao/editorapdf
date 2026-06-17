@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-convert-pdf-to-excel-online`
+const postUrl = `${siteUrl}/en/blog/how-to-convert-pdf-to-excel-online`
 
 export const metadata: Metadata = {
   title: 'How to Convert PDF to Excel Online (Step-by-Step Guide)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -323,7 +323,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF parsing or table recognition works technically. The tool handles page analysis, structure detection, data extraction, and Excel file generation automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">PDF to Excel converter tool</Link> is built with these principles in mind. It's designed to be fast, secure, accurate, and straightforward—everything you need for reliable PDF to spreadsheet conversion without the complexity you don't.
+                  Our <Link href="/tools/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">PDF to Excel converter tool</Link> is built with these principles in mind. It's designed to be fast, secure, accurate, and straightforward—everything you need for reliable PDF to spreadsheet conversion without the complexity you don't.
                 </p>
               </section>
 
@@ -336,7 +336,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF to Excel Converter Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">PDF to Excel converter page</Link>. You'll see a clean interface with a file upload area prominently displayed. No account creation or login required—you can start converting immediately. The interface is designed to be intuitive, so even if you've never used a PDF converter before, you'll understand what to do.
+                    Navigate to our <Link href="/tools/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">PDF to Excel converter page</Link>. You'll see a clean interface with a file upload area prominently displayed. No account creation or login required—you can start converting immediately. The interface is designed to be intuitive, so even if you've never used a PDF converter before, you'll understand what to do.
                   </p>
                 </div>
 
@@ -726,7 +726,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I convert PDF to Excel online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can convert PDF to Excel online for free by using our <Link href="/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">PDF to Excel converter tool</Link>. Simply upload your PDF file containing tables or data, and the tool will automatically detect and extract the information into an Excel spreadsheet format. The conversion happens entirely in your browser, ensuring your files remain private and secure. No account creation, payment, or software installation required.
+                      You can convert PDF to Excel online for free by using our <Link href="/tools/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">PDF to Excel converter tool</Link>. Simply upload your PDF file containing tables or data, and the tool will automatically detect and extract the information into an Excel spreadsheet format. The conversion happens entirely in your browser, ensuring your files remain private and secure. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -747,7 +747,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for converting PDF to Excel online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF to Excel converters support files up to 25-50 MB. For best performance and accuracy, keep files under 25 MB and limit the total number of pages to under 100. Very large PDFs with complex tables may take longer to process or require desktop software. If your PDF is larger than the limit, consider using our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> first to reduce file size, or split the PDF into smaller sections using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>.
+                      File size limits vary by tool, but most online PDF to Excel converters support files up to 25-50 MB. For best performance and accuracy, keep files under 25 MB and limit the total number of pages to under 100. Very large PDFs with complex tables may take longer to process or require desktop software. If your PDF is larger than the limit, consider using our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> first to reduce file size, or split the PDF into smaller sections using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>.
                     </p>
                   </div>
 
@@ -817,7 +817,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What happens if the conversion doesn't work correctly?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      If the conversion doesn't produce the expected results, try these troubleshooting steps: (1) Check that your PDF has clear, well-defined tables—blurry or poorly formatted PDFs convert less accurately, (2) Try adjusting conversion settings if available (table detection mode, OCR settings, etc.), (3) For scanned PDFs, ensure image quality is high and text is clear, (4) If the PDF is very large, try splitting it first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> and converting sections separately, (5) Some manual cleanup in Excel is normal for complex PDFs—even 90% accuracy saves significant time compared to manual entry.
+                      If the conversion doesn't produce the expected results, try these troubleshooting steps: (1) Check that your PDF has clear, well-defined tables—blurry or poorly formatted PDFs convert less accurately, (2) Try adjusting conversion settings if available (table detection mode, OCR settings, etc.), (3) For scanned PDFs, ensure image quality is high and text is clear, (4) If the PDF is very large, try splitting it first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> and converting sections separately, (5) Some manual cleanup in Excel is normal for complex PDFs—even 90% accuracy saves significant time compared to manual entry.
                     </p>
                   </div>
                 </div>
@@ -844,7 +844,7 @@ export default function BlogPost() {
                   <li>Keep backups of original PDFs until you're satisfied with the Excel conversion</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to convert your PDFs to Excel? Try our <Link href="/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">free PDF to Excel converter tool</Link> and experience how simple transforming PDF data into spreadsheets can be. And if you need to make edits to your PDFs before conversion, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before conversion. And if you need to combine multiple PDFs first, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents before converting to Excel.
+                  Ready to convert your PDFs to Excel? Try our <Link href="/tools/pdf-to-excel" className="text-primary-400 hover:text-primary-300 underline">free PDF to Excel converter tool</Link> and experience how simple transforming PDF data into spreadsheets can be. And if you need to make edits to your PDFs before conversion, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before conversion. And if you need to combine multiple PDFs first, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents before converting to Excel.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF to Excel conversion doesn't have to be a chore. With the right tools and approach, you can transform static PDF data into dynamic Excel spreadsheets quickly and confidently, unlocking the power of data analysis, calculations, and visualization that Excel provides. This capability saves hours of manual work, reduces errors, and enables deeper insights from your PDF documents.

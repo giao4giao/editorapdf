@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/open-source-vs-closed-source-pdf-editors`
+const postUrl = `${siteUrl}/en/blog/open-source-vs-closed-source-pdf-editors`
 
 export const metadata: Metadata = {
   title: 'Comparing Open-Source vs. Closed-Source PDF Editors | EditoraPDF Blog',
@@ -83,13 +83,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',

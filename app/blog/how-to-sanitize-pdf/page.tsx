@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-sanitize-pdf`
+const postUrl = `${siteUrl}/en/blog/how-to-sanitize-pdf`
 
 export const metadata: Metadata = {
   title: 'How to Sanitize PDF Files Online (Remove Hidden Data & Metadata)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -325,7 +325,7 @@ export default function BlogPost() {
                   The sanitization process works by creating a new, clean PDF that contains only the visible content. The tool extracts pages and content while stripping away all hidden data, metadata, scripts, and embedded elements. The result is a sanitized PDF that looks identical to the original but contains no hidden information.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/sanitize-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF sanitization tool</Link> is built with these principles in mind. It's designed to be fast, secure, and thorough—removing all hidden data while preserving the visible content you want to keep. You don't need to understand how PDF sanitization works technically; the tool handles everything automatically.
+                  Our <Link href="/tools/remove-hidden-data" className="text-primary-400 hover:text-primary-300 underline">PDF sanitization tool</Link> is built with these principles in mind. It's designed to be fast, secure, and thorough—removing all hidden data while preserving the visible content you want to keep. You don't need to understand how PDF sanitization works technically; the tool handles everything automatically.
                 </p>
               </section>
 
@@ -338,7 +338,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Sanitization Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/sanitize-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF sanitization page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start sanitizing immediately. The tool processes files entirely in your browser, so your documents never leave your device.
+                    Navigate to our <Link href="/tools/remove-hidden-data" className="text-primary-400 hover:text-primary-300 underline">PDF sanitization page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start sanitizing immediately. The tool processes files entirely in your browser, so your documents never leave your device.
                   </p>
                 </div>
 
@@ -669,7 +669,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for sanitizing PDFs online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF sanitizers support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to sanitize very large PDFs, consider splitting them first using a <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> or using desktop software designed for heavy-duty processing.
+                      File size limits vary by tool, but most online PDF sanitizers support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to sanitize very large PDFs, consider splitting them first using a <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> or using desktop software designed for heavy-duty processing.
                     </p>
                   </div>
 
@@ -731,7 +731,7 @@ export default function BlogPost() {
                   <li>For documents with sensitive visible content, use redaction tools in addition to sanitization</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to sanitize your PDFs? Try our <Link href="/sanitize-pdf" className="text-primary-400 hover:text-primary-300 underline">free PDF sanitization tool</Link> and experience how simple cleaning documents can be. And if you need to make edits to your PDFs before or after sanitization, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple sanitized PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to sanitize your PDFs? Try our <Link href="/tools/remove-hidden-data" className="text-primary-400 hover:text-primary-300 underline">free PDF sanitization tool</Link> and experience how simple cleaning documents can be. And if you need to make edits to your PDFs before or after sanitization, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple sanitized PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF privacy doesn't have to be complicated. With the right tools and approach, you can protect your sensitive information and share documents confidently, knowing that hidden data won't expose more than you intend. Start sanitizing your PDFs today and take control of your document privacy.

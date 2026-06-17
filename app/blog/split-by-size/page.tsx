@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/split-by-size`
+const postUrl = `${siteUrl}/en/blog/split-by-size`
 
 export const metadata: Metadata = {
   title: 'Split PDF by Size Online (Divide Large PDFs by MB)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -323,7 +323,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand the technical details. You simply specify your desired maximum file size—say, 10 MB for email attachments—and the tool handles everything else. It creates as many files as needed, each under your specified limit, with clear naming so you can easily identify and manage them.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> includes this size-based splitting feature, making it easy to divide large documents into email-friendly or upload-compatible chunks. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
+                  Our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> includes this size-based splitting feature, making it easy to divide large documents into email-friendly or upload-compatible chunks. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
                 </p>
               </section>
 
@@ -336,7 +336,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Splitter Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter page</Link>. You'll see a clean, intuitive interface with options for different splitting methods. No account creation, login, or payment required—you can start splitting immediately.
+                    Navigate to our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter page</Link>. You'll see a clean, intuitive interface with options for different splitting methods. No account creation, login, or payment required—you can start splitting immediately.
                   </p>
                   <p className="text-surface-300 leading-relaxed">
                     The interface is designed to be self-explanatory, with clear labels and helpful tooltips. You'll see options for splitting by page ranges, by bookmarks, and—most importantly for our purposes—by file size.
@@ -792,10 +792,10 @@ export default function BlogPost() {
                   <li>Test one file first if splitting very large documents to ensure the process works smoothly</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to split your PDFs by size? Try our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">free PDF splitter tool</Link> and experience how simple dividing large documents can be. The size-based splitting feature makes it easy to create email-ready, upload-compatible files in minutes.
+                  Ready to split your PDFs by size? Try our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">free PDF splitter tool</Link> and experience how simple dividing large documents can be. The size-based splitting feature makes it easy to create email-ready, upload-compatible files in minutes.
                 </p>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  And if you need to make edits to your PDFs before or after splitting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For very large files, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before splitting. And if you need to combine PDFs later, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents back together.
+                  And if you need to make edits to your PDFs before or after splitting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For very large files, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before splitting. And if you need to combine PDFs later, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents back together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be complicated. With the right tools and approach, you can handle file size restrictions quickly and confidently, ensuring your documents reach their destination every time. Size-based splitting is your solution for professional, reliable document distribution.

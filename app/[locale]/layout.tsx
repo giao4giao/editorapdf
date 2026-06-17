@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { headers } from 'next/headers'
+import { notFound } from 'next/navigation'
 import Footer from '../components/Footer'
 import { defaultLocale, supportedLocales, type AppLocale, normalizeLocale, isSupportedLocale } from '../../i18n/config'
 import { TranslationProvider } from '../i18n/TranslationProvider'
@@ -129,6 +130,13 @@ export default function LocaleLayout({
   children: React.ReactNode
   params: { locale: string }
 }) {
+  // The [locale] segment matches ANY first path segment, so unknown single-segment
+  // paths (e.g. /xyzzy) would otherwise render the homepage with a 200 + index,follow
+  // (a soft-404). Return a real 404 when the segment is not a supported locale.
+  if (!isSupportedLocale(params.locale)) {
+    notFound();
+  }
+
   const locale = (isSupportedLocale(params.locale) ? normalizeLocale(params.locale) : defaultLocale) as AppLocale;
 
   const messages = getMessages(locale);

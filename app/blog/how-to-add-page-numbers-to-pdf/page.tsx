@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-add-page-numbers-to-pdf`
+const postUrl = `${siteUrl}/en/blog/how-to-add-page-numbers-to-pdf`
 
 export const metadata: Metadata = {
   title: 'How to Add Page Numbers to PDF Online: Complete Guide to PDF Page Numbering',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -708,7 +708,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for adding page numbers to PDFs online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF page numbering tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to add page numbers to very large PDFs, consider splitting the file first using a <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, or using desktop software designed for heavy-duty processing.
+                      File size limits vary by tool, but most online PDF page numbering tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to add page numbers to very large PDFs, consider splitting the file first using a <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, or using desktop software designed for heavy-duty processing.
                     </p>
                   </div>
 
@@ -791,7 +791,7 @@ export default function BlogPost() {
                   <li>Consider starting page numbers from page 3 or 4 for professional documents</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to add page numbers to your PDFs? Try our <Link href="/tools/page-numbers" className="text-primary-400 hover:text-primary-300 underline">free PDF page numbering tool</Link> and experience how simple numbering documents can be. And if you need to make other edits to your PDFs before or after adding page numbers, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to add page numbers to your PDFs? Try our <Link href="/tools/page-numbers" className="text-primary-400 hover:text-primary-300 underline">free PDF page numbering tool</Link> and experience how simple numbering documents can be. And if you need to make other edits to your PDFs before or after adding page numbers, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle document numbering quickly and confidently, leaving more time for the work that actually matters.

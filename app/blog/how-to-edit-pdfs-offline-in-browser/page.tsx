@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 const siteUrl = 'https://editorapdf.com';
-const postUrl = `${siteUrl}/blog/how-to-edit-pdfs-offline-in-browser`;
+const postUrl = `${siteUrl}/en/blog/how-to-edit-pdfs-offline-in-browser`;
 const publishDate = '2026-05-13';
 
 export const metadata: Metadata = {

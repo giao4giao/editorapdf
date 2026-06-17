@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-reverse-pdf-page-order`
+const postUrl = `${siteUrl}/en/blog/how-to-reverse-pdf-page-order`
 
 export const metadata: Metadata = {
   title: 'How to Reverse PDF Page Order Online (Step-by-Step Guide)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -690,14 +690,14 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Can I reverse only some pages in a PDF?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      Most online PDF reverser tools reverse all pages in the document as a single operation. If you need to reverse only specific pages or page ranges, you have a few options: split your PDF first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reverse the desired section, then merge it back using our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>. Alternatively, use a PDF reorder tool to manually rearrange specific pages to their desired positions.
+                      Most online PDF reverser tools reverse all pages in the document as a single operation. If you need to reverse only specific pages or page ranges, you have a few options: split your PDF first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reverse the desired section, then merge it back using our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>. Alternatively, use a PDF reorder tool to manually rearrange specific pages to their desired positions.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for reversing PDF page order online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF reverser tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to reverse very large PDFs, consider splitting them first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reversing sections separately, then merging them back together.
+                      File size limits vary by tool, but most online PDF reverser tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to reverse very large PDFs, consider splitting them first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reversing sections separately, then merging them back together.
                     </p>
                   </div>
 
@@ -746,7 +746,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Is there a limit to how many pages I can reverse?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      There's no hard limit on page count, but practical limits exist based on your device's capabilities. Most online tools handle 100-200 pages comfortably. Very large reversals (500+ pages) may cause browser slowdowns or memory issues. If you need to reverse extremely large documents, consider splitting the document first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reversing sections separately, then merging them back together with our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>.
+                      There's no hard limit on page count, but practical limits exist based on your device's capabilities. Most online tools handle 100-200 pages comfortably. Very large reversals (500+ pages) may cause browser slowdowns or memory issues. If you need to reverse extremely large documents, consider splitting the document first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reversing sections separately, then merging them back together with our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>.
                     </p>
                   </div>
 
@@ -793,7 +793,7 @@ export default function BlogPost() {
                   <li>Remember that reversing twice returns pages to their original sequence</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to reverse your PDF pages? Try our <Link href="/reverse-page-order" className="text-primary-400 hover:text-primary-300 underline">free PDF page reverser tool</Link> and experience how simple flipping pages can be. And if you need to make other edits to your PDFs, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. If you need to rearrange pages in a different way, our <Link href="/reorder-pages" className="text-primary-400 hover:text-primary-300 underline">PDF reorder tool</Link> lets you drag and drop pages to any position. And if you need to combine multiple PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to reverse your PDF pages? Try our <Link href="/reverse-page-order" className="text-primary-400 hover:text-primary-300 underline">free PDF page reverser tool</Link> and experience how simple flipping pages can be. And if you need to make other edits to your PDFs, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. If you need to rearrange pages in a different way, our <Link href="/tools/reorder" className="text-primary-400 hover:text-primary-300 underline">PDF reorder tool</Link> lets you drag and drop pages to any position. And if you need to combine multiple PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle page reversal quickly and confidently, leaving more time for the work that actually matters. Whether you're fixing a scanning error, preparing documents for printing, or correcting export mistakes, the ability to reverse pages efficiently is an essential skill in today's digital workflow.

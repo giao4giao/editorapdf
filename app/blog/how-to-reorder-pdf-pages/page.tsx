@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-reorder-pdf-pages`
+const postUrl = `${siteUrl}/en/blog/how-to-reorder-pdf-pages`
 
 export const metadata: Metadata = {
   title: 'How to Reorder PDF Pages Online (Step-by-Step Guide)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -331,7 +331,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF page reordering works technically. The tool handles page extraction, reordering, and file reconstruction automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/reorder-pages" className="text-primary-400 hover:text-primary-300 underline">PDF page reorder tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't. Whether you're fixing a simple two-page swap or completely reorganizing a 200-page document, the process remains the same: upload, drag, drop, download.
+                  Our <Link href="/tools/reorder" className="text-primary-400 hover:text-primary-300 underline">PDF page reorder tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't. Whether you're fixing a simple two-page swap or completely reorganizing a 200-page document, the process remains the same: upload, drag, drop, download.
                 </p>
               </section>
 
@@ -344,7 +344,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Page Reorder Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/reorder-pages" className="text-primary-400 hover:text-primary-300 underline">PDF page reorder page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start reordering immediately. The interface is designed to be intuitive, so even first-time users can figure it out quickly.
+                    Navigate to our <Link href="/tools/reorder" className="text-primary-400 hover:text-primary-300 underline">PDF page reorder page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start reordering immediately. The interface is designed to be intuitive, so even first-time users can figure it out quickly.
                   </p>
                 </div>
 
@@ -693,7 +693,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I reorder pages in a PDF file online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can reorder PDF pages online by using our <Link href="/reorder-pages" className="text-primary-400 hover:text-primary-300 underline">PDF page reorder tool</Link>. Simply upload your PDF file, and you'll see thumbnails of all pages. Drag and drop pages to rearrange them in your preferred order, then click the reorder button to generate your new PDF with pages in the correct sequence. No account creation, payment, or software installation required.
+                      You can reorder PDF pages online by using our <Link href="/tools/reorder" className="text-primary-400 hover:text-primary-300 underline">PDF page reorder tool</Link>. Simply upload your PDF file, and you'll see thumbnails of all pages. Drag and drop pages to rearrange them in your preferred order, then click the reorder button to generate your new PDF with pages in the correct sequence. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -714,7 +714,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for reordering PDF pages online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF reorder tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to reorder very large PDFs, consider splitting them first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, or using desktop software designed for heavy-duty processing.
+                      File size limits vary by tool, but most online PDF reorder tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to reorder very large PDFs, consider splitting them first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, or using desktop software designed for heavy-duty processing.
                     </p>
                   </div>
 
@@ -763,7 +763,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Is there a limit to how many pages I can reorder?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      There's no hard limit on page count, but practical limits exist based on your device's capabilities. Most online tools handle 100-200 pages comfortably. Very large reorders (500+ pages) may cause browser slowdowns or memory issues. If you need to reorder extremely large documents, consider splitting the document first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reordering sections separately, then merging them back together with our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>.
+                      There's no hard limit on page count, but practical limits exist based on your device's capabilities. Most online tools handle 100-200 pages comfortably. Very large reorders (500+ pages) may cause browser slowdowns or memory issues. If you need to reorder extremely large documents, consider splitting the document first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, reordering sections separately, then merging them back together with our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>.
                     </p>
                   </div>
 
@@ -804,7 +804,7 @@ export default function BlogPost() {
                   <li>Check the final PDF after downloading to ensure everything looks correct</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to reorder your PDF pages? Try our <Link href="/reorder-pages" className="text-primary-400 hover:text-primary-300 underline">free PDF page reorder tool</Link> and experience how simple rearranging documents can be. And if you need to make other edits to your PDFs, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to reorder your PDF pages? Try our <Link href="/tools/reorder" className="text-primary-400 hover:text-primary-300 underline">free PDF page reorder tool</Link> and experience how simple rearranging documents can be. And if you need to make other edits to your PDFs, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle page reordering quickly and confidently, leaving more time for the work that actually matters. Whether you're organizing a presentation, fixing a scanning error, or preparing documents for submission, the ability to reorder pages efficiently is an essential skill in today's digital workflow.

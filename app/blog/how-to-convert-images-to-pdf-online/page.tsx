@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-convert-images-to-pdf-online`
+const postUrl = `${siteUrl}/en/blog/how-to-convert-images-to-pdf-online`
 
 export const metadata: Metadata = {
   title: 'How to Convert Images to PDF Online (Step-by-Step Guide)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -492,7 +492,7 @@ export default function BlogPost() {
                     <li>Share it via email, cloud storage, or messaging apps</li>
                     <li>Print it if needed</li>
                     <li>Further edit it using a <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> if you need to add text, annotations, or make other modifications</li>
-                    <li>Combine it with other PDFs using a <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> if needed</li>
+                    <li>Combine it with other PDFs using a <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> if needed</li>
                   </ul>
                   <p className="text-surface-300 leading-relaxed">
                     That's it! You've successfully converted your images to PDF. The entire process typically takes less than two minutes from start to finish, even with multiple images. The result is a professional, shareable PDF document that preserves your image quality and maintains the order you specified.
@@ -813,7 +813,7 @@ export default function BlogPost() {
                   <li>Use appropriate quality settings based on your needs (file size vs. quality)</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to convert your images to PDF? Try our <Link href="/Images-to-pdf" className="text-primary-400 hover:text-primary-300 underline">free image to PDF converter tool</Link> and experience how simple combining images into PDF documents can be. And if you need to make edits to your PDF after conversion, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, annotations, and more. For large PDFs that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes while maintaining quality. And if you need to combine your converted PDF with other PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to convert your images to PDF? Try our <Link href="/Images-to-pdf" className="text-primary-400 hover:text-primary-300 underline">free image to PDF converter tool</Link> and experience how simple combining images into PDF documents can be. And if you need to make edits to your PDF after conversion, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, annotations, and more. For large PDFs that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes while maintaining quality. And if you need to combine your converted PDF with other PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   Image to PDF conversion doesn't have to be a chore. With the right tools and approach, you can handle document conversion quickly and confidently, leaving more time for the work that actually matters. Whether you're creating portfolios, organizing documents, or compiling photos, online image to PDF converters provide the simplicity, security, and quality you need to get the job done right.

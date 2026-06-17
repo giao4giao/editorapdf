@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-we-built-open-source-pdf-editor`
+const postUrl = `${siteUrl}/en/blog/how-we-built-open-source-pdf-editor`
 
 export const metadata: Metadata = {
   title: 'How We Built a Free Open-Source PDF Editor with Next.js | EditoraPDF',
@@ -89,13 +89,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',

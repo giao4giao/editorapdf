@@ -4,7 +4,7 @@ import Script from 'next/script'
 import MobileMenu from '../../components/MobileMenu'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-merge-pdf-files-online`
+const postUrl = `${siteUrl}/en/blog/how-to-merge-pdf-files-online`
 
 export const metadata: Metadata = {
   title: 'How to Merge PDF Files Online: Complete Guide to Combining PDF Documents',
@@ -103,13 +103,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -192,7 +192,7 @@ export default function BlogPost() {
                 <Link href="/contact" className="nav-link">Contact</Link>
               </nav>
               
-              <Link href="/mergepdf" className="btn-primary btn-md hidden sm:flex">
+              <Link href="/tools/merge" className="btn-primary btn-md hidden sm:flex">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
@@ -325,7 +325,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF merging works technically. The tool handles page extraction, content preservation, and file reconstruction automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
+                  Our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
                 </p>
               </section>
 
@@ -338,7 +338,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Merger Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start merging immediately.
+                    Navigate to our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start merging immediately.
                   </p>
                 </div>
 
@@ -595,7 +595,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I merge PDF files online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can merge PDF files online for free by using our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>. Simply upload multiple PDF files, arrange them in your preferred order using drag-and-drop, and click merge. The tool combines all files into a single PDF document that you can download instantly. No account creation, payment, or software installation required.
+                      You can merge PDF files online for free by using our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>. Simply upload multiple PDF files, arrange them in your preferred order using drag-and-drop, and click merge. The tool combines all files into a single PDF document that you can download instantly. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -697,7 +697,7 @@ export default function BlogPost() {
                   <li>Keep backups of original files until you're satisfied with the merge</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to merge your PDFs? Try our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">free PDF merger tool</Link> and experience how simple combining documents can be. And if you need to make edits to your PDFs before or after merging, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before merging.
+                  Ready to merge your PDFs? Try our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">free PDF merger tool</Link> and experience how simple combining documents can be. And if you need to make edits to your PDFs before or after merging, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes before merging.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle document merging quickly and confidently, leaving more time for the work that actually matters.

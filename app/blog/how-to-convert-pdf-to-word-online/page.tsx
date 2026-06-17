@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-convert-pdf-to-word-online`
+const postUrl = `${siteUrl}/en/blog/how-to-convert-pdf-to-word-online`
 
 export const metadata: Metadata = {
   title: 'How to Convert PDF to Word Online: Complete Guide to PDF to DOCX Conversion',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -322,7 +322,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF to Word conversion works technically. The tool handles text extraction, layout analysis, format conversion, and file reconstruction automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">PDF to Word converter tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
+                  Our <Link href="/tools/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">PDF to Word converter tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need without the complexity you don't.
                 </p>
               </section>
 
@@ -335,7 +335,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF to Word Converter Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">PDF to Word converter page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start converting immediately.
+                    Navigate to our <Link href="/tools/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">PDF to Word converter page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start converting immediately.
                   </p>
                   <p className="text-surface-300 leading-relaxed">
                     The interface is designed to be intuitive, with clear instructions and visual feedback throughout the conversion process.
@@ -666,7 +666,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I convert PDF to Word online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can convert PDF to Word online for free by using our <Link href="/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">PDF to Word converter tool</Link>. Simply upload your PDF file, wait for the conversion process to complete, and download your Word document. The tool preserves text formatting, images, and layout as much as possible during conversion. No account creation, payment, or software installation required.
+                      You can convert PDF to Word online for free by using our <Link href="/tools/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">PDF to Word converter tool</Link>. Simply upload your PDF file, wait for the conversion process to complete, and download your Word document. The tool preserves text formatting, images, and layout as much as possible during conversion. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -687,7 +687,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for converting PDF to Word online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF to Word converters support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 100. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to convert very large PDFs, consider splitting them first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> or using desktop software designed for heavy-duty processing.
+                      File size limits vary by tool, but most online PDF to Word converters support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 100. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to convert very large PDFs, consider splitting them first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> or using desktop software designed for heavy-duty processing.
                     </p>
                   </div>
 
@@ -743,7 +743,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">Is there a limit to how many pages I can convert?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      There's no hard limit on page count, but practical limits exist based on your device's capabilities. Most online tools handle 50-100 pages comfortably. Very large conversions (200+ pages) may cause browser slowdowns or memory issues. If you need to convert extremely large documents, consider splitting them first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> or using desktop software optimized for large file processing.
+                      There's no hard limit on page count, but practical limits exist based on your device's capabilities. Most online tools handle 50-100 pages comfortably. Very large conversions (200+ pages) may cause browser slowdowns or memory issues. If you need to convert extremely large documents, consider splitting them first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> or using desktop software optimized for large file processing.
                     </p>
                   </div>
 
@@ -780,10 +780,10 @@ export default function BlogPost() {
                   <li>Use privacy-first tools that process files locally</li>
                   <li>Review converted documents and make minor formatting adjustments as needed</li>
                   <li>Keep backups of original PDFs until you're satisfied with the conversion</li>
-                  <li>For large files, consider splitting first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link></li>
+                  <li>For large files, consider splitting first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link></li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to convert your PDFs to Word? Try our <Link href="/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">free PDF to Word converter tool</Link> and experience how simple document transformation can be. And if you need to make edits to your PDFs before converting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction before conversion, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple PDFs before converting, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents first.
+                  Ready to convert your PDFs to Word? Try our <Link href="/tools/pdf-to-word" className="text-primary-400 hover:text-primary-300 underline">free PDF to Word converter tool</Link> and experience how simple document transformation can be. And if you need to make edits to your PDFs before converting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction before conversion, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple PDFs before converting, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents first.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF to Word conversion doesn't have to be a chore. With the right tools and approach, you can transform documents quickly and confidently, leaving more time for the actual editing and content work that matters.

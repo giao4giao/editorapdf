@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/is-it-safe-to-edit-pdfs-online`
+const postUrl = `${siteUrl}/en/blog/is-it-safe-to-edit-pdfs-online`
 
 export const metadata: Metadata = {
   title: 'Is It Safe to Edit PDFs Online? Privacy, Security, and What You Should Know',
@@ -94,13 +94,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',

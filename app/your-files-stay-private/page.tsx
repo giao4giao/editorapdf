@@ -9,10 +9,12 @@ import {
 } from 'lucide-react'
 
 const siteUrl = 'https://editorapdf.com'
-const pageUrl = `${siteUrl}/your-files-stay-private`
+// English-only page served under the locale layout; canonical to the non-redirecting /en URL.
+const pageUrl = `${siteUrl}/en/your-files-stay-private`
 
 export const metadata: Metadata = {
-  title: 'Your Files Never Leave Your Browser — 100% Local PDF Processing | EditoraPDF',
+  // Brand suffix is added once by the locale layout's title.template.
+  title: 'Your Files Never Leave Your Browser — 100% Local PDF Processing',
   description:
     'Learn exactly what happens to your PDF files when you use EditoraPDF. All processing runs locally in your browser — no server uploads, no data collection, no exposure.',
   openGraph: {

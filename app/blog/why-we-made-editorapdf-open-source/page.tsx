@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/why-we-made-editorapdf-open-source`
+const postUrl = `${siteUrl}/en/blog/why-we-made-editorapdf-open-source`
 
 export const metadata: Metadata = {
   title: 'Why We Made EditoraPDF Open Source - Our Philosophy | EditoraPDF Blog',
@@ -83,13 +83,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',

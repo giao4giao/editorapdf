@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-insert-duplicate-pages-in-pdf`
+const postUrl = `${siteUrl}/en/blog/how-to-insert-duplicate-pages-in-pdf`
 
 export const metadata: Metadata = {
   title: 'How to Insert Duplicate Pages in PDF: Complete Guide to Copying PDF Pages',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -763,7 +763,7 @@ export default function BlogPost() {
                   <li>Use compression tools if file size becomes an issue</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to duplicate your PDF pages? Try our <Link href="/duplicate-pages" className="text-primary-400 hover:text-primary-300 underline">free PDF duplicate pages tool</Link> and experience how simple copying pages can be. And if you need to make edits to your PDFs before or after duplicating pages, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes after duplicating. And if you need to combine multiple PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to duplicate your PDF pages? Try our <Link href="/duplicate-pages" className="text-primary-400 hover:text-primary-300 underline">free PDF duplicate pages tool</Link> and experience how simple copying pages can be. And if you need to make edits to your PDFs before or after duplicating pages, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes after duplicating. And if you need to combine multiple PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle page duplication quickly and confidently, leaving more time for the work that actually matters.

@@ -40,9 +40,10 @@ export default function LocalizedToolPage() {
     <main className="min-h-screen flex flex-col">
       <Header />
       <div className="flex-1 flex items-center justify-center px-6 pt-6 pb-6">
-        <ToolView 
-          tool={tool} 
-          onBack={() => router.push(`/${locale}/tools`)} 
+        <ToolView
+          tool={tool}
+          onBack={() => router.push(`/${locale}/tools`)}
+          titleAs="h1"
         />
       </div>
     </main>

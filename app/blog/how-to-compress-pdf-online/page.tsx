@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-compress-pdf-online`
+const postUrl = `${siteUrl}/en/blog/how-to-compress-pdf-online`
 
 export const metadata: Metadata = {
   title: 'How to Compress PDF Files Online: Complete Guide to Reducing PDF File Size',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -325,7 +325,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF compression works technically. The tool handles image optimization, font subsetting, object compression, and metadata removal automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/compress-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need to reduce file sizes without the complexity you don't. Whether you're compressing scanned documents, presentations, or reports, the tool adapts to your file type and provides optimal compression results.
+                  Our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need to reduce file sizes without the complexity you don't. Whether you're compressing scanned documents, presentations, or reports, the tool adapts to your file type and provides optimal compression results.
                 </p>
               </section>
 
@@ -338,7 +338,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Compression Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/compress-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF compression page</Link>. You'll see a clean interface with a file upload area and compression options. No account creation or login required—you can start compressing immediately. The page loads quickly and works entirely in your browser, ensuring your files never leave your device.
+                    Navigate to our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression page</Link>. You'll see a clean interface with a file upload area and compression options. No account creation or login required—you can start compressing immediately. The page loads quickly and works entirely in your browser, ensuring your files never leave your device.
                   </p>
                 </div>
 
@@ -708,7 +708,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I compress a PDF file online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can compress a PDF file online for free by using our <Link href="/compress-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link>. Simply upload your PDF file, choose your compression level (low, medium, or high), and click compress. The tool reduces your PDF file size while maintaining quality, and you can download the compressed file instantly. No account creation, payment, or software installation required. The entire process takes just seconds.
+                      You can compress a PDF file online for free by using our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link>. Simply upload your PDF file, choose your compression level (low, medium, or high), and click compress. The tool reduces your PDF file size while maintaining quality, and you can download the compressed file instantly. No account creation, payment, or software installation required. The entire process takes just seconds.
                     </p>
                   </div>
 
@@ -729,7 +729,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for compressing PDFs online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF compressors support files up to 25-50 MB. For best performance, keep files under 25 MB. Very large files (100+ MB) may cause browser performance issues, timeouts, or memory errors. If you need to compress very large PDFs, consider splitting them first using a <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, compressing each part separately, then merging them back together with a <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>. Alternatively, use desktop software designed for heavy-duty processing of very large files.
+                      File size limits vary by tool, but most online PDF compressors support files up to 25-50 MB. For best performance, keep files under 25 MB. Very large files (100+ MB) may cause browser performance issues, timeouts, or memory errors. If you need to compress very large PDFs, consider splitting them first using a <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, compressing each part separately, then merging them back together with a <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>. Alternatively, use desktop software designed for heavy-duty processing of very large files.
                     </p>
                   </div>
 
@@ -819,7 +819,7 @@ export default function BlogPost() {
                   <li>For very large files, consider splitting first, compressing parts, then merging</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to compress your PDFs? Try our <Link href="/compress-pdf" className="text-primary-400 hover:text-primary-300 underline">free PDF compression tool</Link> and experience how simple reducing file sizes can be. And if you need to make edits to your PDFs before or after compression, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For documents that need to be divided, our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> makes it easy to break large files into smaller pieces. And if you need to combine multiple PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> helps you merge documents efficiently.
+                  Ready to compress your PDFs? Try our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">free PDF compression tool</Link> and experience how simple reducing file sizes can be. And if you need to make edits to your PDFs before or after compression, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For documents that need to be divided, our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link> makes it easy to break large files into smaller pieces. And if you need to combine multiple PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> helps you merge documents efficiently.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF management doesn't have to be a chore. With the right tools and approach, you can handle file compression quickly and confidently, ensuring your documents are the right size for sharing while maintaining the quality you need. Whether you're compressing for email, storage, or sharing, online compression tools make the process simple and secure.

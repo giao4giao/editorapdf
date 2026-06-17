@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-redact-pdf-online`
+const postUrl = `${siteUrl}/en/blog/how-to-redact-pdf-online`
 
 export const metadata: Metadata = {
   title: 'How to Redact PDF Online (Step-by-Step Secure Guide)',
@@ -119,13 +119,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
@@ -328,7 +328,7 @@ export default function BlogPost() {
                   The best part? You don't need to understand how PDF redaction works technically. The tool handles data removal, content elimination, and file reconstruction automatically. You just need to know how to use the interface—which is exactly what we'll cover next.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
-                  Our <Link href="/redact-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF redaction tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need to permanently remove sensitive information without the complexity you don't.
+                  Our <Link href="/tools/redact" className="text-primary-400 hover:text-primary-300 underline">PDF redaction tool</Link> is built with these principles in mind. It's designed to be fast, secure, and straightforward—everything you need to permanently remove sensitive information without the complexity you don't.
                 </p>
               </section>
 
@@ -341,7 +341,7 @@ export default function BlogPost() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-white mb-3">Step 1: Access the PDF Redaction Tool</h3>
                   <p className="text-surface-300 leading-relaxed mb-4">
-                    Navigate to our <Link href="/redact-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF redaction page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start redacting immediately. This privacy-first approach ensures your sensitive documents never leave your device.
+                    Navigate to our <Link href="/tools/redact" className="text-primary-400 hover:text-primary-300 underline">PDF redaction page</Link>. You'll see a clean interface with a file upload area. No account creation or login required—you can start redacting immediately. This privacy-first approach ensures your sensitive documents never leave your device.
                   </p>
                 </div>
 
@@ -712,7 +712,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">How do I redact a PDF file online for free?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      You can redact a PDF file online for free by using our <Link href="/redact-pdf" className="text-primary-400 hover:text-primary-300 underline">PDF redaction tool</Link>. Simply upload your PDF file, select the text, images, or areas you want to permanently remove using the redaction tools, and apply the redactions. The tool permanently removes sensitive information, replacing it with black boxes that cannot be recovered. Download your redacted PDF instantly. No account creation, payment, or software installation required.
+                      You can redact a PDF file online for free by using our <Link href="/tools/redact" className="text-primary-400 hover:text-primary-300 underline">PDF redaction tool</Link>. Simply upload your PDF file, select the text, images, or areas you want to permanently remove using the redaction tools, and apply the redactions. The tool permanently removes sensitive information, replacing it with black boxes that cannot be recovered. Download your redacted PDF instantly. No account creation, payment, or software installation required.
                     </p>
                   </div>
 
@@ -768,7 +768,7 @@ export default function BlogPost() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">What is the maximum file size for redacting PDFs online?</h3>
                     <p className="text-surface-300 leading-relaxed">
-                      File size limits vary by tool, but most online PDF redaction tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to redact very large PDFs, consider splitting them first using our <Link href="/splitpdf" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, redacting each section separately, then merging them back together using our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>.
+                      File size limits vary by tool, but most online PDF redaction tools support files up to 25-50 MB. For best performance, keep files under 25 MB and limit the total number of pages to under 200. Very large files (100+ MB) may cause browser performance issues or timeouts. If you need to redact very large PDFs, consider splitting them first using our <Link href="/tools/split" className="text-primary-400 hover:text-primary-300 underline">PDF splitter tool</Link>, redacting each section separately, then merging them back together using our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link>.
                     </p>
                   </div>
 
@@ -831,7 +831,7 @@ export default function BlogPost() {
                   <li>Use appropriate redaction methods for different types of content (text, images, areas, pages)</li>
                 </ul>
                 <p className="text-surface-300 leading-relaxed mb-4">
-                  Ready to redact your PDFs? Try our <Link href="/redact-pdf" className="text-primary-400 hover:text-primary-300 underline">free PDF redaction tool</Link> and experience how simple and secure removing sensitive information can be. And if you need to make other edits to your PDFs before or after redacting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction before redacting, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple redacted PDFs, our <Link href="/mergepdf" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
+                  Ready to redact your PDFs? Try our <Link href="/tools/redact" className="text-primary-400 hover:text-primary-300 underline">free PDF redaction tool</Link> and experience how simple and secure removing sensitive information can be. And if you need to make other edits to your PDFs before or after redacting, check out our <Link href="/edit" className="text-primary-400 hover:text-primary-300 underline">PDF editing tool</Link> for adding text, images, and annotations. For large files that need size reduction before redacting, our <Link href="/tools/compress" className="text-primary-400 hover:text-primary-300 underline">PDF compression tool</Link> can help reduce file sizes. And if you need to combine multiple redacted PDFs, our <Link href="/tools/merge" className="text-primary-400 hover:text-primary-300 underline">PDF merger tool</Link> makes it easy to merge documents together.
                 </p>
                 <p className="text-surface-300 leading-relaxed">
                   PDF redaction doesn't have to be a chore. With the right tools and approach, you can handle document redaction quickly and confidently, ensuring sensitive information is permanently removed and protected. This gives you peace of mind when sharing documents, meeting compliance requirements, and protecting privacy—leaving more time for the work that actually matters.

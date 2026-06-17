@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Header from '../../components/Header'
 
 const siteUrl = 'https://editorapdf.com'
-const postUrl = `${siteUrl}/blog/how-to-edit-a-pdf-online`
+const postUrl = `${siteUrl}/en/blog/how-to-edit-a-pdf-online`
 
 export const metadata: Metadata = {
   title: 'How to Edit a PDF Online - Step-by-Step Guide | EditoraPDF Blog',
@@ -92,13 +92,13 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: `${siteUrl}/`,
+      item: `${siteUrl}/en`,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteUrl}/blog`,
+      item: `${siteUrl}/en/blog`,
     },
     {
       '@type': 'ListItem',
