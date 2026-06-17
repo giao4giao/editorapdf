@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Script from 'next/script'
 import Footer from './components/Footer'
-import { headers } from 'next/headers'
 
 const siteUrl = 'https://editorapdf.com' // Replace with your actual domain
 const siteName = 'EditoraPDF'
@@ -498,11 +497,11 @@ export default function RootLayout({
     },
   }
 
-  const headersList = headers()
-  const locale = headersList.get('x-locale') ?? 'en'
-
+  // Static <html lang="en"> so every route can be statically/edge-rendered (no headers()).
+  // Localized routes correct documentElement.lang on the client via the [locale] layout;
+  // the non-locale tree (blog, site-index) is English, so "en" is already correct there.
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         {/* Google Tag Manager - Load after page is interactive to improve performance */}
         <Script

@@ -12,10 +12,18 @@ import {
   AlertCircle, PenSquare,
 } from 'lucide-react';
 
+import type { Metadata } from 'next';
 import type { AppLocale } from '../../i18n/config';
 import { getMessages } from '../i18n/messages';
+import { localeAlternates } from '../lib/seo';
 
 const siteUrl = 'https://editorapdf.com';
+
+// Canonical + hreflang for the locale home (was provided by the [locale] layout's
+// headers()-based metadata; now per-page so the route can be statically rendered).
+export function generateMetadata({ params }: { params: { locale: AppLocale } }): Metadata {
+  return { alternates: localeAlternates(params.locale, '') };
+}
 
 export default function Home({ params }: { params: { locale: AppLocale } }) {
   const locale = params.locale;

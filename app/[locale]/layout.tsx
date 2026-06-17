@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import Footer from '../components/Footer'
 import { defaultLocale, supportedLocales, type AppLocale, normalizeLocale, isSupportedLocale } from '../../i18n/config'
@@ -47,28 +46,24 @@ const localeSeo: Record<AppLocale, { title: string; description: string; ogLocal
   },
 }
 
+// Statically prerender the six supported locales so every localized page can be
+// statically/edge-rendered instead of `private, no-store`. Unknown [locale] values are
+// still dynamically rendered and then 404'd by the isSupportedLocale gate below — we do
+// NOT set `dynamicParams = false` here because the [...segments] catch-all child has no
+// generateStaticParams and would fail the build under it.
+export function generateStaticParams() {
+  return supportedLocales.map((locale) => ({ locale }))
+}
+
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = (isSupportedLocale(params.locale) ? normalizeLocale(params.locale) : defaultLocale) as AppLocale;
 
   const seo = localeSeo[locale] ?? localeSeo.en;
 
-  // Read x-pathname injected by middleware to build correct canonical + hreflang
-  const headersList = headers();
-  const pathname = headersList.get('x-pathname') ?? `/${locale}`;
-  // Strip the locale prefix to get the page sub-path (e.g. /fr/about → /about)
-  const subPath = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '') || '/';
-
-  // Build per-locale alternate URLs for this specific page
-  // x-default points to the default-locale URL to avoid redirects in hreflang.
-  const hreflangAlternates: Record<string, string> = {
-    'x-default': `${siteUrl}/${defaultLocale}${subPath === '/' ? '' : subPath}`,
-    ...Object.fromEntries(
-      supportedLocales.map((code) => [code, `${siteUrl}/${code}${subPath === '/' ? '' : subPath}`])
-    ),
-  };
-
-  const canonical = `${siteUrl}/${locale}${subPath === '/' ? '' : subPath}`;
-
+  // NOTE: canonical + hreflang are NOT set here anymore. They depend on the page path,
+  // which previously required reading the x-pathname header (forcing dynamic rendering).
+  // Each page now sets its own alternates via localeAlternates(locale, subPath) in
+  // app/lib/seo.ts. openGraph.url is likewise set per-page (omitted here).
   return {
     metadataBase: new URL(siteUrl),
     title: {
@@ -78,7 +73,6 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
     description: seo.description,
     openGraph: {
       type: 'website',
-      url: canonical,
       title: seo.title,
       description: seo.description,
       siteName,
@@ -103,10 +97,6 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
     robots: {
       index: true,
       follow: true,
-    },
-    alternates: {
-      canonical,
-      languages: hreflangAlternates,
     },
   }
 }
@@ -143,6 +133,17 @@ export default function LocaleLayout({
 
   return (
     <TranslationProvider locale={locale} messages={messages}>
+      {/* The document root <html lang> is statically "en" (set in the root layout so
+          pages can be statically rendered). Correct it to this route's locale on the
+          live DOM for screen readers / assistive tech and JS-aware crawlers. hreflang
+          remains the authoritative language signal for search engines. */}
+      {locale !== defaultLocale && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang=${JSON.stringify(locale)}`,
+          }}
+        />
+      )}
       {/* No id="main-content" here — the skip-link target lives in the root layout;
           a second one would be a duplicate id and break the skip link. */}
       <div className="relative min-h-screen flex flex-col">
