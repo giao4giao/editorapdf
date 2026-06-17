@@ -8,7 +8,9 @@ import Header from '../components/Header'
 const siteUrl = 'https://editorapdf.com'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions - EditoraPDF',
+  // Bare title — the layout's title.template adds the "| EditoraPDF" brand once
+  // (avoids the doubled "… - EditoraPDF | EditoraPDF").
+  title: 'Frequently Asked Questions',
   description: 'Find answers to common questions about EditoraPDF - a free, open-source PDF editor. Learn about features, privacy, security, and how to use our online PDF editing tool.',
   keywords: [
     'FAQ',

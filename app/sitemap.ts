@@ -70,18 +70,26 @@ const blogPosts = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  // ── Locale-prefixed main pages ──────────────────────────────────────────────
+  // ── Locale-prefixed main pages (fully translated → per-locale + hreflang) ───
+  // NOTE: /blog and /your-files-stay-private are NOT here — their content is
+  // English-only and they canonicalize to /en, so advertising 6 locale variants with
+  // reciprocal hreflang would conflict with their canonical. They are listed as single
+  // English-only entries below instead.
   const localizedMainPages = [
     { path: '',               priority: 0.95, freq: 'weekly'  as const },
     { path: '/edit',          priority: 0.9,  freq: 'weekly'  as const },
     { path: '/tools',         priority: 0.9,  freq: 'weekly'  as const },
     { path: '/how-it-works',  priority: 0.8,  freq: 'monthly' as const },
     { path: '/about',         priority: 0.75, freq: 'monthly' as const },
-    { path: '/blog',          priority: 0.75, freq: 'weekly'  as const },
     { path: '/faq',           priority: 0.75, freq: 'monthly' as const },
     { path: '/contact',       priority: 0.65, freq: 'monthly' as const },
     { path: '/privacy-policy',          priority: 0.45, freq: 'monthly' as const },
     { path: '/terms',                   priority: 0.45, freq: 'monthly' as const },
+  ]
+
+  // English-only pages: localized chrome but English content, canonical to /en.
+  const englishOnlyMainPages = [
+    { path: '/blog',                    priority: 0.75, freq: 'weekly'  as const },
     { path: '/your-files-stay-private', priority: 0.80, freq: 'monthly' as const },
   ]
 
@@ -105,6 +113,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: altLanguages(`/tools/${toolId}`) },
     }))
   )
+
+  // English-only main pages: single /en URL, no hreflang (matches their /en canonical).
+  const englishOnlyUrls: MetadataRoute.Sitemap = englishOnlyMainPages.map(({ path, priority, freq }) => ({
+    url: `${baseUrl}/${defaultLocale}${path}`,
+    lastModified: now,
+    changeFrequency: freq,
+    priority,
+  }))
 
   // ── Blog posts (English only) ───────────────────────────────────────────────
   // Blog content is not translated, so every /<locale>/blog/<slug> canonicalizes to
@@ -130,6 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...localizedPages,
     ...localizedToolUrls,
+    ...englishOnlyUrls,
     ...blogUrls,
     ...canonicalPages,
   ]
