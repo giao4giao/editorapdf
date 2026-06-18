@@ -38,6 +38,10 @@ export const MIGRATED_BLOG_SLUGS = [
   'how-we-built-open-source-pdf-editor',
   'technology-behind-privacy-first-pdf-editing',
   'open-source-vs-closed-source-pdf-editors',
+  'contributing-to-open-source-beginners-guide',
+  'how-to-redact-pdf-for-legal-compliance',
+  'pdf-metadata-what-is-it-and-how-to-remove',
+  'how-to-edit-pdfs-offline-in-browser',
 ] as const
 
 export type MigratedSlug = (typeof MIGRATED_BLOG_SLUGS)[number]
