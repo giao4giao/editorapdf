@@ -29,6 +29,11 @@ export const MIGRATED_BLOG_SLUGS = [
   'how-to-sanitize-pdf',
   'digital-signature',
   'is-it-safe-to-edit-pdfs-online',
+  'how-to-merge-pdf-files-online',
+  'how-to-split-pdf-files-online',
+  'split-by-bookmarks',
+  'split-by-size',
+  'how-to-insert-duplicate-pages-in-pdf',
 ] as const
 
 export type MigratedSlug = (typeof MIGRATED_BLOG_SLUGS)[number]
