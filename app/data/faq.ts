@@ -1,6 +1,10 @@
 // SEO-optimized FAQ data - reusable across the application
 
 import { faqDataUk } from './faq.uk';
+import { faqDataDe } from './faq.de';
+import { faqDataEs } from './faq.es';
+import { faqDataFr } from './faq.fr';
+import { faqDataIt } from './faq.it';
 
 export interface FAQItem {
   question: string;
@@ -97,8 +101,11 @@ export const faqData: FAQItem[] = [
 ];
 
 // Generate FAQ Schema for structured data (SEO)
-export function generateFAQSchema(siteUrl: string, locale: 'en' | 'uk' = 'en') {
-  const items = locale === 'uk' ? faqDataUk : faqData;
+export function generateFAQSchema(siteUrl: string, locale: 'en' | 'uk' | 'de' | 'es' | 'fr' | 'it' = 'en') {
+  const byLocale: Record<string, FAQItem[]> = {
+    en: faqData, uk: faqDataUk, de: faqDataDe, es: faqDataEs, fr: faqDataFr, it: faqDataIt,
+  };
+  const items = byLocale[locale] ?? faqData;
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

@@ -37,7 +37,7 @@ export default function FAQPage({ params }: { params?: { locale?: string } }) {
   const t = (k: string, f: string) => (m[k] && m[k].trim() ? m[k] : f)
 
   // FAQ Schema for SEO
-  const faqSchema = generateFAQSchema(siteUrl, locale === 'uk' ? 'uk' : 'en')
+  const faqSchema = generateFAQSchema(siteUrl, locale)
 
   return (
     <>

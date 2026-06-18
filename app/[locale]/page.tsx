@@ -29,11 +29,10 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
   const locale = params.locale;
   const messages = getMessages(locale) as Record<string, string>;
   const t = (k: string) => messages[k] ?? k;
-  const isUk = locale === 'uk';
   const withLocale = (path: string) => `/${locale}${path}`;
 
-  // FAQ Schema for SEO - Generated from reusable data
-  const faqSchema = generateFAQSchema(siteUrl, isUk ? 'uk' : 'en');
+  // FAQ Schema for SEO - Generated from reusable per-locale data
+  const faqSchema = generateFAQSchema(siteUrl, locale);
 
   // NOTE: HowTo structured data intentionally removed. Google deprecated HowTo rich
   // results in 2023 (no SERP feature on desktop or mobile), so it added payload with
@@ -51,62 +50,30 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
     '@type': 'WebApplication',
     '@id': `${siteUrl}/#webapp`,
     name: 'EditoraPDF',
-    alternateName: isUk ? 'EditoraPDF онлайн PDF-редактор' : 'EditoraPDF Online PDF Editor',
+    alternateName: t('schema.app.altName'),
     url: siteUrl,
-    description: isUk
-      ? 'Редагуйте PDF онлайн миттєво без встановлення програм і без створення акаунта. Швидке та потужне редагування PDF прямо у браузері з повною приватністю.'
-      : 'Edit PDF documents online instantly without installing software or creating an account. Quick, powerful PDF editing directly in your browser with complete privacy.',
-    applicationCategory: isUk ? 'BusinessApplication' : 'BusinessApplication',
-    applicationSubCategory: isUk ? 'PDF-редактор' : 'PDF Editor',
+    description: t('schema.app.desc'),
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: t('schema.app.subCategory'),
     operatingSystem: 'Any',
-    browserRequirements: isUk
-      ? 'Потрібен сучасний браузер (Chrome, Edge, Firefox, Safari) з увімкненим JavaScript.'
-      : 'Requires a modern browser (Chrome, Edge, Firefox, Safari). JavaScript enabled.',
+    browserRequirements: t('schema.app.browserReq'),
     softwareVersion: '1.0.0',
-    releaseNotes: isUk
-      ? 'Безкоштовний онлайн PDF-редактор з миттєвим доступом. Без встановлення, без реєстрації, без завантажень. Редагуйте PDF прямо у браузері.'
-      : 'Free online PDF editor with instant access. No installation, no signup, no downloads required. Edit PDFs directly in your browser.',
+    releaseNotes: t('schema.app.releaseNotes'),
     isAccessibleForFree: true,
     offers: [
       {
         '@type': 'Offer',
         '@id': `${siteUrl}/#free-offer`,
-        name: isUk ? 'Безкоштовне редагування PDF' : 'Free PDF Editing',
+        name: t('schema.app.offerName'),
         price: '0',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
-        category: isUk ? 'Безкоштовно' : 'Free',
+        category: t('schema.app.offerCategory'),
         url: siteUrl,
       },
     ],
-    featureList: [
-      ...(isUk
-        ? [
-            'Миттєвий доступ без встановлення і реєстрації',
-            'Працює повністю у браузері без завантажень',
-            'Пряме редагування тексту та вмісту PDF',
-            'Додавання, видалення та перевпорядкування сторінок',
-            'Поворот і видалення сторінок',
-            'Анотації PDF: виділення, малювання, нотатки',
-            'Додавання фігур, штампів і зображень',
-            'Заповнення форм і додавання текстових накладок',
-            'Миттєвий експорт і завантаження оновленого PDF',
-            '100% приватність: вся обробка на вашому пристрої',
-          ]
-        : [
-            'Instant access - no installation or signup required',
-            'Works entirely in your browser - no downloads',
-            'Edit PDF text and content directly',
-            'Add, remove, and reorder pages',
-            'Rotate and delete pages',
-            'Annotate PDFs (highlight, draw, add notes)',
-            'Add shapes, stamps, and images',
-            'Fill forms and add text overlays',
-            'Export and download updated PDF instantly',
-            '100% private - all processing on your device',
-          ]),
-    ],
-    permissions: isUk ? 'Спеціальні дозволи не потрібні.' : 'No special permissions required.',
+    featureList: Array.from({ length: 10 }, (_, i) => t(`schema.app.feat${i + 1}`)),
+    permissions: t('schema.app.permissions'),
     inLanguage: [locale],
     publisher: {
       '@type': 'Organization',
@@ -133,21 +100,19 @@ export default function Home({ params }: { params: { locale: AppLocale } }) {
     ],
     softwareHelp: {
       '@type': 'CreativeWork',
-      name: isUk ? 'Контакти' : 'Contact',
+      name: t('nav.contact'),
       url: `${siteUrl}/${locale}/contact`,
     },
     privacyPolicy: `${siteUrl}/${locale}/privacy-policy`,
     termsOfService: `${siteUrl}/${locale}/terms`,
     audience: {
       '@type': 'Audience',
-      audienceType: isUk
-        ? ['Студенти', 'Професіонали', 'Малий бізнес', 'Широка аудиторія']
-        : ['Students', 'Professionals', 'Small Business', 'General Public'],
+      audienceType: Array.from({ length: 4 }, (_, i) => t(`schema.app.aud${i + 1}`)),
     },
     potentialAction: [
       {
         '@type': 'UseAction',
-        name: isUk ? 'Редагувати PDF' : 'Edit a PDF',
+        name: t('schema.app.actionName'),
         target: `${siteUrl}/${locale}`,
       },
     ],
