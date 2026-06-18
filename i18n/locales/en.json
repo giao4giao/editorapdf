@@ -215,8 +215,7 @@
   "tools.category.content": "Content & Media",
   "tools.category.forms": "Forms & Signing",
   "tools.category.ocr": "OCR & Text",
-  "tools.category.analyze": "Analyze & Optimize"
-,
+  "tools.category.analyze": "Analyze & Optimize",
   "tools.info.about": "About this tool",
   "tools.info.related": "You might also need",
   "tools.view.back": "Back to Tools",
@@ -236,14 +235,12 @@
   "tools.view.validation.atLeast1Image": "Please add at least 1 image file",
   "tools.view.validation.enterPageRanges": "Please enter page ranges (e.g., \"1-3, 5, 8-10\")",
   "tools.view.validation.selectPagesDelete": "Please select pages to delete",
-  "tools.view.validation.selectPagesExtract": "Please select pages to extract"
-,
+  "tools.view.validation.selectPagesExtract": "Please select pages to extract",
   "tools.view.redact.selectTitle": "Select Areas to Redact",
   "tools.view.redact.selectDesc": "Click \"Select Areas\" to draw rectangles over sensitive information that should be permanently blacked out.",
   "tools.view.redact.selectCta": "Select Areas to Redact",
   "tools.view.redact.permanent": "Redaction is permanent and cannot be undone",
-  "tools.view.redact.validation.selectAreas": "Please select areas to redact by clicking \"Select Areas to Redact\""
-,
+  "tools.view.redact.validation.selectAreas": "Please select areas to redact by clicking \"Select Areas to Redact\"",
   "tools.view.reorder.title": "Reorder Pages",
   "tools.view.reorder.hint": "Drag pages to reorder or use position selectors to set the order",
   "tools.view.compress.level": "Compression Level",
@@ -257,11 +254,9 @@
   "tools.view.insert-blank.afterWhich": "After which page?",
   "tools.view.insert-blank.summary.beginning": "Will add blank pages at the beginning of your PDF",
   "tools.view.insert-blank.summary.end": "Will add blank pages at the end of your PDF",
-  "tools.view.insert-blank.summary.after": "Will add blank pages after the selected page"
-,
+  "tools.view.insert-blank.summary.after": "Will add blank pages after the selected page",
   "tools.view.filesSelected": "{n} files selected:",
-  "tools.view.addMoreFiles": "Add More Files"
-,
+  "tools.view.addMoreFiles": "Add More Files",
   "tools.split.heading": "Pages to Split Into Separate Files",
   "tools.extract.heading": "Pages to Extract",
   "tools.delete.heading": "Pages to Delete",
@@ -428,7 +423,6 @@
   "tools.pageReorder.close": "Click outside or press ESC to close",
   "tools.pageReorder.closeBtn": "Close",
   "tools.pageReorder.error": "Could not load page preview",
-
   "tools.view.sign.uploadLabel": "Drop PDF file to sign",
   "tools.view.sign.uploadDescription": "Upload the PDF you want to add a signature to",
   "tools.view.sign.actionLabel": "Apply Signature",
@@ -797,7 +791,6 @@
   "tools.view.color-space.steps.1": "Upload a PDF file",
   "tools.view.color-space.steps.2": "Select target color space (RGB or CMYK)",
   "tools.view.color-space.steps.3": "Click \"Convert Colors\" to apply",
-
   "tools.info.split.description": "The Split PDF tool lets you split a large file into smaller, more manageable documents. Supports custom page ranges, fixed page counts, or splitting every N pages. Useful for email attachment limits, organizing long documents, or extracting individual sections. Formatting, images, and text quality are preserved. Processing is entirely in your browser — files are not uploaded.",
   "tools.info.delete-pages.description": "Delete Pages quickly removes unwanted pages from your PDF. Select the pages, confirm, and get a new document without those pages, preserving the quality of the remaining content. All operations are local in the browser.",
   "tools.info.extract-pages.description": "Extract Pages creates a new PDF with only the selected pages. Ideal for excerpts, splitting by chapters, or quickly sharing relevant parts. Fonts, images, and formatting are preserved. Everything happens locally.",
@@ -820,7 +813,6 @@
   "tools.info.pdf-to-csv.description": "PDF → CSV converts tabular data from PDF to CSV, ready for Excel/Sheets and BI systems.",
   "tools.info.pdf-to-html.description": "PDF → HTML creates a web version of the document while preserving the visual appearance of pages.",
   "tools.info.pdf-to-markdown.description": "PDF → Markdown extracts text and basic structure in Markdown format for documentation and blogs.",
-
   "tools.items.merge.title": "Merge PDFs",
   "tools.items.merge.desc": "Combine multiple PDF files into a single document",
   "tools.items.split.title": "Split PDF",
@@ -909,7 +901,6 @@
   "tools.items.add-hyperlinks.desc": "Add or edit clickable links in your PDF",
   "tools.items.add-attachments.title": "Embed Attachments",
   "tools.items.add-attachments.desc": "Embed files (images, docs, data) inside PDF",
-
   "pagerange.uploadToSelect": "Upload a PDF file to select pages",
   "pagerange.empty": "No page range selected",
   "pagerange.addRange": "Add page range",
@@ -930,7 +921,6 @@
   "pagerange.files": "files",
   "pagerange.fileLower": "file",
   "pagerange.willBeCreated": "will be created",
-
   "pageselector.uploadToSelect": "Upload a PDF file to select pages",
   "pageselector.none": "No page selected",
   "pageselector.selectAll": "Select all",
@@ -938,7 +928,6 @@
   "pageselector.page": "Page",
   "pageselector.pages": "Pages",
   "pageselector.selected": "selected",
-
   "rotation.loadingPages": "Loading pages...",
   "rotation.applyToAll": "Apply rotation to all selected pages:",
   "rotation.clickToView": "Click to view",
@@ -956,7 +945,6 @@
   "rotation.option.90": "90° clockwise",
   "rotation.option.180": "180°",
   "rotation.option.270": "90° counter-clockwise",
-
   "tools.duplicate.selectTitle": "Select pages to duplicate",
   "tools.duplicate.total": "Total",
   "tools.duplicate.hint": "Each selected page will be duplicated directly after the original in the PDF.",
@@ -967,7 +955,6 @@
   "tools.duplicate.willCreate": "Will create",
   "tools.duplicate.duplicate": "duplicated",
   "tools.duplicate.original": "original",
-
   "tools.splitBySize.maxPerPart": "Max file size per part",
   "tools.splitBySize.quickPresets": "Quick presets:",
   "tools.splitBySize.custom": "Or set custom size:",
@@ -987,7 +974,6 @@
   "tools.splitBySize.result": "Result:",
   "tools.splitBySize.fits": "The file fits in a single part",
   "tools.splitBySize.note": "The PDF will be split into multiple files, each not exceeding the selected size. Useful for email attachments or file size limits.",
-
   "tools.splitByBookmarks.title": "Split by Bookmark Level",
   "tools.splitByBookmarks.loading": "Loading bookmark information...",
   "tools.splitByBookmarks.none": "No bookmarks found",
@@ -1008,7 +994,6 @@
   "tools.splitByBookmarks.more": "more",
   "tools.splitByBookmarks.summary": "The PDF will be split at each bookmark of the selected level",
   "tools.splitByBookmarks.eachCreates": "Each bookmark creates a separate PDF file.",
-
   "tools.pdfToImages.imageFormat": "Image format",
   "tools.pdfToImages.quality": "Quality",
   "tools.pdfToImages.lowerSize": "Smaller size",
@@ -1027,7 +1012,6 @@
   "tools.pdfToWord.pagesHelp": "Leave empty to convert all pages. Examples: 1-5, 1,3,5, 1-3,5,7-9",
   "tools.pdfToWord.allPages": "All pages",
   "tools.pdfToWord.pdfHas": "The PDF has",
-
   "tools.sanitize.title": "Clean PDF",
   "tools.sanitize.desc": "Remove all hidden data, metadata, and sensitive information from the PDF for safe sharing.",
   "tools.sanitize.item.metadata": "Metadata (author, title, dates, etc.)",
@@ -1038,7 +1022,6 @@
   "tools.sanitize.item.layers": "Hidden layers",
   "tools.sanitize.item.links": "Cross-references and links",
   "tools.sanitize.note": "All hidden data will be removed. The PDF content (text, images, pages) will remain unchanged.",
-
   "tools.certificate.file": "Certificate file (.pfx / .p12)",
   "tools.certificate.drop": "Click or drop certificate file here",
   "tools.certificate.remove": "Remove certificate",
@@ -1049,7 +1032,6 @@
   "tools.certificate.location": "Location (optional)",
   "tools.certificate.locationPlaceholder": "e.g.: City, Country",
   "tools.certificate.note": "Note: A visual signature will be added to the PDF with the certificate details. Full digital signature support may require server-side processing.",
-
   "tools.complete.done": "Done!",
   "tools.complete.readyPrefix": "Your",
   "tools.complete.readySuffix": "is ready to download.",
@@ -1062,7 +1044,6 @@
   "tools.complete.extractedNotReady": "The extracted PDF is not ready yet. Please try again.",
   "tools.complete.reorderedNotReady": "The reordered PDF is not ready yet. Please try again.",
   "tools.complete.rotatedNotReady": "The rotated PDF is not ready yet. Please try again.",
-
   "tools.sign.signaturePad.title": "Create signature",
   "tools.sign.signaturePad.close": "Close",
   "tools.sign.signaturePad.hint": "Draw signature above",
@@ -1084,12 +1065,13 @@
   "tools.sign.positionSelector.clickToPlace": "Click on the page to place the signature",
   "tools.sign.positionSelector.cancel": "Cancel",
   "tools.sign.positionSelector.confirm": "Confirm Position",
-
   "common.error": "Error",
   "common.dismissError": "Dismiss error",
-
   "tools.insertBlank.of": "of",
   "tools.insertBlank.afterPageHint": "Blank pages will be inserted after page",
-  "tools.insertBlank.countTitle": "Number of blank pages"
+  "tools.insertBlank.countTitle": "Number of blank pages",
+  "tools.meta.titleSuffix": "Free Online, No Signup",
+  "tools.meta.descSuffix": "Free online PDF tool — no installation, no account required. Files are processed locally in your browser. 100% private.",
+  "tools.indexMeta.title": "Free Online PDF Tools — No Signup Required",
+  "tools.indexMeta.description": "All free PDF tools in one place: merge, split, compress, convert, edit, sign, and more. No installation, no account. Files are processed locally in your browser."
 }
-

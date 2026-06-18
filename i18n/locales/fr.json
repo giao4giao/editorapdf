@@ -171,7 +171,7 @@
   "tools.split.title": "Diviser un PDF",
   "tools.split.desc": "Séparer les pages",
   "tools.reorder.title": "Réorganiser",
-  "tools.reorder.desc": "Drag & drop",
+  "tools.reorder.desc": "Glisser-déposer",
   "tools.rotate.title": "Pivoter",
   "tools.rotate.desc": "Rotation des pages",
   "tools.delete.title": "Supprimer des pages",
@@ -1069,5 +1069,9 @@
   "tools.pageReorder.preview": "Aperçu de la page",
   "tools.pageReorder.close": "Cliquer en dehors ou appuyer sur ESC pour fermer",
   "tools.pageReorder.closeBtn": "Fermer",
-  "tools.pageReorder.error": "Impossible de charger l'aperçu de la page"
+  "tools.pageReorder.error": "Impossible de charger l'aperçu de la page",
+  "tools.meta.titleSuffix": "Gratuit en ligne, sans inscription",
+  "tools.meta.descSuffix": "Outil PDF en ligne gratuit — sans installation ni compte. Les fichiers sont traités localement dans votre navigateur. 100 % privé.",
+  "tools.indexMeta.title": "Outils PDF en ligne gratuits — sans inscription",
+  "tools.indexMeta.description": "Tous les outils PDF gratuits au même endroit : fusionner, diviser, compresser, convertir, modifier, signer et plus. Sans installation ni compte. Les fichiers sont traités localement dans votre navigateur."
 }

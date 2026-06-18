@@ -171,7 +171,7 @@
   "tools.split.title": "Dividi PDF",
   "tools.split.desc": "Separa pagine",
   "tools.reorder.title": "Riordina",
-  "tools.reorder.desc": "Drag & drop",
+  "tools.reorder.desc": "Trascina e rilascia",
   "tools.rotate.title": "Ruota",
   "tools.rotate.desc": "Rotazione pagine",
   "tools.delete.title": "Elimina pagine",
@@ -1069,5 +1069,9 @@
   "tools.pageReorder.preview": "Anteprima pagina",
   "tools.pageReorder.close": "Clicca fuori o premi ESC per chiudere",
   "tools.pageReorder.closeBtn": "Chiudi",
-  "tools.pageReorder.error": "Impossibile caricare l'anteprima della pagina"
+  "tools.pageReorder.error": "Impossibile caricare l'anteprima della pagina",
+  "tools.meta.titleSuffix": "Gratis online, senza registrazione",
+  "tools.meta.descSuffix": "Strumento PDF online gratuito — senza installazione né account. I file vengono elaborati localmente nel tuo browser. 100% privato.",
+  "tools.indexMeta.title": "Strumenti PDF online gratuiti — senza registrazione",
+  "tools.indexMeta.description": "Tutti gli strumenti PDF gratuiti in un unico posto: unire, dividere, comprimere, convertire, modificare, firmare e altro. Senza installazione né account. I file vengono elaborati localmente nel tuo browser."
 }

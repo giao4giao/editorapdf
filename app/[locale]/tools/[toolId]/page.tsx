@@ -2,12 +2,27 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { toolsMeta } from '../../../data/toolsMeta';
-import { supportedLocales } from '../../../../i18n/config';
+import { supportedLocales, normalizeLocale } from '../../../../i18n/config';
+import { getMessages } from '../../../i18n/messages';
 import ToolPageClient from './ToolPageClient';
 import RelatedArticles from '../../../components/RelatedArticles';
 
 const siteUrl = 'https://editorapdf.com';
 const defaultLocale = 'en';
+
+// Localized tool name + description (from the per-tool i18n keys, which are fully
+// translated) and the SEO boilerplate, so the <title>/meta/schema are in the page's
+// language instead of the English toolsMeta values.
+function localizedTool(locale: string, toolId: string, fallbackTitle: string, fallbackDesc: string) {
+  const m = getMessages(normalizeLocale(locale));
+  const get = (k: string) => (m[k] && m[k].trim() ? m[k] : '');
+  return {
+    name: get(`tools.items.${toolId}.title`) || fallbackTitle,
+    desc: get(`tools.items.${toolId}.desc`) || fallbackDesc,
+    titleSuffix: get('tools.meta.titleSuffix') || 'Free Online, No Signup',
+    descSuffix: get('tools.meta.descSuffix') || '',
+  };
+}
 
 // Unknown toolIds must return a real 404 instead of an indexable soft-404 homepage.
 export const dynamicParams = false;
@@ -39,9 +54,10 @@ export function generateMetadata({
     };
   }
 
+  const L = localizedTool(locale, tool.id, tool.title, tool.description);
   // Brand suffix is added once by the locale layout's title.template.
-  const title = `${tool.title} Online Free — No Signup`;
-  const description = `${tool.description}. Free online PDF tool — no installation, no account required. Files processed locally in your browser. 100% private.`;
+  const title = `${L.name} — ${L.titleSuffix}`;
+  const description = L.descSuffix ? `${L.desc}. ${L.descSuffix}` : L.desc;
   const url = `${siteUrl}/${locale}/tools/${tool.id}`;
 
   const hreflangAlternates: Record<string, string> = {
@@ -65,7 +81,7 @@ export function generateMetadata({
           url: `${siteUrl}/og/og-image.png`,
           width: 1200,
           height: 630,
-          alt: `EditoraPDF — ${tool.title}`,
+          alt: `EditoraPDF — ${L.name}`,
         },
       ],
     },
@@ -97,6 +113,14 @@ export default function ToolPage({
   if (!tool) notFound();
   const url = `${siteUrl}/${params.locale}/tools/${params.toolId}`;
 
+  // Localized tool name/description + breadcrumb labels for the JSON-LD schema.
+  const m = getMessages(normalizeLocale(params.locale));
+  const t = (k: string, f: string) => (m[k] && m[k].trim() ? m[k] : f);
+  const toolName = t(`tools.items.${tool.id}.title`, tool.title);
+  const toolDesc = t(`tools.items.${tool.id}.desc`, tool.description);
+  const descSuffix = t('tools.meta.descSuffix', '');
+  const fullDesc = descSuffix ? `${toolDesc}. ${descSuffix}` : toolDesc;
+
   const breadcrumbSchema = tool
     ? {
         '@context': 'https://schema.org',
@@ -106,19 +130,19 @@ export default function ToolPage({
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Home',
-            item: `${siteUrl}/${defaultLocale}`,
+            name: t('nav.home', 'Home'),
+            item: `${siteUrl}/${params.locale}`,
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Tools',
+            name: t('nav.tools', 'PDF Tools'),
             item: `${siteUrl}/${params.locale}/tools`,
           },
           {
             '@type': 'ListItem',
             position: 3,
-            name: tool.title,
+            name: toolName,
             item: url,
           },
         ],
@@ -130,8 +154,8 @@ export default function ToolPage({
         '@context': 'https://schema.org',
         '@type': 'Service',
         '@id': `${url}#service`,
-        name: `${tool.title} Online Free`,
-        description: `${tool.description}. Free online PDF tool — no installation, no account required. Files processed locally in your browser. 100% private.`,
+        name: toolName,
+        description: fullDesc,
         url,
         serviceType: 'PDF Processing',
         category: 'Document Management',
@@ -169,8 +193,8 @@ export default function ToolPage({
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         '@id': `${url}#webapp`,
-        name: `${tool.title} — EditoraPDF`,
-        description: `${tool.description}. Free online PDF tool — no installation, no account required. Files processed locally in your browser. 100% private.`,
+        name: `${toolName} — EditoraPDF`,
+        description: fullDesc,
         url,
         applicationCategory: 'BusinessApplication',
         applicationSubCategory: 'PDF Tool',

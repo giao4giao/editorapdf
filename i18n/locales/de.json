@@ -1069,5 +1069,9 @@
   "tools.pageReorder.preview": "Seitenvorschau",
   "tools.pageReorder.close": "Außerhalb klicken oder ESC drücken zum Schließen",
   "tools.pageReorder.closeBtn": "Schließen",
-  "tools.pageReorder.error": "Seitenvorschau konnte nicht geladen werden"
+  "tools.pageReorder.error": "Seitenvorschau konnte nicht geladen werden",
+  "tools.meta.titleSuffix": "Kostenlos online, ohne Anmeldung",
+  "tools.meta.descSuffix": "Kostenloses Online-PDF-Tool — keine Installation, kein Konto erforderlich. Dateien werden lokal in Ihrem Browser verarbeitet. 100 % privat.",
+  "tools.indexMeta.title": "Kostenlose Online-PDF-Werkzeuge — ohne Anmeldung",
+  "tools.indexMeta.description": "Alle kostenlosen PDF-Werkzeuge an einem Ort: zusammenführen, teilen, komprimieren, konvertieren, bearbeiten, signieren und mehr. Keine Installation, kein Konto. Dateien werden lokal in Ihrem Browser verarbeitet."
 }
