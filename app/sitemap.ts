@@ -85,12 +85,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact',       priority: 0.65, freq: 'monthly' as const },
     { path: '/privacy-policy',          priority: 0.45, freq: 'monthly' as const },
     { path: '/terms',                   priority: 0.45, freq: 'monthly' as const },
+    { path: '/your-files-stay-private', priority: 0.80, freq: 'monthly' as const },
   ]
 
-  // English-only pages: localized chrome but English content, canonical to /en.
+  // English-only pages: English content, canonical to /en.
   const englishOnlyMainPages = [
     { path: '/blog',                    priority: 0.75, freq: 'weekly'  as const },
-    { path: '/your-files-stay-private', priority: 0.80, freq: 'monthly' as const },
   ]
 
   const localizedPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
