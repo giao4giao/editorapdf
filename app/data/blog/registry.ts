@@ -13,6 +13,14 @@ import * as howToConvertPdfToWordOnline from './posts/how-to-convert-pdf-to-word
 import * as howToConvertPdfToExcelOnline from './posts/how-to-convert-pdf-to-excel-online'
 import * as howToConvertPdfToCsvOnline from './posts/how-to-convert-pdf-to-csv-online'
 import * as howToConvertImagesToPdfOnline from './posts/how-to-convert-images-to-pdf-online'
+import * as howToAddWatermarkToPdfOnline from './posts/how-to-add-watermark-to-pdf-online'
+import * as howToAddPageNumbersToPdf from './posts/how-to-add-page-numbers-to-pdf'
+import * as howToAddHeadersAndFootersToPdf from './posts/how-to-add-headers-and-footers-to-pdf'
+import * as howToCompressPdfOnline from './posts/how-to-compress-pdf-online'
+import * as howToRedactPdfOnline from './posts/how-to-redact-pdf-online'
+import * as howToSanitizePdf from './posts/how-to-sanitize-pdf'
+import * as digitalSignature from './posts/digital-signature'
+import * as isItSafeToEditPdfsOnline from './posts/is-it-safe-to-edit-pdfs-online'
 
 // slug → post module. Add an entry here (and to MIGRATED_BLOG_SLUGS) when a post is
 // migrated to the locale-aware route. Static imports keep every post in the SSG bundle.
@@ -31,6 +39,14 @@ export const BLOG_POST_REGISTRY: Record<string, BlogPostModule> = {
   'how-to-convert-pdf-to-excel-online': howToConvertPdfToExcelOnline,
   'how-to-convert-pdf-to-csv-online': howToConvertPdfToCsvOnline,
   'how-to-convert-images-to-pdf-online': howToConvertImagesToPdfOnline,
+  'how-to-add-watermark-to-pdf-online': howToAddWatermarkToPdfOnline,
+  'how-to-add-page-numbers-to-pdf': howToAddPageNumbersToPdf,
+  'how-to-add-headers-and-footers-to-pdf': howToAddHeadersAndFootersToPdf,
+  'how-to-compress-pdf-online': howToCompressPdfOnline,
+  'how-to-redact-pdf-online': howToRedactPdfOnline,
+  'how-to-sanitize-pdf': howToSanitizePdf,
+  'digital-signature': digitalSignature,
+  'is-it-safe-to-edit-pdfs-online': isItSafeToEditPdfsOnline,
 }
 
 export function getBlogPost(slug: string): BlogPostModule | undefined {

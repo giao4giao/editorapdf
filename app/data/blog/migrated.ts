@@ -21,6 +21,14 @@ export const MIGRATED_BLOG_SLUGS = [
   'how-to-convert-pdf-to-excel-online',
   'how-to-convert-pdf-to-csv-online',
   'how-to-convert-images-to-pdf-online',
+  'how-to-add-watermark-to-pdf-online',
+  'how-to-add-page-numbers-to-pdf',
+  'how-to-add-headers-and-footers-to-pdf',
+  'how-to-compress-pdf-online',
+  'how-to-redact-pdf-online',
+  'how-to-sanitize-pdf',
+  'digital-signature',
+  'is-it-safe-to-edit-pdfs-online',
 ] as const
 
 export type MigratedSlug = (typeof MIGRATED_BLOG_SLUGS)[number]
