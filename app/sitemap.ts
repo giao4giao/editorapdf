@@ -74,10 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   // ── Locale-prefixed main pages (fully translated → per-locale + hreflang) ───
-  // NOTE: /blog and /your-files-stay-private are NOT here — their content is
-  // English-only and they canonicalize to /en, so advertising 6 locale variants with
-  // reciprocal hreflang would conflict with their canonical. They are listed as single
-  // English-only entries below instead.
+  // The blog index and all 35 posts are now fully localized, so /blog gets per-locale
+  // + reciprocal hreflang here (its per-locale entries live in blogUrls below).
   const localizedMainPages = [
     { path: '',               priority: 0.95, freq: 'weekly'  as const },
     { path: '/edit',          priority: 0.9,  freq: 'weekly'  as const },
@@ -86,15 +84,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/about',         priority: 0.75, freq: 'monthly' as const },
     { path: '/faq',           priority: 0.75, freq: 'monthly' as const },
     { path: '/contact',       priority: 0.65, freq: 'monthly' as const },
+    { path: '/blog',                    priority: 0.75, freq: 'weekly'  as const },
     { path: '/privacy-policy',          priority: 0.45, freq: 'monthly' as const },
     { path: '/terms',                   priority: 0.45, freq: 'monthly' as const },
     { path: '/your-files-stay-private', priority: 0.80, freq: 'monthly' as const },
   ]
 
-  // English-only pages: English content, canonical to /en.
-  const englishOnlyMainPages = [
-    { path: '/blog',                    priority: 0.75, freq: 'weekly'  as const },
-  ]
+  // English-only pages: English content, canonical to /en. (None remain — kept for
+  // structure; the blog index moved to the localized list above.)
+  const englishOnlyMainPages: { path: string; priority: number; freq: 'weekly' | 'monthly' }[] = []
 
   const localizedPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     localizedMainPages.map(({ path, priority, freq }) => ({
