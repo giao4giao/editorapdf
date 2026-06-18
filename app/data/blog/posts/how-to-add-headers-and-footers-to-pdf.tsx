@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '../../../components/Header'
 import { getMessages } from '../../../i18n/messages'
 import { localeAlternates } from '../../../lib/seo'
@@ -510,7 +511,7 @@ export function Article({ locale }: { locale: AppLocale }) {
 
       {/* Hero Image with Title Overlay */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden bg-surface-800">
-        <img
+        <Image fill priority sizes="100vw"
           src={heroImage}
           alt={c.heroAlt}
           className="w-full h-full object-cover shadow-[inset_0_0_200px_100px_rgba(0,0,0,0.8),0_0_100px_50px_rgba(0,0,0,0.6)]"

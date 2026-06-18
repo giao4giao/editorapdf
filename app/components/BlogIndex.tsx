@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from './Header'
 import {
   Github, ShieldCheck, Lock, BarChart3, ArrowRight, Code, FileX, Database, WifiOff,
@@ -8,7 +9,7 @@ import type { AppLocale } from '../../i18n/config'
 // Per-locale content. `en` is copied verbatim from the legacy blog index so `/en/blog`
 // renders unchanged; other locales are translations. Category-pill labels that repeat
 // across cards share one key (catGuide, catPrivacy, …). Only visible text is keyed here;
-// all classNames, icons, <img> src/alt, and card order stay in the JSX below.
+// all classNames, icons, <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"> src/alt, and card order stay in the JSX below.
 type Content = Record<string, string>
 
 const C: Record<AppLocale, Content> = {
@@ -287,7 +288,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Merge PDF Files Online */}
             <Link href={L('how-to-merge-pdf-files-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Merge PDF Files Online_ Complete Guide to Combining PDF Documents.png"
                   alt="How to Merge PDF Files Online"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -314,7 +315,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Split PDF Files Online */}
             <Link href={L('how-to-split-pdf-files-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Split PDF Files Online_ Complete Guide to Dividing PDF Documents.png"
                   alt="How to Split PDF Files Online"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -341,7 +342,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Insert Duplicate Pages in PDF */}
             <Link href={L('how-to-insert-duplicate-pages-in-pdf')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Insert Duplicate Pages in PDF_ Complete Guide to Copying PDF Pages.png"
                   alt="How to Insert Duplicate Pages in PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -493,7 +494,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: PDF to Markdown Converter */}
             <Link href={L('pdf-to-markdown')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/PDF to Markdown Converter_ Complete Guide to Transforming PDF Documents into Markdown Format.png"
                   alt="PDF to Markdown Converter"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -520,7 +521,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Edit a PDF Online */}
             <Link href={L('how-to-edit-a-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog1.png"
                   alt="Step-by-step guide on how to edit a PDF file online"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -543,7 +544,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: Is It Safe to Edit PDFs Online? */}
             <Link href={L('is-it-safe-to-edit-pdfs-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog2.png"
                   alt="Is It Safe to Edit PDFs Online."
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -566,7 +567,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: PDF to HTML Converter */}
             <Link href={L('pdf-to-html')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Convert PDF to HTML Online_ Complete Guide to PDF to HTML Conversion.png"
                   alt="PDF to HTML Converter"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -593,7 +594,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: PDF to Text Converter */}
             <Link href={L('pdf-to-text')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/PDF to Text Converter_ Complete Guide to Extracting Text from PDF Files.png"
                   alt="PDF to Text Converter"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -620,7 +621,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: Digital Signature */}
             <Link href={L('digital-signature')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Add Digital Signatures to PDFs Online_ Complete Guide to E-Signing Documents.png"
                   alt="Digital Signature"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -647,7 +648,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Add Headers and Footers to PDF */}
             <Link href={L('how-to-add-headers-and-footers-to-pdf')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Add Headers and Footers to PDF_ Complete Guide to Customizing PDF Documents.png"
                   alt="How to Add Headers and Footers to PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -674,7 +675,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Add Page Numbers to PDF */}
             <Link href={L('how-to-add-page-numbers-to-pdf')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Add Page Numbers to PDF Online_ Complete Guide to PDF Page Numbering.png"
                   alt="How to Add Page Numbers to PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -701,7 +702,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Add Watermark to PDF */}
             <Link href={L('how-to-add-watermark-to-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Add Watermark to PDF Online_ Complete Guide to Watermarking PDF Documents.png"
                   alt="How to Add Watermark to PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -728,7 +729,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Compress PDF Online */}
             <Link href={L('how-to-compress-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Compress PDF Files Online_ Complete Guide to Reducing PDF File Size.png"
                   alt="How to Compress PDF Online"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -755,7 +756,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Convert Images to PDF */}
             <Link href={L('how-to-convert-images-to-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Convert Images to PDF Online_ Complete Guide to Image to PDF Conversion.png"
                   alt="How to Convert Images to PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -782,7 +783,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Convert PDF to CSV */}
             <Link href={L('how-to-convert-pdf-to-csv-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Convert PDF to Excel Online_ Complete Guide to PDF to Spreadsheet Conversion.png"
                   alt="How to Convert PDF to CSV"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -809,7 +810,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Convert PDF to Excel */}
             <Link href={L('how-to-convert-pdf-to-excel-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Convert PDF to Excel Online_ Complete Guide to PDF to Spreadsheet Conversion.png"
                   alt="How to Convert PDF to Excel"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -836,7 +837,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Convert PDF to Word */}
             <Link href={L('how-to-convert-pdf-to-word-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Convert PDF to Word Online_ Complete Guide to PDF to DOCX Conversion.png"
                   alt="How to Convert PDF to Word"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -863,7 +864,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Delete Pages from PDF */}
             <Link href={L('how-to-delete-pages-from-pdf')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Delete Pages from PDF Online_ Complete Guide to Removing Unwanted Pages.png"
                   alt="How to Delete Pages from PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -890,7 +891,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Extract Pages from PDF */}
             <Link href={L('how-to-extract-pages-from-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Extract Pages from PDF Online_ Complete Guide to PDF Page Extraction.png"
                   alt="How to Extract Pages from PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -917,7 +918,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Insert Blank Pages in PDF */}
             <Link href={L('how-to-insert-blank-pages-in-pdf')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Insert Blank Pages in PDF_ Complete Guide to Adding Empty Pages.png"
                   alt="How to Insert Blank Pages in PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -944,7 +945,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Redact PDF Online */}
             <Link href={L('how-to-redact-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Redact PDF Online_ Complete Guide to Removing Sensitive Information.png"
                   alt="How to Redact PDF Online"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -971,7 +972,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Reorder PDF Pages */}
             <Link href={L('how-to-reorder-pdf-pages')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Reorder PDF Pages Online_ Complete Guide to Rearranging PDF Documents.png"
                   alt="How to Reorder PDF Pages"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -998,7 +999,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Reverse PDF Page Order */}
             <Link href={L('how-to-reverse-pdf-page-order')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Reverse PDF Page Order Online_ Complete Guide to Flipping PDF Pages.png"
                   alt="How to Reverse PDF Page Order"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -1025,7 +1026,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Rotate PDF Pages */}
             <Link href={L('how-to-rotate-pdf-pages-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Rotate PDF Pages Online_ Complete Guide to Fixing PDF Orientation.png"
                   alt="How to Rotate PDF Pages"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -1052,7 +1053,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: How to Sanitize PDF */}
             <Link href={L('how-to-sanitize-pdf')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Sanitize PDF Files Online_ Complete Guide to Removing Hidden Data and Metadata.png"
                   alt="How to Sanitize PDF"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -1079,7 +1080,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: Split PDF by Bookmarks */}
             <Link href={L('split-by-bookmarks')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/How to Split PDF by Bookmarks_ Complete Guide to Dividing PDFs Using Bookmark Structure.png"
                   alt="Split PDF by Bookmarks"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -1106,7 +1107,7 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
             {/* Blog Post: Split PDF by Size */}
             <Link href={L('split-by-size')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-surface-800">
-                <img
+                <Image fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                   src="/blog/Split PDF by Size_ Complete Guide to Dividing Large PDFs by File Size.png"
                   alt="Split PDF by Size"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
