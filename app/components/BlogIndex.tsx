@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Header from './Header'
 import {
   Github, ShieldCheck, Lock, BarChart3, ArrowRight, Code, FileX, Database, WifiOff,
+  FileImage, Crop, Layers,
 } from 'lucide-react'
 import type { AppLocale } from '../../i18n/config'
 
@@ -19,6 +20,12 @@ const C: Record<AppLocale, Content> = {
     pageSubtitle: 'Tips, tutorials, and guides to help you master PDF editing',
     readMore: 'Read more',
     badgeNew: 'New',
+    pdfToImagesCardTitle: "How to Convert PDF to Images (JPG, PNG, WebP) Online",
+    pdfToImagesCardDesc: "Turn each page of a PDF into a separate image — privately, right in your browser, with no upload and no signup",
+    cropCardTitle: "How to Crop PDF Pages Online: Trim Margins and White Space",
+    cropCardDesc: "Cut away unwanted margins, borders, and white space so your content fills the page — directly in your browser, no upload required",
+    flattenCardTitle: "How to Flatten a PDF Online: Lock Form Fields and Annotations",
+    flattenCardDesc: "Merge fillable fields, comments, and signatures into the page so your finished PDF looks the same everywhere — and nobody can change it",
 
     // Category pills (deduplicated)
     catGuide: 'Guide',
@@ -207,6 +214,78 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
 
             {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Blog Post: How to Convert PDF to Images */}
+            <Link href={L('how-to-convert-pdf-to-images-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-accent-500/20 to-primary-500/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <FileImage className="w-24 h-24 text-accent-400/50" strokeWidth={1.5} />
+                </div>
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-500/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                  {c.badgeNew}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 text-xs font-medium">{c.catConverter}</span>
+                  <span className="px-2 py-0.5 rounded bg-info-500/20 text-info-300 text-xs font-medium">{c.catGuide}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{c.pdfToImagesCardTitle}</h3>
+                <p className="text-surface-400 mb-4 line-clamp-3">{c.pdfToImagesCardDesc}</p>
+                <span className="text-primary-400 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {c.readMore}
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
+            {/* Blog Post: How to Crop PDF Pages */}
+            <Link href={L('how-to-crop-pdf-pages-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-warning-500/20 to-accent-500/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Crop className="w-24 h-24 text-warning-400/50" strokeWidth={1.5} />
+                </div>
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-500/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                  {c.badgeNew}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 rounded bg-success-500/20 text-success-300 text-xs font-medium">{c.catPdfTools}</span>
+                  <span className="px-2 py-0.5 rounded bg-info-500/20 text-info-300 text-xs font-medium">{c.catGuide}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{c.cropCardTitle}</h3>
+                <p className="text-surface-400 mb-4 line-clamp-3">{c.cropCardDesc}</p>
+                <span className="text-primary-400 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {c.readMore}
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
+            {/* Blog Post: How to Flatten a PDF */}
+            <Link href={L('how-to-flatten-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-primary-500/20 to-success-500/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Layers className="w-24 h-24 text-primary-400/50" strokeWidth={1.5} />
+                </div>
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-500/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                  {c.badgeNew}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 rounded bg-success-500/20 text-success-300 text-xs font-medium">{c.catPdfTools}</span>
+                  <span className="px-2 py-0.5 rounded bg-info-500/20 text-info-300 text-xs font-medium">{c.catGuide}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{c.flattenCardTitle}</h3>
+                <p className="text-surface-400 mb-4 line-clamp-3">{c.flattenCardDesc}</p>
+                <span className="text-primary-400 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {c.readMore}
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
             {/* Blog Post: How to Edit PDFs Offline in Browser */}
             <Link href={L('how-to-edit-pdfs-offline-in-browser')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-success-500/20 to-info-500/20">

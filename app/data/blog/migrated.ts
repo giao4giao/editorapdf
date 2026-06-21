@@ -42,6 +42,9 @@ export const MIGRATED_BLOG_SLUGS = [
   'how-to-redact-pdf-for-legal-compliance',
   'pdf-metadata-what-is-it-and-how-to-remove',
   'how-to-edit-pdfs-offline-in-browser',
+  'how-to-convert-pdf-to-images-online',
+  'how-to-crop-pdf-pages-online',
+  'how-to-flatten-pdf-online',
 ] as const
 
 export type MigratedSlug = (typeof MIGRATED_BLOG_SLUGS)[number]

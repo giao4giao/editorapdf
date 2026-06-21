@@ -34,6 +34,9 @@ import * as contributingToOpenSourceBeginnersGuide from './posts/contributing-to
 import * as howToRedactPdfForLegalCompliance from './posts/how-to-redact-pdf-for-legal-compliance'
 import * as pdfMetadataWhatIsItAndHowToRemove from './posts/pdf-metadata-what-is-it-and-how-to-remove'
 import * as howToEditPdfsOfflineInBrowser from './posts/how-to-edit-pdfs-offline-in-browser'
+import * as howToConvertPdfToImagesOnline from './posts/how-to-convert-pdf-to-images-online'
+import * as howToCropPdfPagesOnline from './posts/how-to-crop-pdf-pages-online'
+import * as howToFlattenPdfOnline from './posts/how-to-flatten-pdf-online'
 
 // slug → post module. Add an entry here (and to MIGRATED_BLOG_SLUGS) when a post is
 // migrated to the locale-aware route. Static imports keep every post in the SSG bundle.
@@ -73,6 +76,9 @@ export const BLOG_POST_REGISTRY: Record<string, BlogPostModule> = {
   'how-to-redact-pdf-for-legal-compliance': howToRedactPdfForLegalCompliance,
   'pdf-metadata-what-is-it-and-how-to-remove': pdfMetadataWhatIsItAndHowToRemove,
   'how-to-edit-pdfs-offline-in-browser': howToEditPdfsOfflineInBrowser,
+  'how-to-convert-pdf-to-images-online': howToConvertPdfToImagesOnline,
+  'how-to-crop-pdf-pages-online': howToCropPdfPagesOnline,
+  'how-to-flatten-pdf-online': howToFlattenPdfOnline,
 }
 
 export function getBlogPost(slug: string): BlogPostModule | undefined {

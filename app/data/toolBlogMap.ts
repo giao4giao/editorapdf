@@ -20,14 +20,14 @@ const TOOL_BLOG_MAP: Record<string, string[]> = {
   'split-by-bookmarks': ['split-by-bookmarks', 'how-to-split-pdf-files-online'],
 
   // Security & Protection
-  sign:                 ['digital-signature', 'is-it-safe-to-edit-pdfs-online'],
+  sign:                 ['digital-signature', 'how-to-flatten-pdf-online', 'is-it-safe-to-edit-pdfs-online'],
   redact:               ['how-to-redact-pdf-online', 'how-to-redact-pdf-for-legal-compliance', 'pdf-metadata-what-is-it-and-how-to-remove'],
   'remove-hidden-data': ['how-to-sanitize-pdf', 'pdf-metadata-what-is-it-and-how-to-remove', 'technology-behind-privacy-first-pdf-editing'],
   certificate:          ['digital-signature', 'how-to-redact-pdf-for-legal-compliance', 'is-it-safe-to-edit-pdfs-online'],
 
   // Convert
-  'pdf-to-images':      ['how-to-edit-a-pdf-online', 'how-to-edit-pdfs-offline-in-browser'],
-  'images-to-pdf':      ['how-to-convert-images-to-pdf-online', 'how-to-edit-a-pdf-online'],
+  'pdf-to-images':      ['how-to-convert-pdf-to-images-online', 'how-to-convert-images-to-pdf-online', 'how-to-edit-a-pdf-online'],
+  'images-to-pdf':      ['how-to-convert-images-to-pdf-online', 'how-to-convert-pdf-to-images-online', 'how-to-edit-a-pdf-online'],
   'pdf-to-word':        ['how-to-convert-pdf-to-word-online'],
   'pdf-to-excel':       ['how-to-convert-pdf-to-excel-online', 'how-to-convert-pdf-to-csv-online'],
   'pdf-to-text':        ['pdf-to-text'],
@@ -39,11 +39,11 @@ const TOOL_BLOG_MAP: Record<string, string[]> = {
   compress:             ['how-to-compress-pdf-online', 'split-by-size'],
   'add-watermark':      ['how-to-add-watermark-to-pdf-online'],
   'page-numbers':       ['how-to-add-page-numbers-to-pdf', 'how-to-add-headers-and-footers-to-pdf'],
-  crop:                 ['how-to-edit-a-pdf-online', 'how-to-edit-pdfs-offline-in-browser'],
-  resize:               ['how-to-edit-a-pdf-online', 'how-to-compress-pdf-online'],
+  crop:                 ['how-to-crop-pdf-pages-online', 'how-to-edit-a-pdf-online'],
+  resize:               ['how-to-crop-pdf-pages-online', 'how-to-compress-pdf-online', 'how-to-edit-a-pdf-online'],
   grayscale:            ['how-to-edit-a-pdf-online', 'how-to-compress-pdf-online'],
   'invert-colors':      ['how-to-edit-a-pdf-online'],
-  flatten:              ['how-to-edit-a-pdf-online', 'digital-signature'],
+  flatten:              ['how-to-flatten-pdf-online', 'digital-signature', 'how-to-edit-a-pdf-online'],
   'remove-annotations': ['how-to-sanitize-pdf', 'pdf-metadata-what-is-it-and-how-to-remove'],
 
   // Content & Media

@@ -7,6 +7,24 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'how-to-convert-pdf-to-images-online',
+    title: 'How to Convert PDF to Images (JPG, PNG, WebP) Online',
+    description: 'Export every PDF page as a separate JPG, PNG, or WebP image — privately, in your browser. Plus tips on which format to pick.',
+    tags: ['Converter', 'Guide'],
+  },
+  {
+    slug: 'how-to-crop-pdf-pages-online',
+    title: 'How to Crop PDF Pages Online: Trim Margins and White Space',
+    description: 'Trim unwanted margins, borders, and scanner edges from PDF pages so content fills the screen — for free, in your browser.',
+    tags: ['PDF Tools', 'Guide'],
+  },
+  {
+    slug: 'how-to-flatten-pdf-online',
+    title: 'How to Flatten a PDF Online: Lock Form Fields and Annotations',
+    description: 'Flatten form fields, comments, and signatures into the page so they become permanent and non-editable. Free and private.',
+    tags: ['PDF Tools', 'Guide'],
+  },
+  {
     slug: 'how-to-edit-pdfs-offline-in-browser',
     title: 'How to Edit PDFs Offline in Your Browser — No Installation, No Upload',
     description: 'Edit PDF files offline without installing software. Works even after you disconnect from the internet.',
