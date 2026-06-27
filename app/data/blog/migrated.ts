@@ -45,6 +45,8 @@ export const MIGRATED_BLOG_SLUGS = [
   'how-to-convert-pdf-to-images-online',
   'how-to-crop-pdf-pages-online',
   'how-to-flatten-pdf-online',
+  'how-to-edit-text-in-a-pdf-online',
+  'how-to-annotate-a-pdf-online',
 ] as const
 
 export type MigratedSlug = (typeof MIGRATED_BLOG_SLUGS)[number]

@@ -20,8 +20,8 @@ const TOOL_BLOG_MAP: Record<string, string[]> = {
   'split-by-bookmarks': ['split-by-bookmarks', 'how-to-split-pdf-files-online'],
 
   // Security & Protection
-  sign:                 ['digital-signature', 'how-to-flatten-pdf-online', 'is-it-safe-to-edit-pdfs-online'],
-  redact:               ['how-to-redact-pdf-online', 'how-to-redact-pdf-for-legal-compliance', 'pdf-metadata-what-is-it-and-how-to-remove'],
+  sign:                 ['digital-signature', 'how-to-annotate-a-pdf-online', 'how-to-flatten-pdf-online'],
+  redact:               ['how-to-redact-pdf-online', 'how-to-edit-text-in-a-pdf-online', 'how-to-redact-pdf-for-legal-compliance'],
   'remove-hidden-data': ['how-to-sanitize-pdf', 'pdf-metadata-what-is-it-and-how-to-remove', 'technology-behind-privacy-first-pdf-editing'],
   certificate:          ['digital-signature', 'how-to-redact-pdf-for-legal-compliance', 'is-it-safe-to-edit-pdfs-online'],
 
@@ -43,7 +43,7 @@ const TOOL_BLOG_MAP: Record<string, string[]> = {
   resize:               ['how-to-crop-pdf-pages-online', 'how-to-compress-pdf-online', 'how-to-edit-a-pdf-online'],
   grayscale:            ['how-to-edit-a-pdf-online', 'how-to-compress-pdf-online'],
   'invert-colors':      ['how-to-edit-a-pdf-online'],
-  flatten:              ['how-to-flatten-pdf-online', 'digital-signature', 'how-to-edit-a-pdf-online'],
+  flatten:              ['how-to-flatten-pdf-online', 'how-to-annotate-a-pdf-online', 'how-to-edit-a-pdf-online'],
   'remove-annotations': ['how-to-sanitize-pdf', 'pdf-metadata-what-is-it-and-how-to-remove'],
 
   // Content & Media

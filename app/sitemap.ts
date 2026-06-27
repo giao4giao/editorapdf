@@ -31,44 +31,10 @@ const tools = [
   'add-barcode', 'add-bookmarks', 'add-hyperlinks', 'add-attachments',
 ]
 
-// Blog posts
-const blogPosts = [
-  'how-to-edit-a-pdf-online',
-  'how-to-merge-pdf-files-online',
-  'how-to-split-pdf-files-online',
-  'how-to-extract-pages-from-pdf-online',
-  'how-to-delete-pages-from-pdf',
-  'how-to-insert-duplicate-pages-in-pdf',
-  'how-to-add-page-numbers-to-pdf',
-  'how-to-rotate-pdf-pages-online',
-  'how-to-add-watermark-to-pdf-online',
-  'is-it-safe-to-edit-pdfs-online',
-  'how-we-built-open-source-pdf-editor',
-  'why-we-made-editorapdf-open-source',
-  'technology-behind-privacy-first-pdf-editing',
-  'contributing-to-open-source-beginners-guide',
-  'open-source-vs-closed-source-pdf-editors',
-  'pdf-to-markdown',
-  'pdf-to-html',
-  'pdf-to-text',
-  'digital-signature',
-  'how-to-add-headers-and-footers-to-pdf',
-  'how-to-compress-pdf-online',
-  'how-to-convert-images-to-pdf-online',
-  'how-to-convert-pdf-to-csv-online',
-  'how-to-convert-pdf-to-excel-online',
-  'how-to-convert-pdf-to-word-online',
-  'how-to-redact-pdf-online',
-  'how-to-reorder-pdf-pages',
-  'how-to-reverse-pdf-page-order',
-  'how-to-sanitize-pdf',
-  'how-to-insert-blank-pages-in-pdf',
-  'split-by-bookmarks',
-  'split-by-size',
-  'how-to-redact-pdf-for-legal-compliance',
-  'pdf-metadata-what-is-it-and-how-to-remove',
-  'how-to-edit-pdfs-offline-in-browser',
-]
+// Blog posts. Derived from MIGRATED_BLOG_SLUGS so the sitemap can never drift behind the
+// posts again — every post that has a locale-aware route is included automatically. (All
+// posts are migrated now, so each gets per-locale URLs + hreflang in blogUrls below.)
+const blogPosts: readonly string[] = MIGRATED_BLOG_SLUGS
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()

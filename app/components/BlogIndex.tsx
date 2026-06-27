@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Header from './Header'
 import {
   Github, ShieldCheck, Lock, BarChart3, ArrowRight, Code, FileX, Database, WifiOff,
-  FileImage, Crop, Layers,
+  FileImage, Crop, Layers, Type, Highlighter,
 } from 'lucide-react'
 import type { AppLocale } from '../../i18n/config'
 
@@ -20,6 +20,10 @@ const C: Record<AppLocale, Content> = {
     pageSubtitle: 'Tips, tutorials, and guides to help you master PDF editing',
     readMore: 'Read more',
     badgeNew: 'New',
+    editTextCardTitle: "How to Edit Text in a PDF Online: The Complete Guide",
+    editTextCardDesc: "A deep dive into changing the actual text inside a PDF — how it works, when it works, and when another tool is the smarter choice.",
+    annotateCardTitle: "How to Annotate a PDF Online: Highlight, Comment, and Mark Up",
+    annotateCardDesc: "A practical, in-depth guide to marking up PDFs in your browser — highlights, shapes, drawing, and notes — without uploading a single file",
     pdfToImagesCardTitle: "How to Convert PDF to Images (JPG, PNG, WebP) Online",
     pdfToImagesCardDesc: "Turn each page of a PDF into a separate image — privately, right in your browser, with no upload and no signup",
     cropCardTitle: "How to Crop PDF Pages Online: Trim Margins and White Space",
@@ -214,6 +218,54 @@ export default function BlogIndex({ locale }: { locale: AppLocale }) {
 
             {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Blog Post: How to Edit Text in a PDF */}
+            <Link href={L('how-to-edit-text-in-a-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-primary-500/20 to-info-500/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Type className="w-24 h-24 text-primary-400/50" strokeWidth={1.5} />
+                </div>
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-500/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                  {c.badgeNew}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 text-xs font-medium">{c.catGuide}</span>
+                  <span className="px-2 py-0.5 rounded bg-success-500/20 text-success-300 text-xs font-medium">{c.catPdfTools}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{c.editTextCardTitle}</h3>
+                <p className="text-surface-400 mb-4 line-clamp-3">{c.editTextCardDesc}</p>
+                <span className="text-primary-400 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {c.readMore}
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
+            {/* Blog Post: How to Annotate a PDF */}
+            <Link href={L('how-to-annotate-a-pdf-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-warning-500/20 to-error-500/20">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Highlighter className="w-24 h-24 text-warning-400/50" strokeWidth={1.5} />
+                </div>
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary-500/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                  {c.badgeNew}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 text-xs font-medium">{c.catGuide}</span>
+                  <span className="px-2 py-0.5 rounded bg-success-500/20 text-success-300 text-xs font-medium">{c.catPdfTools}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{c.annotateCardTitle}</h3>
+                <p className="text-surface-400 mb-4 line-clamp-3">{c.annotateCardDesc}</p>
+                <span className="text-primary-400 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {c.readMore}
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
+
             {/* Blog Post: How to Convert PDF to Images */}
             <Link href={L('how-to-convert-pdf-to-images-online')} className="card overflow-hidden hover:scale-105 transition-transform duration-300 group">
               <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-accent-500/20 to-primary-500/20">

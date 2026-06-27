@@ -7,6 +7,18 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'how-to-edit-text-in-a-pdf-online',
+    title: 'How to Edit Text in a PDF Online: A Complete Guide',
+    description: 'How PDF text actually works, the step-by-step way to change words in your browser, best practices, and honest limitations.',
+    tags: ['Guide', 'PDF Tools'],
+  },
+  {
+    slug: 'how-to-annotate-a-pdf-online',
+    title: 'How to Annotate a PDF Online: Highlight, Comment, Draw and Sign',
+    description: 'A deep guide to marking up PDFs — highlights, comments, drawings, stamps — privately in your browser, and how annotations are stored.',
+    tags: ['Guide', 'PDF Tools'],
+  },
+  {
     slug: 'how-to-convert-pdf-to-images-online',
     title: 'How to Convert PDF to Images (JPG, PNG, WebP) Online',
     description: 'Export every PDF page as a separate JPG, PNG, or WebP image — privately, in your browser. Plus tips on which format to pick.',
