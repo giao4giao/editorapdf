@@ -4,7 +4,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Machine-translated, validated for key parity.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Внесок у відкритий код: посібник для початківців з EditoraPDF | Блог EditoraPDF",
+    "metaTitle": "Внесок у відкритий код: посібник для початківців з EditoraPDF",
     "metaDesc": "Дізнайтеся, як робити внесок у проєкти з відкритим кодом на прикладі EditoraPDF. Покроковий посібник для перших учасників, що охоплює Git, GitHub, pull request і не тільки.",
     "ogTitle": "Внесок у відкритий код: посібник для початківців з EditoraPDF",
     "ogDesc": "Покроковий посібник для перших учасників проєктів з відкритим кодом на прикладі EditoraPDF.",
@@ -161,7 +161,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Відкритий код"
   },
   "de": {
-    "metaTitle": "Zu Open Source beitragen: Ein Leitfaden für Einsteiger mit EditoraPDF | EditoraPDF Blog",
+    "metaTitle": "Zu Open Source beitragen: Ein Leitfaden für Einsteiger mit EditoraPDF",
     "metaDesc": "Erfahren Sie am Beispiel von EditoraPDF, wie Sie zu Open-Source-Projekten beitragen. Schritt-für-Schritt-Anleitung für Erstbeitragende zu Git, GitHub, Pull Requests und mehr.",
     "ogTitle": "Zu Open Source beitragen: Ein Leitfaden für Einsteiger mit EditoraPDF",
     "ogDesc": "Schritt-für-Schritt-Anleitung für Erstbeitragende zu Open-Source-Projekten am Beispiel von EditoraPDF.",
@@ -318,7 +318,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open Source"
   },
   "es": {
-    "metaTitle": "Contribuir al código abierto: una guía para principiantes con EditoraPDF | Blog de EditoraPDF",
+    "metaTitle": "Contribuir al código abierto: una guía para principiantes con EditoraPDF",
     "metaDesc": "Aprende a contribuir a proyectos de código abierto usando EditoraPDF como ejemplo. Guía paso a paso para colaboradores primerizos que abarca Git, GitHub, pull requests y más.",
     "ogTitle": "Contribuir al código abierto: una guía para principiantes con EditoraPDF",
     "ogDesc": "Guía paso a paso para colaboradores primerizos en proyectos de código abierto usando EditoraPDF como ejemplo.",
@@ -475,7 +475,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Código abierto"
   },
   "fr": {
-    "metaTitle": "Contribuer à l'open source : guide du débutant avec EditoraPDF | Blog EditoraPDF",
+    "metaTitle": "Contribuer à l'open source : guide du débutant avec EditoraPDF",
     "metaDesc": "Apprenez à contribuer aux projets open source en prenant EditoraPDF comme exemple. Guide étape par étape pour les débutants, couvrant Git, GitHub, les pull requests, et plus encore.",
     "ogTitle": "Contribuer à l'open source : guide du débutant avec EditoraPDF",
     "ogDesc": "Guide étape par étape pour ceux qui contribuent pour la première fois aux projets open source, en prenant EditoraPDF comme exemple.",
@@ -632,7 +632,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open Source"
   },
   "it": {
-    "metaTitle": "Contribuire all'open source: una guida per principianti con EditoraPDF | Blog di EditoraPDF",
+    "metaTitle": "Contribuire all'open source: una guida per principianti con EditoraPDF",
     "metaDesc": "Scopri come contribuire ai progetti open source usando EditoraPDF come esempio. Guida passo passo per chi contribuisce per la prima volta, che copre Git, GitHub, pull request e altro ancora.",
     "ogTitle": "Contribuire all'open source: una guida per principianti con EditoraPDF",
     "ogDesc": "Guida passo passo per chi contribuisce per la prima volta ai progetti open source, usando EditoraPDF come esempio.",

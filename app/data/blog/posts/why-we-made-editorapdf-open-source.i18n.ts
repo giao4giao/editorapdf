@@ -4,7 +4,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Machine-translated, validated for key parity.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Чому ми зробили EditoraPDF з відкритим кодом — Наша філософія | Блог EditoraPDF",
+    "metaTitle": "Чому ми зробили EditoraPDF з відкритим кодом — Наша філософія",
     "metaDesc": "Дізнайтеся, чому ми вирішили зробити EditoraPDF повністю з відкритим кодом і безкоштовним назавжди. Відкрийте для себе принципи прозорості, приватності та спільноти, які рухають наш проєкт.",
     "ogTitle": "Чому ми зробили EditoraPDF з відкритим кодом",
     "ogDesc": "Філософія та принципи, які стоять за рішенням зробити EditoraPDF повністю з відкритим кодом і безкоштовним назавжди.",
@@ -156,7 +156,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Відкритий код"
   },
   "de": {
-    "metaTitle": "Warum wir EditoraPDF Open Source gemacht haben – Unsere Philosophie | EditoraPDF Blog",
+    "metaTitle": "Warum wir EditoraPDF Open Source gemacht haben – Unsere Philosophie",
     "metaDesc": "Erfahre, warum wir uns entschieden haben, EditoraPDF vollständig Open Source und für immer kostenlos zu machen. Entdecke die Prinzipien Transparenz, Datenschutz und Community, die unser Projekt antreiben.",
     "ogTitle": "Warum wir EditoraPDF Open Source gemacht haben",
     "ogDesc": "Die Philosophie und die Prinzipien dahinter, EditoraPDF vollständig Open Source und für immer kostenlos zu machen.",
@@ -308,7 +308,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open Source"
   },
   "es": {
-    "metaTitle": "Por qué hicimos EditoraPDF de código abierto - Nuestra filosofía | Blog de EditoraPDF",
+    "metaTitle": "Por qué hicimos EditoraPDF de código abierto - Nuestra filosofía",
     "metaDesc": "Descubre por qué decidimos hacer EditoraPDF completamente de código abierto y gratuito para siempre. Conoce los principios de transparencia, privacidad y comunidad que impulsan nuestro proyecto.",
     "ogTitle": "Por qué hicimos EditoraPDF de código abierto",
     "ogDesc": "La filosofía y los principios detrás de hacer EditoraPDF completamente de código abierto y gratuito para siempre.",
@@ -460,7 +460,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Código abierto"
   },
   "fr": {
-    "metaTitle": "Pourquoi nous avons rendu EditoraPDF open source - Notre philosophie | Blog EditoraPDF",
+    "metaTitle": "Pourquoi nous avons rendu EditoraPDF open source - Notre philosophie",
     "metaDesc": "Découvrez pourquoi nous avons décidé de rendre EditoraPDF entièrement open source et gratuit pour toujours. Explorez les principes de transparence, de confidentialité et de communauté qui animent notre projet.",
     "ogTitle": "Pourquoi nous avons rendu EditoraPDF open source",
     "ogDesc": "La philosophie et les principes qui sous-tendent la décision de rendre EditoraPDF entièrement open source et gratuit pour toujours.",
@@ -612,7 +612,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open Source"
   },
   "it": {
-    "metaTitle": "Perché abbiamo reso EditoraPDF open source - La nostra filosofia | Blog EditoraPDF",
+    "metaTitle": "Perché abbiamo reso EditoraPDF open source - La nostra filosofia",
     "metaDesc": "Scopri perché abbiamo deciso di rendere EditoraPDF completamente open source e gratuito per sempre. Conosci i principi di trasparenza, privacy e comunità che guidano il nostro progetto.",
     "ogTitle": "Perché abbiamo reso EditoraPDF open source",
     "ogDesc": "La filosofia e i principi alla base della decisione di rendere EditoraPDF completamente open source e gratuito per sempre.",

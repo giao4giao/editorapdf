@@ -23,7 +23,7 @@ type Content = Record<string, string>
 
 const C: Record<AppLocale, Content> = {
   en: {
-    metaTitle: 'How to Flatten a PDF Online: Lock Form Fields | EditoraPDF',
+    metaTitle: 'How to Flatten a PDF Online: Lock Form Fields',
     metaDesc: 'Flatten a PDF online to lock form fields, comments, and signatures into the page. Free, private, in-browser — make your PDF non-editable in a few clicks.',
     ogTitle: 'How to Flatten a PDF Online: Lock Form Fields and Annotations',
     ogDesc: 'Merge form fields, comments, and signatures into the page so they cannot be changed. Free, private, browser-based PDF flattening — no uploads, no software.',

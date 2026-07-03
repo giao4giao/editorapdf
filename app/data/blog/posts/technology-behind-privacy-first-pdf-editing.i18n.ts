@@ -4,7 +4,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Machine-translated, validated for key parity.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Технологія, що стоїть за редагуванням PDF з пріоритетом приватності | Блог EditoraPDF",
+    "metaTitle": "Технологія, що стоїть за редагуванням PDF з пріоритетом приватності",
     "metaDesc": "Дізнайтеся, як обробка на боці клієнта, PDF.js, pdf-lib та сучасні веб-технології забезпечують справді приватне редагування PDF без завантаження на сервер. Технічний детальний огляд.",
     "ogTitle": "Технологія, що стоїть за редагуванням PDF з пріоритетом приватності",
     "ogDesc": "Дізнайтеся, як обробка на боці клієнта забезпечує справді приватне редагування PDF без завантаження на сервер.",
@@ -119,7 +119,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "openSource": "Відкритий код"
   },
   "de": {
-    "metaTitle": "Die Technologie hinter datenschutzorientierter PDF-Bearbeitung | EditoraPDF Blog",
+    "metaTitle": "Die Technologie hinter datenschutzorientierter PDF-Bearbeitung",
     "metaDesc": "Erfahren Sie, wie clientseitige Verarbeitung, PDF.js, pdf-lib und moderne Webtechnologien wirklich private PDF-Bearbeitung ohne Server-Uploads ermöglichen. Technischer Deep Dive.",
     "ogTitle": "Die Technologie hinter datenschutzorientierter PDF-Bearbeitung",
     "ogDesc": "Erfahren Sie, wie clientseitige Verarbeitung wirklich private PDF-Bearbeitung ohne Server-Uploads ermöglicht.",
@@ -234,7 +234,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "openSource": "Open Source"
   },
   "es": {
-    "metaTitle": "La tecnología detrás de la edición de PDF centrada en la privacidad | Blog de EditoraPDF",
+    "metaTitle": "La tecnología detrás de la edición de PDF centrada en la privacidad",
     "metaDesc": "Descubre cómo el procesamiento del lado del cliente, PDF.js, pdf-lib y las tecnologías web modernas permiten una edición de PDF verdaderamente privada sin subidas al servidor. Análisis técnico en profundidad.",
     "ogTitle": "La tecnología detrás de la edición de PDF centrada en la privacidad",
     "ogDesc": "Descubre cómo el procesamiento del lado del cliente permite una edición de PDF verdaderamente privada sin subidas al servidor.",
@@ -349,7 +349,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "openSource": "Código abierto"
   },
   "fr": {
-    "metaTitle": "La technologie derrière l'édition de PDF axée sur la confidentialité | Blog EditoraPDF",
+    "metaTitle": "La technologie derrière l'édition de PDF axée sur la confidentialité",
     "metaDesc": "Découvrez comment le traitement côté client, PDF.js, pdf-lib et les technologies web modernes permettent une édition de PDF réellement privée, sans téléversement sur un serveur. Plongée technique approfondie.",
     "ogTitle": "La technologie derrière l'édition de PDF axée sur la confidentialité",
     "ogDesc": "Découvrez comment le traitement côté client permet une édition de PDF réellement privée, sans téléversement sur un serveur.",
@@ -464,7 +464,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "openSource": "Open Source"
   },
   "it": {
-    "metaTitle": "La tecnologia dietro l'editing PDF orientato alla privacy | Blog EditoraPDF",
+    "metaTitle": "La tecnologia dietro l'editing PDF orientato alla privacy",
     "metaDesc": "Scopri come l'elaborazione lato client, PDF.js, pdf-lib e le moderne tecnologie web rendono possibile un editing PDF davvero privato senza caricamenti sui server. Un approfondimento tecnico.",
     "ogTitle": "La tecnologia dietro l'editing PDF orientato alla privacy",
     "ogDesc": "Scopri come l'elaborazione lato client rende possibile un editing PDF davvero privato senza caricamenti sui server.",

@@ -3,7 +3,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Translated string maps for how-to-flatten-pdf-online. Keys mirror C.en; machine-translated, key-parity validated.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Як зробити PDF плоским онлайн: заблокуйте поля форми | EditoraPDF",
+    "metaTitle": "Як зробити PDF плоским онлайн: заблокуйте поля форми",
     "metaDesc": "Зробіть PDF плоским онлайн, щоб зафіксувати поля форми, коментарі та підписи на сторінці. Безкоштовно, конфіденційно, у браузері — зробіть свій PDF нередагованим за кілька кліків.",
     "ogTitle": "Як зробити PDF плоским онлайн: заблокуйте поля форми та анотації",
     "ogDesc": "Об'єднайте поля форми, коментарі та підписи зі сторінкою, щоб їх не можна було змінити. Безкоштовне, конфіденційне зведення PDF у браузері — без завантажень, без програм.",
@@ -79,7 +79,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Зведення задумане як остаточне, тож немає вбудованого способу скасувати його та перетворити об'єднаний вміст назад на редаговані поля. Якщо вам може знадобитися знову редагувати форму, збережіть незведену копію оригіналу перед зведенням."
   },
   "de": {
-    "metaTitle": "PDF online reduzieren (flatten): Formularfelder sperren | EditoraPDF",
+    "metaTitle": "PDF online reduzieren (flatten): Formularfelder sperren",
     "metaDesc": "Reduzieren Sie ein PDF online, um Formularfelder, Kommentare und Signaturen fest in die Seite einzubetten. Kostenlos, privat, im Browser — machen Sie Ihr PDF mit wenigen Klicks unveränderbar.",
     "ogTitle": "PDF online reduzieren (flatten): Formularfelder und Anmerkungen sperren",
     "ogDesc": "Verbinden Sie Formularfelder, Kommentare und Signaturen fest mit der Seite, sodass sie nicht mehr geändert werden können. Kostenloses, privates, browserbasiertes Reduzieren von PDFs — kein Upload, keine Software.",
@@ -155,7 +155,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Das Reduzieren ist als dauerhaft gedacht, daher gibt es keine integrierte Möglichkeit, es rückgängig zu machen und den zusammengeführten Inhalt wieder in bearbeitbare Felder zu verwandeln. Falls Sie das Formular möglicherweise erneut bearbeiten müssen, bewahren Sie eine nicht reduzierte Kopie des Originals auf, bevor Sie reduzieren."
   },
   "es": {
-    "metaTitle": "Cómo aplanar un PDF en línea: bloquea los campos de formulario | EditoraPDF",
+    "metaTitle": "Cómo aplanar un PDF en línea: bloquea los campos de formulario",
     "metaDesc": "Aplana un PDF en línea para fijar los campos de formulario, los comentarios y las firmas en la página. Gratis, privado y en el navegador: convierte tu PDF en no editable con unos pocos clics.",
     "ogTitle": "Cómo aplanar un PDF en línea: bloquea los campos de formulario y las anotaciones",
     "ogDesc": "Combina los campos de formulario, los comentarios y las firmas con la página para que no se puedan modificar. Aplanado de PDF gratuito, privado y desde el navegador: sin subidas ni software.",
@@ -231,7 +231,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Aplanar está pensado para ser permanente, así que no hay una forma integrada de deshacerlo y convertir el contenido fusionado de nuevo en campos editables. Si es posible que necesites editar el formulario otra vez, conserva una copia sin aplanar del original antes de aplanarlo."
   },
   "fr": {
-    "metaTitle": "Comment aplatir un PDF en ligne : verrouiller les champs de formulaire | EditoraPDF",
+    "metaTitle": "Comment aplatir un PDF en ligne : verrouiller les champs de formulaire",
     "metaDesc": "Aplatissez un PDF en ligne pour verrouiller les champs de formulaire, commentaires et signatures dans la page. Gratuit, privé, dans le navigateur — rendez votre PDF non modifiable en quelques clics.",
     "ogTitle": "Comment aplatir un PDF en ligne : verrouiller les champs de formulaire et les annotations",
     "ogDesc": "Fusionnez les champs de formulaire, commentaires et signatures dans la page pour qu'ils ne puissent plus être modifiés. Aplatissement de PDF gratuit, privé et dans le navigateur — sans téléversement, sans logiciel.",
@@ -307,7 +307,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "L'aplatissement est conçu pour être permanent : il n'existe donc aucun moyen intégré de l'annuler et de retransformer le contenu fusionné en champs modifiables. Si vous risquez de devoir modifier de nouveau le formulaire, conservez une copie non aplatie de l'original avant d'aplatir."
   },
   "it": {
-    "metaTitle": "Come appiattire un PDF online: blocca i campi modulo | EditoraPDF",
+    "metaTitle": "Come appiattire un PDF online: blocca i campi modulo",
     "metaDesc": "Appiattisci un PDF online per bloccare campi modulo, commenti e firme nella pagina. Gratis, privato, nel browser: rendi il tuo PDF non modificabile in pochi clic.",
     "ogTitle": "Come appiattire un PDF online: blocca campi modulo e annotazioni",
     "ogDesc": "Unisci campi modulo, commenti e firme nella pagina in modo che non possano essere modificati. Appiattimento PDF gratuito, privato e basato sul browser: niente caricamenti, niente software.",

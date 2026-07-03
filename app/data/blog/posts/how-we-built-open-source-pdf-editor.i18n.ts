@@ -4,7 +4,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Machine-translated, validated for key parity.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Як ми створили безкоштовний редактор PDF з відкритим кодом на Next.js | EditoraPDF",
+    "metaTitle": "Як ми створили безкоштовний редактор PDF з відкритим кодом на Next.js",
     "metaDesc": "Технічний детальний огляд створення EditoraPDF — безкоштовного редактора PDF з відкритим кодом на Next.js 14, TypeScript, PDF.js і pdf-lib. Дізнайтеся про нашу архітектуру, виклики та рішення.",
     "ogTitle": "Як ми створили безкоштовний редактор PDF з відкритим кодом на Next.js",
     "ogDesc": "Технічний детальний огляд створення EditoraPDF — дізнайтеся про наш технологічний стек, архітектурні рішення та процес розробки з відкритим кодом.",
@@ -200,7 +200,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Відкритий код"
   },
   "de": {
-    "metaTitle": "Wie wir mit Next.js einen kostenlosen Open-Source-PDF-Editor entwickelt haben | EditoraPDF",
+    "metaTitle": "Wie wir mit Next.js einen kostenlosen Open-Source-PDF-Editor entwickelt haben",
     "metaDesc": "Technischer Tiefblick in die Entwicklung von EditoraPDF – einem kostenlosen, quelloffenen PDF-Editor mit Next.js 14, TypeScript, PDF.js und pdf-lib. Erfahren Sie mehr über unsere Architektur, Herausforderungen und Lösungen.",
     "ogTitle": "Wie wir mit Next.js einen kostenlosen Open-Source-PDF-Editor entwickelt haben",
     "ogDesc": "Technischer Tiefblick in die Entwicklung von EditoraPDF – erfahren Sie mehr über unseren Tech-Stack, unsere Architekturentscheidungen und unseren Open-Source-Entwicklungsprozess.",
@@ -396,7 +396,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open Source"
   },
   "es": {
-    "metaTitle": "Cómo creamos un editor de PDF gratuito y de código abierto con Next.js | EditoraPDF",
+    "metaTitle": "Cómo creamos un editor de PDF gratuito y de código abierto con Next.js",
     "metaDesc": "Análisis técnico en profundidad sobre la creación de EditoraPDF: un editor de PDF gratuito y de código abierto con Next.js 14, TypeScript, PDF.js y pdf-lib. Conoce nuestra arquitectura, los desafíos y las soluciones.",
     "ogTitle": "Cómo creamos un editor de PDF gratuito y de código abierto con Next.js",
     "ogDesc": "Análisis técnico en profundidad sobre la creación de EditoraPDF: conoce nuestra pila tecnológica, las decisiones de arquitectura y el proceso de desarrollo de código abierto.",
@@ -592,7 +592,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Código abierto"
   },
   "fr": {
-    "metaTitle": "Comment nous avons créé un éditeur PDF open source gratuit avec Next.js | EditoraPDF",
+    "metaTitle": "Comment nous avons créé un éditeur PDF open source gratuit avec Next.js",
     "metaDesc": "Plongée technique dans la création d'EditoraPDF — un éditeur PDF gratuit et open source bâti avec Next.js 14, TypeScript, PDF.js et pdf-lib. Découvrez notre architecture, nos défis et nos solutions.",
     "ogTitle": "Comment nous avons créé un éditeur PDF open source gratuit avec Next.js",
     "ogDesc": "Plongée technique dans la création d'EditoraPDF — découvrez notre stack technique, nos choix d'architecture et notre processus de développement open source.",
@@ -788,7 +788,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open source"
   },
   "it": {
-    "metaTitle": "Come abbiamo creato un editor PDF open source gratuito con Next.js | EditoraPDF",
+    "metaTitle": "Come abbiamo creato un editor PDF open source gratuito con Next.js",
     "metaDesc": "Approfondimento tecnico sulla creazione di EditoraPDF - un editor PDF gratuito e open source con Next.js 14, TypeScript, PDF.js e pdf-lib. Scopri la nostra architettura, le sfide e le soluzioni.",
     "ogTitle": "Come abbiamo creato un editor PDF open source gratuito con Next.js",
     "ogDesc": "Approfondimento tecnico sulla creazione di EditoraPDF - scopri il nostro stack tecnologico, le decisioni architetturali e il processo di sviluppo open source.",

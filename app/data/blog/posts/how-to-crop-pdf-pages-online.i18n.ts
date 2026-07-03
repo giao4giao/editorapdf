@@ -3,7 +3,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Translated string maps for how-to-crop-pdf-pages-online. Keys mirror C.en; machine-translated, key-parity validated.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Як обрізати сторінки PDF онлайн: прибрати поля | EditoraPDF",
+    "metaTitle": "Як обрізати сторінки PDF онлайн: прибрати поля",
     "metaDesc": "Дізнайтеся, як безкоштовно обрізати сторінки PDF онлайн. Прибирайте поля, видаляйте білий простір і обрізайте краї сканера прямо у браузері — без завантаження на сервер, без встановлення, без втрати якості.",
     "ogTitle": "Як обрізати сторінки PDF онлайн: прибрати поля та білий простір",
     "ogDesc": "Простий посібник із обрізання сторінок PDF у браузері. Прибирайте поля, видаляйте білий простір і обрізайте краї сканера без втрати якості тексту чи завантаження файлів на сервер.",
@@ -78,7 +78,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Так. Оскільки інструмент повністю працює у вашому браузері, ви можете обрізати сторінки PDF на телефоні, планшеті, Chromebook чи комп’ютері. Підходить будь-який пристрій із сучасним браузером, без потреби завантажувати застосунок. Це дає змогу легко прибрати поля, щоб PDF краще читався на маленькому екрані."
   },
   "de": {
-    "metaTitle": "PDF-Seiten online zuschneiden: Ränder kürzen | EditoraPDF",
+    "metaTitle": "PDF-Seiten online zuschneiden: Ränder kürzen",
     "metaDesc": "Erfahren Sie, wie Sie PDF-Seiten kostenlos online zuschneiden. Kürzen Sie Ränder, entfernen Sie Weißraum und schneiden Sie Scannerränder direkt im Browser weg – kein Upload, keine Installation, kein Qualitätsverlust.",
     "ogTitle": "PDF-Seiten online zuschneiden: Ränder und Weißraum kürzen",
     "ogDesc": "Eine einfache Anleitung zum Zuschneiden von PDF-Seiten im Browser. Kürzen Sie Ränder, entfernen Sie Weißraum und schneiden Sie Scannerkanten weg, ohne Textqualität zu verlieren oder Dateien hochzuladen.",
@@ -153,7 +153,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Ja. Da das Werkzeug vollständig in Ihrem Browser läuft, können Sie PDF-Seiten auf einem Smartphone, Tablet, Chromebook oder Computer zuschneiden. Jedes Gerät mit einem modernen Browser funktioniert, ohne dass eine App heruntergeladen werden muss. So lassen sich Ränder leicht entfernen, damit sich ein PDF auf einem kleinen Bildschirm besser lesen lässt."
   },
   "es": {
-    "metaTitle": "Cómo recortar páginas PDF en línea: ajusta los márgenes | EditoraPDF",
+    "metaTitle": "Cómo recortar páginas PDF en línea: ajusta los márgenes",
     "metaDesc": "Aprende a recortar páginas PDF en línea gratis. Ajusta los márgenes, elimina el espacio en blanco y corta los bordes del escáner directamente en tu navegador, sin subir archivos, sin instalar nada y sin pérdida de calidad.",
     "ogTitle": "Cómo recortar páginas PDF en línea: ajusta los márgenes y el espacio en blanco",
     "ogDesc": "Una guía sencilla para recortar páginas PDF en tu navegador. Ajusta los márgenes, elimina el espacio en blanco y corta los bordes del escáner sin perder calidad de texto ni subir archivos.",
@@ -228,7 +228,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Sí. Como la herramienta se ejecuta por completo en tu navegador, puedes recortar páginas PDF en un teléfono, una tableta, un Chromebook o un ordenador. Funciona cualquier dispositivo con un navegador moderno, sin ninguna aplicación que descargar. Esto facilita eliminar los márgenes para que un PDF se lea mejor en una pantalla pequeña."
   },
   "fr": {
-    "metaTitle": "Comment rogner les pages d'un PDF en ligne : couper les marges | EditoraPDF",
+    "metaTitle": "Comment rogner les pages d'un PDF en ligne : couper les marges",
     "metaDesc": "Découvrez comment rogner les pages d'un PDF en ligne gratuitement. Coupez les marges, supprimez les espaces blancs et retirez les bords de scanner directement dans votre navigateur — sans téléversement, sans installation, sans perte de qualité.",
     "ogTitle": "Comment rogner les pages d'un PDF en ligne : couper les marges et les espaces blancs",
     "ogDesc": "Un guide simple pour rogner les pages d'un PDF dans votre navigateur. Coupez les marges, supprimez les espaces blancs et retirez les bords de scanner sans perdre la qualité du texte ni téléverser de fichiers.",
@@ -303,7 +303,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Oui. Comme l'outil s'exécute entièrement dans votre navigateur, vous pouvez rogner les pages d'un PDF sur un téléphone, une tablette, un Chromebook ou un ordinateur. Tout appareil doté d'un navigateur moderne fonctionne, sans application à télécharger. Cela permet de supprimer facilement les marges pour qu'un PDF se lise mieux sur un petit écran."
   },
   "it": {
-    "metaTitle": "Come ritagliare le pagine di un PDF online: rifila i margini | EditoraPDF",
+    "metaTitle": "Come ritagliare le pagine di un PDF online: rifila i margini",
     "metaDesc": "Scopri come ritagliare le pagine di un PDF online gratis. Rifila i margini, elimina gli spazi bianchi e taglia i bordi della scansione direttamente nel browser, senza caricamenti, senza installazioni e senza perdita di qualità.",
     "ogTitle": "Come ritagliare le pagine di un PDF online: rifila margini e spazi bianchi",
     "ogDesc": "Una guida semplice per ritagliare le pagine di un PDF nel browser. Rifila i margini, elimina gli spazi bianchi e taglia i bordi della scansione senza perdere la qualità del testo né caricare file.",

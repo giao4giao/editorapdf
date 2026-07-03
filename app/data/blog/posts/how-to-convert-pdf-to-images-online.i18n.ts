@@ -3,7 +3,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Translated string maps for how-to-convert-pdf-to-images-online. Keys mirror C.en; machine-translated, key-parity validated.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Як конвертувати PDF у зображення (JPG, PNG, WebP) | EditoraPDF",
+    "metaTitle": "Як конвертувати PDF у зображення (JPG, PNG, WebP)",
     "metaDesc": "Конвертуйте PDF у JPG, PNG чи WebP онлайн безкоштовно. Експортуйте кожну сторінку PDF як окреме зображення прямо у браузері — без завантаження на сервер, без реєстрації, повністю конфіденційно.",
     "ogTitle": "Як конвертувати PDF у зображення (JPG, PNG, WebP) онлайн",
     "ogDesc": "Перетворіть кожну сторінку PDF на окреме зображення JPG, PNG чи WebP — конфіденційно, у вашому браузері. Покрокова інструкція та поради, який формат обрати.",
@@ -89,7 +89,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Так. Оскільки інструмент працює у браузері, він працює у будь-якому сучасному браузері на комп’ютері, планшеті чи телефоні — без застосунку для встановлення. Більші PDF можуть рендеритися трохи повільніше на мобільному, бо конвертація використовує обчислювальну потужність вашого пристрою."
   },
   "de": {
-    "metaTitle": "PDF in Bilder umwandeln (JPG, PNG, WebP) | EditoraPDF",
+    "metaTitle": "PDF in Bilder umwandeln (JPG, PNG, WebP)",
     "metaDesc": "PDF kostenlos online in JPG, PNG oder WebP umwandeln. Jede PDF-Seite direkt im Browser als separates Bild exportieren — ohne Upload, ohne Anmeldung, vollständig privat.",
     "ogTitle": "PDF in Bilder umwandeln (JPG, PNG, WebP) – online",
     "ogDesc": "Jede Seite eines PDFs in ein separates JPG-, PNG- oder WebP-Bild verwandeln — privat, direkt im Browser. Schritt-für-Schritt-Anleitung plus Tipps zur Formatwahl.",
@@ -175,7 +175,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Ja. Da das Tool im Browser läuft, funktioniert es in jedem modernen Browser auf Desktop, Tablet oder Handy — keine App zu installieren. Größere PDFs werden auf Mobilgeräten möglicherweise etwas langsamer gerendert, da die Umwandlung die Rechenleistung deines eigenen Geräts nutzt."
   },
   "es": {
-    "metaTitle": "Cómo convertir un PDF en imágenes (JPG, PNG, WebP) | EditoraPDF",
+    "metaTitle": "Cómo convertir un PDF en imágenes (JPG, PNG, WebP)",
     "metaDesc": "Convierte PDF a JPG, PNG o WebP en línea y gratis. Exporta cada página del PDF como una imagen independiente directamente en tu navegador: sin subidas, sin registro y totalmente privado.",
     "ogTitle": "Cómo convertir un PDF en imágenes (JPG, PNG, WebP) en línea",
     "ogDesc": "Convierte cada página de un PDF en una imagen JPG, PNG o WebP independiente, de forma privada y en tu navegador. Guía paso a paso y consejos sobre qué formato elegir.",
@@ -261,7 +261,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Sí. Como la herramienta se ejecuta en el navegador, funciona en cualquier navegador moderno en ordenador, tableta o teléfono, sin ninguna aplicación que instalar. Los PDF más grandes pueden renderizarse un poco más lento en el móvil, ya que la conversión utiliza la capacidad de procesamiento de tu propio dispositivo."
   },
   "fr": {
-    "metaTitle": "Comment convertir un PDF en images (JPG, PNG, WebP) | EditoraPDF",
+    "metaTitle": "Comment convertir un PDF en images (JPG, PNG, WebP)",
     "metaDesc": "Convertissez un PDF en JPG, PNG ou WebP en ligne gratuitement. Exportez chaque page de PDF en image distincte directement dans votre navigateur — sans téléversement, sans inscription, totalement privé.",
     "ogTitle": "Comment convertir un PDF en images (JPG, PNG, WebP) en ligne",
     "ogDesc": "Transformez chaque page d'un PDF en image JPG, PNG ou WebP distincte — en privé, dans votre navigateur. Guide étape par étape, avec des conseils sur le format à choisir.",
@@ -347,7 +347,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fv6a": "Oui. Comme l'outil s'exécute dans le navigateur, il fonctionne sur n'importe quel navigateur moderne, sur ordinateur, tablette ou téléphone — aucune application à installer. Les PDF volumineux peuvent se rendre un peu plus lentement sur mobile, car la conversion utilise la puissance de calcul de votre propre appareil."
   },
   "it": {
-    "metaTitle": "Come convertire un PDF in immagini (JPG, PNG, WebP) | EditoraPDF",
+    "metaTitle": "Come convertire un PDF in immagini (JPG, PNG, WebP)",
     "metaDesc": "Converti PDF in JPG, PNG o WebP online gratis. Esporta ogni pagina di un PDF come immagine separata direttamente nel browser — senza caricamento, senza registrazione, totalmente privato.",
     "ogTitle": "Come convertire un PDF in immagini (JPG, PNG, WebP) online",
     "ogDesc": "Trasforma ogni pagina di un PDF in un'immagine JPG, PNG o WebP separata — in modo privato, nel tuo browser. Guida passo passo e consigli su quale formato scegliere.",

@@ -5,7 +5,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // validated for key parity + no-English-leakage.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Як редагувати PDF онлайн — покрокова інструкція | Блог EditoraPDF",
+    "metaTitle": "Як редагувати PDF онлайн — покрокова інструкція",
     "metaDesc": "Дізнайтеся, як редагувати PDF-файли онлайн без встановлення програм. Покрокова інструкція з редагування тексту, зображень, фігур, керування сторінками тощо.",
     "ogTitle": "Як редагувати PDF онлайн — покрокова інструкція",
     "ogDesc": "Дізнайтеся, як редагувати PDF-файли онлайн без встановлення програм. Покрокова інструкція з редагування тексту, зображень, фігур, керування сторінками тощо.",
@@ -137,7 +137,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fq5a": "Більшість онлайн-редакторів PDF підтримують файли до певного розміру. Для найкращої продуктивності рекомендуються документи менші за 25 MB і менші за 50 сторінок."
   },
   "de": {
-    "metaTitle": "Ein PDF online bearbeiten - Schritt-für-Schritt-Anleitung | EditoraPDF Blog",
+    "metaTitle": "Ein PDF online bearbeiten - Schritt-für-Schritt-Anleitung",
     "metaDesc": "Erfahren Sie, wie Sie PDF-Dateien online bearbeiten, ohne Software zu installieren. Schritt-für-Schritt-Anleitung zu Textbearbeitung, Bildern, Formen, Seitenverwaltung und mehr.",
     "ogTitle": "Ein PDF online bearbeiten - Schritt-für-Schritt-Anleitung",
     "ogDesc": "Erfahren Sie, wie Sie PDF-Dateien online bearbeiten, ohne Software zu installieren. Schritt-für-Schritt-Anleitung zu Textbearbeitung, Bildern, Formen, Seitenverwaltung und mehr.",
@@ -269,7 +269,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fq5a": "Die meisten Online-PDF-Editoren unterstützen Dateien bis zu einer bestimmten Größe. Für eine optimale Leistung werden Dokumente unter 25 MB und mit weniger als 50 Seiten empfohlen."
   },
   "es": {
-    "metaTitle": "Cómo editar un PDF en línea: guía paso a paso | Blog de EditoraPDF",
+    "metaTitle": "Cómo editar un PDF en línea: guía paso a paso",
     "metaDesc": "Aprende a editar archivos PDF en línea sin instalar software. Guía paso a paso sobre edición de texto, imágenes, formas, gestión de páginas y más.",
     "ogTitle": "Cómo editar un PDF en línea: guía paso a paso",
     "ogDesc": "Aprende a editar archivos PDF en línea sin instalar software. Guía paso a paso sobre edición de texto, imágenes, formas, gestión de páginas y más.",
@@ -401,7 +401,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fq5a": "La mayoría de los editores de PDF en línea admiten archivos de hasta cierto tamaño. Para un mejor rendimiento, se recomiendan documentos de menos de 25 MB y menos de 50 páginas."
   },
   "fr": {
-    "metaTitle": "Comment modifier un PDF en ligne - Guide étape par étape | Blog EditoraPDF",
+    "metaTitle": "Comment modifier un PDF en ligne - Guide étape par étape",
     "metaDesc": "Découvrez comment modifier des fichiers PDF en ligne sans installer de logiciel. Guide étape par étape couvrant l'édition de texte, les images, les formes, la gestion des pages, et plus encore.",
     "ogTitle": "Comment modifier un PDF en ligne - Guide étape par étape",
     "ogDesc": "Découvrez comment modifier des fichiers PDF en ligne sans installer de logiciel. Guide étape par étape couvrant l'édition de texte, les images, les formes, la gestion des pages, et plus encore.",
@@ -533,7 +533,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "fq5a": "La plupart des éditeurs de PDF en ligne prennent en charge les fichiers jusqu'à une certaine taille. Pour de meilleures performances, les documents de moins de 25 MB et de moins de 50 pages sont recommandés."
   },
   "it": {
-    "metaTitle": "Come Modificare un PDF Online - Guida Passo Passo | Blog EditoraPDF",
+    "metaTitle": "Come Modificare un PDF Online - Guida Passo Passo",
     "metaDesc": "Scopri come modificare i file PDF online senza installare software. Guida passo passo che copre modifica del testo, immagini, forme, gestione delle pagine e altro.",
     "ogTitle": "Come Modificare un PDF Online - Guida Passo Passo",
     "ogDesc": "Scopri come modificare i file PDF online senza installare software. Guida passo passo che copre modifica del testo, immagini, forme, gestione delle pagine e altro.",

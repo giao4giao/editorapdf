@@ -23,7 +23,7 @@ type Content = Record<string, string>
 
 const C: Record<AppLocale, Content> = {
   en: {
-    metaTitle: 'How to Crop PDF Pages Online: Trim Margins | EditoraPDF',
+    metaTitle: 'How to Crop PDF Pages Online: Trim Margins',
     metaDesc: 'Learn how to crop PDF pages online for free. Trim margins, remove white space, and cut scanner borders right in your browser — no upload, no install, no quality loss.',
     ogTitle: 'How to Crop PDF Pages Online: Trim Margins and White Space',
     ogDesc: 'A simple guide to cropping PDF pages in your browser. Trim margins, remove white space, and cut off scanner edges without losing text quality or uploading files.',

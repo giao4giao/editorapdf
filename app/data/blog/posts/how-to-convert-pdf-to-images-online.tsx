@@ -23,7 +23,7 @@ type Content = Record<string, string>
 
 const C: Record<AppLocale, Content> = {
   en: {
-    metaTitle: 'How to Convert PDF to Images (JPG, PNG, WebP) | EditoraPDF',
+    metaTitle: 'How to Convert PDF to Images (JPG, PNG, WebP)',
     metaDesc: 'Convert PDF to JPG, PNG or WebP online for free. Export every PDF page as a separate image right in your browser — no upload, no signup, fully private.',
     ogTitle: 'How to Convert PDF to Images (JPG, PNG, WebP) Online',
     ogDesc: 'Turn each page of a PDF into a separate JPG, PNG, or WebP image — privately, in your browser. Step-by-step guide plus tips on which format to pick.',

@@ -23,7 +23,7 @@ type Content = Record<string, string>
 
 const C: Record<AppLocale, Content> = {
   en: {
-    metaTitle: 'How We Built a Free Open-Source PDF Editor with Next.js | EditoraPDF',
+    metaTitle: 'How We Built a Free Open-Source PDF Editor with Next.js',
     metaDesc: 'Technical deep dive into building EditoraPDF - a free, open-source PDF editor with Next.js 14, TypeScript, PDF.js, and pdf-lib. Learn about our architecture, challenges, and solutions.',
     ogTitle: 'How We Built a Free Open-Source PDF Editor with Next.js',
     ogDesc: 'Technical deep dive into building EditoraPDF - learn about our tech stack, architecture decisions, and open-source development process.',

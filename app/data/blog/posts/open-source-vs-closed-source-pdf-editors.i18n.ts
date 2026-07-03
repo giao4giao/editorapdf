@@ -4,7 +4,7 @@ import type { AppLocale } from '../../../../i18n/config'
 // Machine-translated, validated for key parity.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
   "uk": {
-    "metaTitle": "Порівняння PDF-редакторів із відкритим і закритим кодом | Блог EditoraPDF",
+    "metaTitle": "Порівняння PDF-редакторів із відкритим і закритим кодом",
     "metaDesc": "Вичерпне порівняння PDF-редакторів із відкритим і пропрієтарним кодом. Дізнайтеся про переваги, недоліки, наслідки для безпеки та який тип підходить саме вам.",
     "ogTitle": "Порівняння PDF-редакторів із відкритим і закритим кодом",
     "ogDesc": "Вичерпне порівняння PDF-редакторів із відкритим і пропрієтарним кодом із перевагами, недоліками та рекомендаціями.",
@@ -140,7 +140,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Відкритий код"
   },
   "de": {
-    "metaTitle": "Open-Source- vs. Closed-Source-PDF-Editoren im Vergleich | EditoraPDF Blog",
+    "metaTitle": "Open-Source- vs. Closed-Source-PDF-Editoren im Vergleich",
     "metaDesc": "Umfassender Vergleich von Open-Source- und proprietären PDF-Editoren. Erfahren Sie die Vor- und Nachteile, Sicherheitsaspekte und welcher Typ für Ihre Anforderungen geeignet ist.",
     "ogTitle": "Open-Source- vs. Closed-Source-PDF-Editoren im Vergleich",
     "ogDesc": "Ein umfassender Vergleich von Open-Source- und proprietären PDF-Editoren mit Vor- und Nachteilen sowie Empfehlungen.",
@@ -276,7 +276,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open Source"
   },
   "es": {
-    "metaTitle": "Comparación de editores de PDF de código abierto vs. código cerrado | Blog de EditoraPDF",
+    "metaTitle": "Comparación de editores de PDF de código abierto vs. código cerrado",
     "metaDesc": "Comparación exhaustiva de editores de PDF de código abierto y propietarios. Descubre las ventajas, las desventajas, las implicaciones de seguridad y qué tipo es el adecuado para tus necesidades.",
     "ogTitle": "Comparación de editores de PDF de código abierto vs. código cerrado",
     "ogDesc": "Una comparación exhaustiva de editores de PDF de código abierto y propietarios con ventajas, desventajas y recomendaciones.",
@@ -412,7 +412,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Código abierto"
   },
   "fr": {
-    "metaTitle": "Comparatif des éditeurs PDF open source et propriétaires | Blog EditoraPDF",
+    "metaTitle": "Comparatif des éditeurs PDF open source et propriétaires",
     "metaDesc": "Comparatif complet des éditeurs PDF open source et propriétaires. Découvrez les avantages, les inconvénients, les implications en matière de sécurité et le type qui correspond à vos besoins.",
     "ogTitle": "Comparatif des éditeurs PDF open source et propriétaires",
     "ogDesc": "Un comparatif complet des éditeurs PDF open source et propriétaires, avec leurs avantages, leurs inconvénients et nos recommandations.",
@@ -548,7 +548,7 @@ export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = 
     "footerOpenSource": "Open source"
   },
   "it": {
-    "metaTitle": "Editor PDF Open Source vs. Closed Source a Confronto | Blog EditoraPDF",
+    "metaTitle": "Editor PDF Open Source vs. Closed Source a Confronto",
     "metaDesc": "Confronto completo tra editor PDF open source e proprietari. Scopri i pro, i contro, le implicazioni per la sicurezza e quale tipologia è più adatta alle tue esigenze.",
     "ogTitle": "Editor PDF Open Source vs. Closed Source a Confronto",
     "ogDesc": "Un confronto completo tra editor PDF open source e proprietari, con pro, contro e consigli.",
