@@ -48,11 +48,33 @@ const args = process.argv.slice(2);
 const countIdx = args.indexOf("--count");
 const COUNT = countIdx >= 0 && Number(args[countIdx + 1]) > 0 ? Number(args[countIdx + 1]) : 2;
 const NO_WRITE = args.includes("--no-write");
+const NO_TRANSLATE = args.includes("--no-translate"); // English-only (debug)
+const MOCK = args.includes("--mock"); // skip the API entirely (canned post + marker translations) for testing wiring/build
 
 const POSTS_DIR = path.join(ROOT, "app/data/blog/posts");
 const REGISTRY_TS = path.join(ROOT, "app/data/blog/registry.ts");
 const MIGRATED_TS = path.join(ROOT, "app/data/blog/migrated.ts");
 const BLOG_INDEX_TSX = path.join(ROOT, "app/components/BlogIndex.tsx");
+const INDEX_CONTENT_TS = path.join(ROOT, "app/data/blog/indexContent.ts");
+const SEARCH_INDEX_TS = path.join(ROOT, "app/data/searchIndex.ts");
+
+// The site is fully localized; auto-posts MUST be too, or the 5 non-English locale URLs
+// render duplicate English content (which Google leaves "crawled, not indexed").
+const LOCALES = [
+  { code: "uk", name: "Ukrainian" },
+  { code: "de", name: "German" },
+  { code: "es", name: "Spanish" },
+  { code: "fr", name: "French" },
+  { code: "it", name: "Italian" },
+];
+
+// cat* key → the human label BlogIndex C.en uses (for searchIndex tags).
+const CAT_LABEL = {
+  catGuide: "Guide", catPrivacy: "Privacy", catSecurity: "Security", catPdfTools: "PDF Tools",
+  catConverter: "Converter", catOpenSource: "Open Source", catTechnical: "Technical",
+  catPhilosophy: "Philosophy", catTechnology: "Technology", catComparison: "Comparison",
+  catAnalysis: "Analysis", catCompliance: "Compliance",
+};
 
 const SITE_URL = "https://editorapdf.com";
 const HERO_IMAGE = "/og/og-image.png"; // shared OG hero (matches recent posts like how-to-flatten)
@@ -74,7 +96,7 @@ const POST_SCHEMA = {
     category2: { type: "string", enum: CATEGORIES },
     cardTitle: { type: "string", description: "blog-index card heading" },
     cardDesc: { type: "string", description: "1-2 sentence blog-index card description" },
-    metaTitle: { type: "string", description: "<=60 chars, ends with ' | EditoraPDF'" },
+    metaTitle: { type: "string", description: "<=50 chars, primary keyword first. Do NOT append the site name — the layout adds ' | EditoraPDF' automatically" },
     metaDesc: { type: "string", description: "150-160 chars, includes primary keyword" },
     ogTitle: { type: "string" },
     ogDesc: { type: "string" },
@@ -160,6 +182,48 @@ async function claudePosts(prompt, maxTokens = 16000) {
   return tool.input.posts;
 }
 
+const TRANSLATE_TOOL = {
+  name: "submit_translation",
+  description: "Submit the translated string map.",
+  input_schema: {
+    type: "object",
+    properties: { translation: { type: "object", additionalProperties: { type: "string" } } },
+    required: ["translation"],
+  },
+};
+
+// Translate every value of an English string map into one locale (keys unchanged).
+async function claudeTranslate(enMap, localeName) {
+  if (MOCK) {
+    // Marker translation so the wiring/build can be tested without the API.
+    return Object.fromEntries(Object.entries(enMap).map(([k, v]) => [k, `[${localeName}] ${v}`]));
+  }
+  if (!API_KEY) throw new Error("ANTHROPIC_API_KEY is not set");
+  const prompt =
+    `Translate EVERY value of this JSON object into natural, fluent, native ${localeName}. ` +
+    `Return { translation } with the EXACT SAME KEYS. Keep the brand "EditoraPDF", "PDF", and ` +
+    `file/format tokens (JPG, PNG, WebP, DOCX, XLSX, CSV, OCR, A4) as-is. Preserve leading/trailing ` +
+    `spaces and terminal punctuation. OBJECT = ${JSON.stringify(enMap)}`;
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "x-api-key": API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+    body: JSON.stringify({
+      model: MODEL,
+      max_tokens: 16000,
+      tools: [TRANSLATE_TOOL],
+      tool_choice: { type: "tool", name: "submit_translation" },
+      messages: [{ role: "user", content: prompt }],
+    }),
+  });
+  if (!res.ok) throw new Error(`Anthropic API ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  const data = await res.json();
+  const tool = (data.content || []).find((b) => b.type === "tool_use");
+  const tr = tool?.input?.translation;
+  if (!tr || typeof tr !== "object") throw new Error(`Translation failed (${localeName}, stop_reason: ${data.stop_reason})`);
+  // Per-key fill: keep English for any key the model dropped (never blank the page).
+  return Object.fromEntries(Object.keys(enMap).map((k) => [k, tr[k] && String(tr[k]).trim() ? tr[k] : enMap[k]]));
+}
+
 // ─── Read existing slugs from registry.ts (the post wiring source of truth) ────
 function existingSlugsFromRegistry(src) {
   // BLOG_POST_REGISTRY keys are quoted kebab-case slugs.
@@ -186,7 +250,7 @@ STRICT REQUIREMENTS for each new post object (call the submit_posts tool):
 - "icon": one of ${JSON.stringify(ICONS)} (a lucide icon that fits the topic).
 - "category1"/"category2": two DIFFERENT category keys from ${JSON.stringify(CATEGORIES)} that fit the topic.
 - "cardTitle"/"cardDesc": the blog-index card heading + 1-2 sentence description.
-- "metaTitle": <= 60 chars, ends with " | EditoraPDF".
+- "metaTitle": <= 50 chars, primary keyword first. Do NOT append " | EditoraPDF" — the page layout adds the site name automatically, so including it here would double it.
 - "metaDesc": 150-160 chars, includes the primary keyword.
 - "ogTitle","ogDesc","ogAlt","twTitle","twDesc","heroAlt": social/SEO metadata.
 - "bcLeaf": short breadcrumb label (e.g. "How to Flatten a PDF").
@@ -204,7 +268,9 @@ Pick fresh, non-overlapping PDF topics NOT covered by the existing slugs. Each p
 // ─── Build the .tsx post module from a generated post object ───────────────────
 const q = (s) => JSON.stringify(String(s ?? "")); // safe JS string literal
 
-function buildPostTsx(post, slug, today) {
+// The English content map (C.en) for a post — the single source both buildPostTsx and the
+// translator use, so the .i18n.ts keys always match C.en exactly.
+function contentMap(post) {
   const C = {
     metaTitle: post.metaTitle, metaDesc: post.metaDesc,
     ogTitle: post.ogTitle, ogDesc: post.ogDesc, ogAlt: post.ogAlt,
@@ -225,7 +291,12 @@ function buildPostTsx(post, slug, today) {
     C[`fv${i + 1}q`] = f.q;
     C[`fv${i + 1}a`] = f.a;
   });
+  return C;
+}
 
+function buildPostTsx(post, slug, today) {
+  const C = contentMap(post);
+  const sections = (post.sections || []).slice(0, 6);
   const cEntries = Object.entries(C).map(([k, v]) => `    ${k}: ${q(v)},`).join("\n");
 
   const sectionJsx = sections.map((s, i) => {
@@ -447,12 +518,16 @@ Object.assign(C, TRANSLATIONS)
 `;
 }
 
-function buildPostI18n(slug) {
+// translations: { uk: {key:val,...}, de: {...}, ... } — populated maps mirroring C.en.
+function buildPostI18n(slug, translations) {
+  const body = translations && Object.keys(translations).length
+    ? JSON.stringify(translations, null, 2)
+    : "{}";
   return `import type { AppLocale } from '../../../../i18n/config'
 
 // Translated string maps for ${slug}. Keys mirror C.en in ./${slug}.tsx.
-// Empty for now — every locale falls back to the English source per-key until filled in.
-export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {}
+// Machine-translated at generation time; missing keys fall back to English per-key.
+export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = ${body}
 `;
 }
 
@@ -484,6 +559,53 @@ function buildIndexCard(post, slug) {
             </Link>`;
 }
 
+// ─── Quality gate ─────────────────────────────────────────────────────────────
+function wordCount(p) {
+  let w = 0;
+  const add = (s) => { if (s) w += String(s).trim().split(/\s+/).filter(Boolean).length; };
+  add(p.intro1); add(p.intro2);
+  (p.sections || []).forEach((s) => { add(s.h); add(s.p1); add(s.p2); (s.list || []).forEach(add); });
+  (p.faq || []).forEach((f) => { add(f.q); add(f.a); });
+  return w;
+}
+
+// Returns a rejection reason, or "" if the post is publishable. The .tsx/schema map over
+// EXACTLY 6 sections + 6 FAQ, so anything short would render undefined — reject it.
+function qualityIssue(p) {
+  if (!p || typeof p !== "object") return "not an object";
+  for (const k of ["slug", "cardTitle", "cardDesc", "metaTitle", "metaDesc", "heroTitle", "heroSubtitle", "intro1", "intro2"]) {
+    if (!p[k] || !String(p[k]).trim()) return `missing ${k}`;
+  }
+  const secs = Array.isArray(p.sections) ? p.sections : [];
+  if (secs.length < 6) return `only ${secs.length} sections (need 6)`;
+  if (secs.slice(0, 6).some((s) => !s || !s.h || !s.p1)) return "a section is missing its heading or lead";
+  const faq = Array.isArray(p.faq) ? p.faq : [];
+  if (faq.length < 6) return `only ${faq.length} FAQ (need 6)`;
+  if (faq.slice(0, 6).some((f) => !f || !f.q || !f.a)) return "an FAQ is missing its question or answer";
+  const w = wordCount(p);
+  if (w < 700) return `too thin (~${w} words)`;
+  return "";
+}
+
+// A canned, valid post for `--mock` runs (tests the write/translate/wire/build path, no API).
+function mockPost(existingSlugs) {
+  let slug = "how-to-mock-test-a-pdf-online", i = 1;
+  while (existingSlugs.includes(slug)) slug = `how-to-mock-test-a-pdf-online-${i++}`;
+  const sec = (h) => ({ h, p1: "Lead paragraph explaining the topic in several sentences for testing purposes only, written to be long enough that the quality gate word count is comfortably satisfied when the mock post is validated during a local wiring test of the blog generator pipeline.", list: ["First test step or point here for the mock", "Second test step or point here for the mock", "Third test step or point here for the mock"], p2: "Closing paragraph for this section, a few sentences long so the mock post has realistic body length, rounding out the section during testing without ever calling the translation or generation API." });
+  return {
+    slug, icon: "Layers", category1: "catGuide", category2: "catPdfTools",
+    cardTitle: "Mock Test Post Title", cardDesc: "A mock blog-index card description used only for local wiring tests.",
+    metaTitle: "Mock Test Post: Local Wiring Check", metaDesc: "A mock meta description that is roughly the right length for exercising the blog generator wiring and the production build.",
+    ogTitle: "Mock Test Post", ogDesc: "Mock OG description.", ogAlt: "Mock OG alt", twTitle: "Mock Test Post", twDesc: "Mock Twitter description.",
+    heroAlt: "Mock hero alt text", bcLeaf: "Mock Test", heroTitle: "Mock Test Post: A Local Wiring Test", heroSubtitle: "This is a mock hero subtitle used only when running the generator with --mock.",
+    artHeadline: "Mock Test Post", artDesc: "Mock article description.",
+    intro1: "This is the first intro paragraph of the mock post, present only so the generator has realistic content to write and wire during local testing without calling the API at all.",
+    intro2: "This is the second intro paragraph, adding a little more length so the word-count quality gate comfortably passes during the mock test run.",
+    sections: ["What This Is", "Why It Matters", "How It Works", "Step by Step", "Tips", "Limitations"].map(sec),
+    faq: [1, 2, 3, 4, 5, 6].map((n) => ({ q: `Mock question number ${n}?`, a: `Mock answer number ${n}, a sentence or two long so the FAQ has real content for testing.` })),
+  };
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   let registrySrc = await readFile(REGISTRY_TS, "utf8");
@@ -508,37 +630,59 @@ async function main() {
   ];
 
   console.log(`→ Generating ${COUNT} new English post(s) with ${MODEL}…`);
-  const generated = await claudePosts(generationPrompt(samples, existingSlugs));
+  const generated = MOCK ? [mockPost(existingSlugs)] : await claudePosts(generationPrompt(samples, existingSlugs));
 
   const today = new Date().toISOString().slice(0, 10);
   const seen = new Set(existingSlugs);
   const newPosts = [];
   for (const p of Array.isArray(generated) ? generated : [generated]) {
-    if (!p || !p.slug || !Array.isArray(p.sections) || !Array.isArray(p.faq)) {
-      console.warn("  ⚠ skipping malformed post", p?.slug);
-      continue;
-    }
+    const reason = qualityIssue(p);
+    if (reason) { console.warn(`  ⚠ rejected post "${p?.slug}": ${reason}`); continue; }
     const slug = String(p.slug).trim().toLowerCase().replace(/[^a-z0-9-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
     if (!slug || seen.has(slug)) { console.warn(`  ⚠ duplicate/empty slug "${slug}" — skipping`); continue; }
     if (!ICONS.includes(p.icon)) p.icon = "Layers";
     if (!CATEGORIES.includes(p.category1)) p.category1 = "catGuide";
     if (!CATEGORIES.includes(p.category2) || p.category2 === p.category1) p.category2 = "catPdfTools";
+    // Defensive: the [locale] layout title.template already appends " | EditoraPDF".
+    // Strip any brand suffix the model added so the rendered <title> isn't doubled.
+    p.metaTitle = String(p.metaTitle || "").replace(/\s*[|–—-]\s*(Blog\s+(?:de|di)?\s*)?Editora\s?PDF\s*$/i, "").trim();
     seen.add(slug);
     newPosts.push({ ...p, slug });
   }
-  if (!newPosts.length) throw new Error("Model returned no usable new posts");
-  console.log(`  ✓ ${newPosts.length} post(s): ${newPosts.map((p) => p.slug).join(", ")}`);
+  if (!newPosts.length) throw new Error("No posts passed the quality gate");
+  console.log(`  ✓ ${newPosts.length} post(s): ${newPosts.map((p) => `${p.slug} (~${wordCount(p)}w)`).join(", ")}`);
+
+  // Translate each post's content map (+ its card text) into the 5 non-English locales.
+  // enC → { uk: {...}, de: {...}, ... }; card text is carried on the __cardTitle/__cardDesc keys.
+  const postTr = new Map();   // slug → { locale → C-map }
+  const cardTr = new Map();   // slug → { locale → { <ident>CardTitle, <ident>CardDesc } }
+  for (const p of newPosts) {
+    const ident = slugToIdent(p.slug);
+    const enC = { ...contentMap(p), __cardTitle: p.cardTitle, __cardDesc: p.cardDesc };
+    const perLocale = {}, perCard = {};
+    if (!NO_TRANSLATE) {
+      for (const loc of LOCALES) {
+        const t = await claudeTranslate(enC, loc.name);
+        const { __cardTitle, __cardDesc, ...cKeys } = t;
+        perLocale[loc.code] = cKeys;
+        perCard[loc.code] = { [`${ident}CardTitle`]: __cardTitle, [`${ident}CardDesc`]: __cardDesc };
+      }
+      console.log(`  ✓ translated ${p.slug} → ${LOCALES.map((l) => l.code).join("/")}`);
+    }
+    postTr.set(p.slug, perLocale);
+    cardTr.set(p.slug, perCard);
+  }
 
   if (NO_WRITE) {
     console.log("\n--no-write: nothing written. Generated posts:\n");
-    console.log(JSON.stringify(newPosts.map((p) => ({ slug: p.slug, title: p.heroTitle })), null, 2));
+    console.log(JSON.stringify(newPosts.map((p) => ({ slug: p.slug, title: p.heroTitle, words: wordCount(p) })), null, 2));
     return;
   }
 
-  // 1) Write the .tsx + .i18n.ts post modules.
+  // 1) Write the .tsx + populated .i18n.ts post modules.
   for (const p of newPosts) {
     await writeFile(path.join(POSTS_DIR, `${p.slug}.tsx`), buildPostTsx(p, p.slug, today));
-    await writeFile(path.join(POSTS_DIR, `${p.slug}.i18n.ts`), buildPostI18n(p.slug));
+    await writeFile(path.join(POSTS_DIR, `${p.slug}.i18n.ts`), buildPostI18n(p.slug, postTr.get(p.slug)));
     console.log(`  ✓ wrote app/data/blog/posts/${p.slug}.{tsx,i18n.ts}`);
   }
 
@@ -596,7 +740,40 @@ async function main() {
     console.log(`  ✓ added ${newPosts.length} card(s) to BlogIndex.tsx`);
   }
 
-  console.log("\n✅ Done. New posts render at /<locale>/blog/<slug> and appear in the sitemap.");
+  // 5) indexContent.ts — localized blog-index card title/desc for the 5 non-en locales
+  //    (so the cards aren't English on /uk/blog, /de/blog, …).
+  if (!NO_TRANSLATE) {
+    let src = await readFile(INDEX_CONTENT_TS, "utf8");
+    for (const loc of LOCALES) {
+      const lines = newPosts.flatMap((p) =>
+        Object.entries(cardTr.get(p.slug)?.[loc.code] || {}).map(([k, v]) => `    ${q(k)}: ${q(v)},`)
+      );
+      if (!lines.length) continue;
+      const anchor = src.indexOf(`"${loc.code}": {`);
+      if (anchor < 0) { console.warn(`  ⚠ indexContent.ts: no "${loc.code}" block`); continue; }
+      const lineEnd = src.indexOf("\n", anchor); // end of the `"uk": {` line
+      src = src.slice(0, lineEnd + 1) + lines.join("\n") + "\n" + src.slice(lineEnd + 1);
+    }
+    await writeFile(INDEX_CONTENT_TS, src);
+    console.log(`  ✓ added localized card text to indexContent.ts`);
+  }
+
+  // 6) searchIndex.ts — a BLOG_POSTS entry so RelatedArticles/tool cross-links + blog
+  //    search surface the post (tags come from the two chosen category labels).
+  {
+    let src = await readFile(SEARCH_INDEX_TS, "utf8");
+    const anchor = src.indexOf("export const BLOG_POSTS: BlogPost[] = [");
+    const lineEnd = src.indexOf("\n", anchor);
+    const entries = newPosts.map((p) => {
+      const tags = [CAT_LABEL[p.category1] || "Guide", CAT_LABEL[p.category2] || "PDF Tools"];
+      return `  {\n    slug: ${q(p.slug)},\n    title: ${q(p.cardTitle)},\n    description: ${q(p.cardDesc)},\n    tags: [${tags.map(q).join(", ")}],\n  },`;
+    }).join("\n");
+    src = src.slice(0, lineEnd + 1) + entries + "\n" + src.slice(lineEnd + 1);
+    await writeFile(SEARCH_INDEX_TS, src);
+    console.log(`  ✓ added ${newPosts.length} entry(ies) to searchIndex.ts`);
+  }
+
+  console.log("\n✅ Done. New posts render localized at /<locale>/blog/<slug> and are in the sitemap.");
 }
 
 main().catch((err) => {

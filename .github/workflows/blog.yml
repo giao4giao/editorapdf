@@ -2,10 +2,12 @@ name: Daily Blog
 
 # Generates brand-new blog posts with the Claude API (matching the existing posts'
 # style + on-page SEO) and wires each one into THIS repo's TSX blog system:
-#   • app/data/blog/posts/<slug>.tsx + <slug>.i18n.ts   (the post module)
+#   • app/data/blog/posts/<slug>.tsx + <slug>.i18n.ts   (the post module + translations)
 #   • app/data/blog/registry.ts                          (so the [slug] route renders it)
 #   • app/data/blog/migrated.ts                          (so it lands in the sitemap)
 #   • app/components/BlogIndex.tsx                        (the blog-index card)
+#   • app/data/blog/indexContent.ts                      (localized blog-index card text)
+#   • app/data/searchIndex.ts                            (related-articles + search)
 # then commits those changed files to main. That push triggers the Vercel production
 # deploy.
 #
@@ -13,12 +15,11 @@ name: Daily Blog
 # per ISO week, so posts are generated only ~twice a week. A manual "Run workflow"
 # always generates, regardless of the day.
 #
-# IndexNow: this repo has NO scripts/indexnow.mjs. The existing .github/workflows/
-# indexnow.yml runs on `deployment_status` (Vercel production deploys) and submits the
-# changed URLs — that path DOES fire for the Vercel deploy this push creates, so we do
-# not need to ping IndexNow from here. As a belt-and-braces fallback we also submit the
-# new post URLs directly via the repo's existing scripts/submit-indexnow.js after the
-# deploy has had time to go live.
+# IndexNow: the existing .github/workflows/indexnow.yml runs on `deployment_status`
+# (Vercel production deploys) and submits ONLY the changed URLs per deploy — that path
+# fires for the Vercel deploy this push creates, so we do NOT ping IndexNow from here.
+# (An earlier fallback step here re-submitted the whole sitemap after every run; Bing
+# flagged that as batch mode, so it was removed in favour of the streaming indexnow.yml.)
 
 on:
   schedule:
@@ -72,22 +73,17 @@ jobs:
             exit 0
           fi
           DATE=$(date -u +%Y-%m-%d)
-          # Commit ONLY the files the generator touches (posts + the four wiring files).
+          # Commit ONLY the files the generator touches (posts + the six wiring files).
           git add \
             app/data/blog/posts/ \
             app/data/blog/registry.ts \
             app/data/blog/migrated.ts \
-            app/components/BlogIndex.tsx
+            app/components/BlogIndex.tsx \
+            app/data/blog/indexContent.ts \
+            app/data/searchIndex.ts
           git commit -m "blog: add daily posts ($DATE)"
           git push
           echo "pushed=true" >> "$GITHUB_OUTPUT"
 
-      # A push made with GITHUB_TOKEN does NOT trigger indexnow.yml's `deployment_status`
-      # event directly — but the Vercel deploy this push creates DOES fire indexnow.yml.
-      # This step is a belt-and-braces direct submission: wait for the deploy to go live,
-      # then submit the whole (updated) sitemap via the repo's existing IndexNow script.
-      - name: Ping IndexNow (fallback)
-        if: steps.commit.outputs.pushed == 'true'
-        run: |
-          sleep 120
-          node scripts/submit-indexnow.js
+      # IndexNow is handled by indexnow.yml on the Vercel `deployment_status` this push
+      # triggers — it streams only the changed URLs. No batch submission from here.
