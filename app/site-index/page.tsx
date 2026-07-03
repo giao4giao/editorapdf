@@ -14,7 +14,7 @@ const pageUrl = `${siteUrl}/site-index`;
 const defaultLocale = 'en';
 
 export const metadata: Metadata = {
-  title: 'Site Index — All Pages, Tools and Articles | EditoraPDF',
+  title: 'Site Index — All Pages, Tools and Articles',
   description:
     'Complete index of EditoraPDF: every PDF tool, blog article and main page in one place. A simple, browsable map of the site.',
   alternates: {

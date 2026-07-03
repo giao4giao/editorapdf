@@ -44,7 +44,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // + reciprocal hreflang here (its per-locale entries live in blogUrls below).
   const localizedMainPages = [
     { path: '',               priority: 0.95, freq: 'weekly'  as const },
-    { path: '/edit',          priority: 0.9,  freq: 'weekly'  as const },
+    // NOTE: /edit is intentionally NOT here — the editor is an interactive app shell with
+    // no indexable content (soft 404 in GSC) and is noindex'd in app/[locale]/edit/page.tsx.
     { path: '/tools',         priority: 0.9,  freq: 'weekly'  as const },
     { path: '/how-it-works',  priority: 0.8,  freq: 'monthly' as const },
     { path: '/about',         priority: 0.75, freq: 'monthly' as const },
