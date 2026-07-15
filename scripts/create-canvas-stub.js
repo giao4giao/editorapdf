@@ -2,24 +2,25 @@
 /**
  * postinstall: fixes for @opennextjs/cloudflare Cloudflare Worker bundling.
  *
- * Problem 1 — pdfjs-dist requires "canvas"
+ * Fix 1 — pdfjs-dist requires "canvas"
  *   pdfjs-dist/build/pdf.js line 6247: `const Canvas = require("canvas")`
  *   "canvas" is a heavy native Node.js addon that is never installed in this
- *   project (all PDF rendering happens in the browser). esbuild fails at
- *   bundle-time when it cannot resolve the module.
+ *   project.
  *   Fix: create an empty stub at node_modules/canvas so esbuild can resolve it.
  *
- * Problem 2 — Worker bundle too large (26 MB → exceeds 3/10 MiB limits)
- *   next.config.js marks pdfjs-dist, tesseract.js, pdf-lib, etc. as webpack
- *   server-side externals, which generates `require('pdfjs-dist')` calls in the
- *   Next.js server output. When @opennextjs/cloudflare's bundle-server.js step
- *   runs esbuild on that output, esbuild follows those require() calls and bundles
- *   the entire libraries (~25 MB combined) into the Worker.
- *   Fix: patch bundle-server.js to add esbuild `alias` entries that redirect all
- *   heavy client-only packages to an empty stub (stubs/client-only-stub.js),
- *   exactly as OpenNext does for `ws`, `node-fetch`, etc.
+ * Fix 2 — Exclude client-only libraries (~25 MB)
+ *   next.config.js marks heavy libraries (pdfjs-dist, tesseract.js, pdf-lib, docx, xlsx, etc.)
+ *   as webpack externals.
+ *   Fix: patch bundle-server.js to add esbuild `alias` entries that redirect these packages
+ *   to stubs/client-only-stub.js.
  *
- * Both fixes are idempotent and re-apply automatically after every npm install.
+ * Fix 3 — Exclude static page routes (~10 MB)
+ *   Next.js compiles blog/[slug]/page.js and tools/[toolId]/page.js. Although these pages
+ *   are 100% static and served directly by Cloudflare Assets, Next.js copies them to standalone
+ *   server files, and OpenNext/esbuild bundles their code (which imports all blog posts and tools)
+ *   into the Worker.
+ *   Fix: patch bundle-server.js to add an esbuild plugin that redirects these page files to
+ *   stubs/client-only-stub.js during resolution.
  */
 
 'use strict';
@@ -68,11 +69,8 @@ function ensureCanvasStub() {
 }
 
 // ---------------------------------------------------------------------------
-// Fix 2: patch bundle-server.js to alias heavy packages to empty stub
+// Fix 2 & 3: patch bundle-server.js
 // ---------------------------------------------------------------------------
-
-// Packages that are client-only and must NOT be bundled into the Worker.
-// These match the list in next.config.js webpack externals.
 const CLIENT_ONLY_PACKAGES = [
   'pdfjs-dist',
   'tesseract.js',
@@ -89,11 +87,11 @@ const CLIENT_ONLY_PACKAGES = [
   'sharp',
 ];
 
-// Marker inserted into the patched file so the patch is not applied twice.
-const PATCH_MARKER = '// [client-only-alias-patch-v1]';
+const ALIAS_PATCH_MARKER = '// [client-only-alias-patch-v1]';
+const PLUGIN_PATCH_MARKER = '// [client-only-plugin-patch-v2]';
 
-// Exact string to anchor the insertion point (last entry in the alias block).
-const ANCHOR = '"@next/env": path.join(buildOpts.outputDir, "cloudflare-templates/shims/env.js"),';
+const ALIAS_ANCHOR = '"@next/env": path.join(buildOpts.outputDir, "cloudflare-templates/shims/env.js"),';
+const PLUGIN_ANCHOR = 'plugins: [';
 
 function patchBundleServer() {
   const bundleServerPath = path.join(
@@ -103,43 +101,70 @@ function patchBundleServer() {
   );
 
   if (!fs.existsSync(bundleServerPath)) {
-    console.warn('[postinstall] bundle-server.js not found, skipping alias patch');
+    console.warn('[postinstall] bundle-server.js not found, skipping patch');
     return;
   }
 
-  const original = fs.readFileSync(bundleServerPath, 'utf8');
+  let code = fs.readFileSync(bundleServerPath, 'utf8');
+  let dirty = false;
 
-  if (original.includes(PATCH_MARKER)) {
-    console.log('[postinstall] bundle-server.js already patched, skipping');
-    return;
+  // Apply Alias Patch
+  if (!code.includes(ALIAS_PATCH_MARKER)) {
+    if (code.includes(ALIAS_ANCHOR)) {
+      const stubRelPath = 'stubs/client-only-stub.js';
+      const aliasLines = CLIENT_ONLY_PACKAGES
+        .map(pkg => `            "${pkg}": path.join(appPath, "${stubRelPath}"),`)
+        .join('\n');
+
+      const insertion =
+        `${ALIAS_ANCHOR}\n` +
+        `            ${ALIAS_PATCH_MARKER}\n` +
+        `            // Heavy client-only packages — replaced with empty stubs so esbuild\n` +
+        `            // does not bundle them (~25 MB) into the Cloudflare Worker.\n` +
+        aliasLines;
+
+      code = code.replace(ALIAS_ANCHOR, insertion);
+      dirty = true;
+      console.log('[postinstall] Patched bundle-server.js: added client-only package aliases');
+    } else {
+      console.warn('[postinstall] Could not find alias anchor in bundle-server.js');
+    }
   }
 
-  if (!original.includes(ANCHOR)) {
-    console.warn('[postinstall] Could not find anchor in bundle-server.js — @opennextjs/cloudflare may have changed. Skipping alias patch.');
-    return;
+  // Apply Plugin Patch (to exclude static page routes)
+  if (!code.includes(PLUGIN_PATCH_MARKER)) {
+    if (code.includes(PLUGIN_ANCHOR)) {
+      const pluginCode =
+        `${PLUGIN_ANCHOR}\n` +
+        `            ${PLUGIN_PATCH_MARKER}\n` +
+        `            // Intercept and redirect static page entrypoints to empty stubs\n` +
+        `            // so esbuild does not bundle their code (~10 MB) into the Worker.\n` +
+        `            {\n` +
+        `                name: "exclude-static-pages",\n` +
+        `                setup(build) {\n` +
+        `                    build.onResolve({ filter: /blog.\\[slug\\].page\\.js$|tools.\\[toolId\\].page\\.js$/ }, () => {\n` +
+        `                        return { path: path.join(buildOpts.appPath, "stubs/client-only-stub.js") };\n` +
+        `                    });\n` +
+        `                }\n` +
+        `            },`;
+
+      code = code.replace(PLUGIN_ANCHOR, pluginCode);
+      dirty = true;
+      console.log('[postinstall] Patched bundle-server.js: added static page exclusion plugin');
+    } else {
+      console.warn('[postinstall] Could not find plugin anchor in bundle-server.js');
+    }
   }
 
-  // Build the alias entries using the same `appPath` variable that bundle-server.js
-  // already has in scope (from `const { appPath, ... } = buildOpts`).
-  const stubRelPath = 'stubs/client-only-stub.js';
-  const aliasLines = CLIENT_ONLY_PACKAGES
-    .map(pkg => `            "${pkg}": path.join(appPath, "${stubRelPath}"),`)
-    .join('\n');
-
-  const insertion =
-    `${ANCHOR}\n` +
-    `            ${PATCH_MARKER}\n` +
-    `            // Heavy client-only packages — replaced with empty stubs so esbuild\n` +
-    `            // does not bundle them (~25 MB) into the Cloudflare Worker.\n` +
-    aliasLines;
-
-  const patched = original.replace(ANCHOR, insertion);
-  fs.writeFileSync(bundleServerPath, patched);
-  console.log('[postinstall] Patched bundle-server.js: added client-only package aliases');
+  if (dirty) {
+    fs.writeFileSync(bundleServerPath, code);
+  } else {
+    console.log('[postinstall] bundle-server.js already fully patched');
+  }
 }
 
 // ---------------------------------------------------------------------------
-// Run both fixes
+// Run
 // ---------------------------------------------------------------------------
 try {
   ensureCanvasStub();
@@ -152,4 +177,3 @@ try {
 } catch (err) {
   console.error('[postinstall] bundle-server patch failed:', err.message);
 }
-
