@@ -11,6 +11,6 @@
     "binding": "ASSETS"
   },
   "build": {
-    "command": "npm run build:worker"
+    "command": "npm run build"
   }
 }

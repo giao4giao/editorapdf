@@ -19,6 +19,7 @@ const CSP_REPORT_ONLY = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   // SEO & Performance optimizations
   compress: true, // Enable gzip compression
   
