@@ -32,29 +32,6 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true, // Use SWC for faster minification
   
-  // Exclude heavy client-only packages from the server-side bundle.
-  // These libraries (PDF rendering, OCR, document generation) are only used
-  // in browser 'use client' components and must NOT be bundled into the
-  // Cloudflare Worker — they would inflate it from ~2 MB to ~24 MB otherwise.
-  outputFileTracingExcludes: {
-    '*': [
-      'node_modules/pdfjs-dist/**',
-      'node_modules/tesseract.js/**',
-      'node_modules/tesseract.js-core/**',
-      'node_modules/pdf-lib/**',
-      'node_modules/pptxgenjs/**',
-      'node_modules/exceljs/**',
-      'node_modules/mammoth/**',
-      'node_modules/docx/**',
-      'node_modules/jszip/**',
-      'node_modules/xlsx/**',
-      'node_modules/jsbarcode/**',
-      'node_modules/qrcode/**',
-      'node_modules/sharp/**',
-      'node_modules/@img/**',
-    ],
-  },
-
   // Experimental features for better performance
   experimental: {
     // Tree-shake barrel imports for icon-heavy packages so only the icons actually
@@ -67,6 +44,28 @@ const nextConfig = {
     // It breaks `next export` if `critters` isn't installed, especially on /404 and /500 prerender.
     // Keep disabled unless you explicitly add `critters` to dependencies.
     optimizeCss: false,
+    // IMPORTANT: In Next.js 14, outputFileTracingExcludes is inside `experimental`.
+    // Placing it at the top level silently does nothing.
+    // Exclude heavy client-only packages so they are NOT copied into .next/standalone
+    // (and therefore not bundled into the Cloudflare Worker, avoiding the 24 MB size issue).
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/pdfjs-dist/**',
+        'node_modules/tesseract.js/**',
+        'node_modules/tesseract.js-core/**',
+        'node_modules/pdf-lib/**',
+        'node_modules/pptxgenjs/**',
+        'node_modules/exceljs/**',
+        'node_modules/mammoth/**',
+        'node_modules/docx/**',
+        'node_modules/jszip/**',
+        'node_modules/xlsx/**',
+        'node_modules/jsbarcode/**',
+        'node_modules/qrcode/**',
+        'node_modules/sharp/**',
+        'node_modules/@img/**',
+      ],
+    },
   },
   
   // Compiler optimizations
