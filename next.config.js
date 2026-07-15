@@ -66,6 +66,26 @@ const nextConfig = {
         'node_modules/@img/**',
       ],
     },
+    // Mark heavy client-only packages as external so Next.js (and therefore
+    // the OpenNext/esbuild re-bundling step) never inlines them into the
+    // server bundle. pdfjs-dist has a Node.js code path that require("canvas"),
+    // which esbuild cannot resolve in the Cloudflare Worker environment.
+    serverComponentsExternalPackages: [
+      'pdfjs-dist',
+      'canvas',
+      'tesseract.js',
+      'tesseract.js-core',
+      'pdf-lib',
+      'pptxgenjs',
+      'exceljs',
+      'mammoth',
+      'docx',
+      'jszip',
+      'xlsx',
+      'jsbarcode',
+      'qrcode',
+      'sharp',
+    ],
   },
   
   // Compiler optimizations
