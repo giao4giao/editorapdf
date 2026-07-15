@@ -11,7 +11,8 @@
     "submit-indexnow": "node scripts/submit-indexnow.js",
     "generate-favicons": "node scripts/generate-favicons.js",
     "build:worker": "npm run build",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "postinstall": "node scripts/create-canvas-stub.js"
   },
   "dependencies": {
     "docx": "^8.5.0",
