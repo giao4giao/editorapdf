@@ -32,6 +32,29 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true, // Use SWC for faster minification
   
+  // Exclude heavy client-only packages from the server-side bundle.
+  // These libraries (PDF rendering, OCR, document generation) are only used
+  // in browser 'use client' components and must NOT be bundled into the
+  // Cloudflare Worker — they would inflate it from ~2 MB to ~24 MB otherwise.
+  outputFileTracingExcludes: {
+    '*': [
+      'node_modules/pdfjs-dist/**',
+      'node_modules/tesseract.js/**',
+      'node_modules/tesseract.js-core/**',
+      'node_modules/pdf-lib/**',
+      'node_modules/pptxgenjs/**',
+      'node_modules/exceljs/**',
+      'node_modules/mammoth/**',
+      'node_modules/docx/**',
+      'node_modules/jszip/**',
+      'node_modules/xlsx/**',
+      'node_modules/jsbarcode/**',
+      'node_modules/qrcode/**',
+      'node_modules/sharp/**',
+      'node_modules/@img/**',
+    ],
+  },
+
   // Experimental features for better performance
   experimental: {
     // Tree-shake barrel imports for icon-heavy packages so only the icons actually
@@ -139,6 +162,36 @@ const nextConfig = {
         'emitter': false,
         'batch': false,
       };
+    }
+
+    // Mark heavy client-only PDF/document libraries as externals on the server.
+    // These packages are never executed server-side; marking them external prevents
+    // them from being pulled into the Cloudflare Worker bundle (~24 MB → <3 MB).
+    if (isServer) {
+      const clientOnlyPackages = [
+        'pdfjs-dist',
+        'tesseract.js',
+        'pdf-lib',
+        'pptxgenjs',
+        'exceljs',
+        'mammoth',
+        'docx',
+        'jszip',
+        'xlsx',
+        'jsbarcode',
+        'qrcode',
+        'sharp',
+      ];
+      const existingExternals = config.externals || [];
+      config.externals = [
+        ...(Array.isArray(existingExternals) ? existingExternals : [existingExternals]),
+        ({ request }, callback) => {
+          if (clientOnlyPackages.some(pkg => request === pkg || request.startsWith(`${pkg}/`))) {
+            return callback(null, `commonjs ${request}`);
+          }
+          callback();
+        },
+      ];
     }
     
     return config;
