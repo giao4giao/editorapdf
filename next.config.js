@@ -43,6 +43,22 @@ const nextConfig = {
     // It breaks `next export` if `critters` isn't installed, especially on /404 and /500 prerender.
     // Keep disabled unless you explicitly add `critters` to dependencies.
     optimizeCss: false,
+    // Exclude heavy client-only PDF/document libraries from the server/edge bundle.
+    // These libraries contain Node.js-specific code (e.g. require("buffer")) that
+    // cannot be resolved in the Cloudflare Edge runtime by esbuild.
+    // All PDF operations happen exclusively in the browser — these are safe to exclude server-side.
+    serverComponentsExternalPackages: [
+      'pdfjs-dist',
+      'pdf-lib',
+      'tesseract.js',
+      'mammoth',
+      'exceljs',
+      'pptxgenjs',
+      'jszip',
+      'xlsx',
+      'docx',
+      'canvas',
+    ],
   },
   
   // Compiler optimizations
@@ -130,10 +146,6 @@ const nextConfig = {
   webpack: (config, { isServer }) => {
     // Fix for pdfjs-dist worker in Next.js
     config.resolve.alias.canvas = false;
-    
-    if (isServer) {
-      config.resolve.alias.buffer = false;
-    }
     
     // Ignore problematic modules that aren't used
     if (!isServer) {

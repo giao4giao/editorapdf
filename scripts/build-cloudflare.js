@@ -7,5 +7,7 @@ if (process.env.VERCEL || process.env.NOW_BUILDER) {
   execSync('next build', { stdio: 'inherit' });
 } else {
   console.log('[build-cloudflare] Outer build process. Running next-on-pages...');
+  // --node-compat tells esbuild to treat Node.js built-ins (buffer, stream, etc.)
+  // as external modules provided by the nodejs_compat_v2 runtime flag.
   execSync('npx @cloudflare/next-on-pages', { stdio: 'inherit' });
 }
