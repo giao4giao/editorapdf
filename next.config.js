@@ -32,7 +32,6 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true, // Use SWC for faster minification
   
-  // Experimental features for better performance
   experimental: {
     // Tree-shake barrel imports for icon-heavy packages so only the icons actually
     // used are bundled (lucide-react is imported in ~34 files). This is a per-package
@@ -44,48 +43,6 @@ const nextConfig = {
     // It breaks `next export` if `critters` isn't installed, especially on /404 and /500 prerender.
     // Keep disabled unless you explicitly add `critters` to dependencies.
     optimizeCss: false,
-    // IMPORTANT: In Next.js 14, outputFileTracingExcludes is inside `experimental`.
-    // Placing it at the top level silently does nothing.
-    // Exclude heavy client-only packages so they are NOT copied into .next/standalone
-    // (and therefore not bundled into the Cloudflare Worker, avoiding the 24 MB size issue).
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/pdfjs-dist/**',
-        'node_modules/tesseract.js/**',
-        'node_modules/tesseract.js-core/**',
-        'node_modules/pdf-lib/**',
-        'node_modules/pptxgenjs/**',
-        'node_modules/exceljs/**',
-        'node_modules/mammoth/**',
-        'node_modules/docx/**',
-        'node_modules/jszip/**',
-        'node_modules/xlsx/**',
-        'node_modules/jsbarcode/**',
-        'node_modules/qrcode/**',
-        'node_modules/sharp/**',
-        'node_modules/@img/**',
-      ],
-    },
-    // Mark heavy client-only packages as external so Next.js (and therefore
-    // the OpenNext/esbuild re-bundling step) never inlines them into the
-    // server bundle. pdfjs-dist has a Node.js code path that require("canvas"),
-    // which esbuild cannot resolve in the Cloudflare Worker environment.
-    serverComponentsExternalPackages: [
-      'pdfjs-dist',
-      'canvas',
-      'tesseract.js',
-      'tesseract.js-core',
-      'pdf-lib',
-      'pptxgenjs',
-      'exceljs',
-      'mammoth',
-      'docx',
-      'jszip',
-      'xlsx',
-      'jsbarcode',
-      'qrcode',
-      'sharp',
-    ],
   },
   
   // Compiler optimizations
@@ -181,36 +138,6 @@ const nextConfig = {
         'emitter': false,
         'batch': false,
       };
-    }
-
-    // Mark heavy client-only PDF/document libraries as externals on the server.
-    // These packages are never executed server-side; marking them external prevents
-    // them from being pulled into the Cloudflare Worker bundle (~24 MB → <3 MB).
-    if (isServer) {
-      const clientOnlyPackages = [
-        'pdfjs-dist',
-        'tesseract.js',
-        'pdf-lib',
-        'pptxgenjs',
-        'exceljs',
-        'mammoth',
-        'docx',
-        'jszip',
-        'xlsx',
-        'jsbarcode',
-        'qrcode',
-        'sharp',
-      ];
-      const existingExternals = config.externals || [];
-      config.externals = [
-        ...(Array.isArray(existingExternals) ? existingExternals : [existingExternals]),
-        ({ request }, callback) => {
-          if (clientOnlyPackages.some(pkg => request === pkg || request.startsWith(`${pkg}/`))) {
-            return callback(null, `commonjs ${request}`);
-          }
-          callback();
-        },
-      ];
     }
     
     return config;
