@@ -4,14 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "pages:build": "next-on-pages",
+    "build": "node scripts/build-cloudflare.js",
     "start": "next start",
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
     "submit-indexnow": "node scripts/submit-indexnow.js",
     "generate-favicons": "node scripts/generate-favicons.js",
-    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
+    "deploy": "npm run build && wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
     "docx": "^8.5.0",
