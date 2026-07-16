@@ -43,22 +43,11 @@ const nextConfig = {
     // It breaks `next export` if `critters` isn't installed, especially on /404 and /500 prerender.
     // Keep disabled unless you explicitly add `critters` to dependencies.
     optimizeCss: false,
-    // Exclude heavy client-only PDF/document libraries from the server/edge bundle.
-    // These libraries contain Node.js-specific code (e.g. require("buffer")) that
-    // cannot be resolved in the Cloudflare Edge runtime by esbuild.
-    // All PDF operations happen exclusively in the browser — these are safe to exclude server-side.
-    serverComponentsExternalPackages: [
-      'pdfjs-dist',
-      'pdf-lib',
-      'tesseract.js',
-      'mammoth',
-      'exceljs',
-      'pptxgenjs',
-      'jszip',
-      'xlsx',
-      'docx',
-      'canvas',
-    ],
+    // IMPORTANT: Do NOT add serverComponentsExternalPackages for pdfjs-dist or pdf-lib.
+    // Marking them as external causes webpack to emit require('pdfjs-dist') in the edge
+    // function output, which esbuild then tries to bundle fresh from node_modules —
+    // bringing require("buffer") back in. Instead, we alias pdfjs-dist to an empty stub
+    // in the server webpack config below, so esbuild never encounters it.
   },
   
   // Compiler optimizations
@@ -144,18 +133,40 @@ const nextConfig = {
   },
   
   webpack: (config, { isServer }) => {
-    // Fix for pdfjs-dist worker in Next.js
+    // Fix for pdfjs-dist canvas dependency (browser builds)
     config.resolve.alias.canvas = false;
-    
-    // Ignore problematic modules that aren't used
-    if (!isServer) {
+
+    if (isServer) {
+      // On the server/edge compilation, replace pdfjs-dist with an empty stub.
+      //
+      // WHY: pdfjs-dist is a browser-only library (all PDF operations run in the
+      // browser). It should never execute server-side. However, because
+      // pdfjsLoader.ts uses a dynamic import('pdfjs-dist'), Next.js includes it in
+      // the edge function bundle for any route that transitively imports that module.
+      // pdfjs-dist contains require("buffer") which esbuild (used by
+      // @cloudflare/next-on-pages) cannot resolve in the browser-platform mode.
+      //
+      // Solution: alias pdfjs-dist -> empty stub on the server/edge webpack pass.
+      // webpack inlines {} instead of the 300 kB pdfjs bundle, so esbuild never
+      // sees require("buffer"). Client builds are unaffected.
+      //
+      // NOTE: Do NOT use serverComponentsExternalPackages for this — that makes
+      // webpack emit require('pdfjs-dist') which esbuild then bundles from source,
+      // re-introducing the same require("buffer") error.
+      const pdfjsStub = require.resolve('./stubs/pdfjs-stub.js');
+      config.resolve.alias['pdfjs-dist'] = pdfjsStub;
+      config.resolve.alias['pdfjs-dist/build/pdf'] = pdfjsStub;
+      config.resolve.alias['pdfjs-dist/build/pdf.mjs'] = pdfjsStub;
+      config.resolve.alias['pdfjs-dist/legacy/build/pdf'] = pdfjsStub;
+    } else {
+      // Client-side: keep pdfjs-dist real, just fill missing browser polyfills
       config.resolve.fallback = {
         ...config.resolve.fallback,
-        'emitter': false,
-        'batch': false,
+        emitter: false,
+        batch: false,
       };
     }
-    
+
     return config;
   },
 }
