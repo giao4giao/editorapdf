@@ -3,6 +3,8 @@ import './globals.css'
 import Script from 'next/script'
 import Footer from './components/Footer'
 
+export const runtime = 'edge';
+
 const siteUrl = 'https://editorapdf.com' // Replace with your actual domain
 const siteName = 'EditoraPDF'
 const siteDescription = 'Edit PDF documents online instantly without installing software or creating an account. Quick, powerful PDF editing in your browser. No downloads, no signup, 100% free and private.'

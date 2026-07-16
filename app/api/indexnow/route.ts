@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { submitToIndexNow } from '@/app/lib/indexnow';
 
+export const runtime = 'edge';
+
 /**
  * IndexNow API Route
  * POST /api/indexnow

@@ -5,6 +5,8 @@ import { defaultLocale, supportedLocales, type AppLocale, normalizeLocale, isSup
 import { TranslationProvider } from '../i18n/TranslationProvider'
 import { getMessages } from '../i18n/messages'
 
+export const runtime = 'edge';
+
 const siteUrl = 'https://editorapdf.com'
 const siteName = 'EditoraPDF'
 
