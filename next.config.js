@@ -131,6 +131,10 @@ const nextConfig = {
     // Fix for pdfjs-dist worker in Next.js
     config.resolve.alias.canvas = false;
     
+    if (isServer) {
+      config.resolve.alias.buffer = false;
+    }
+    
     // Ignore problematic modules that aren't used
     if (!isServer) {
       config.resolve.fallback = {
