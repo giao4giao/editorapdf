@@ -158,6 +158,12 @@ const nextConfig = {
       config.resolve.alias['pdfjs-dist/build/pdf'] = pdfjsStub;
       config.resolve.alias['pdfjs-dist/build/pdf.mjs'] = pdfjsStub;
       config.resolve.alias['pdfjs-dist/legacy/build/pdf'] = pdfjsStub;
+
+      // PDF-to-Word conversion runs only after a browser user action. docx's
+      // ESM build leaves a raw require("buffer") in the Edge chunk. next-on-pages
+      // bundles that chunk from stdin without resolveDir, so even installing
+      // buffer cannot resolve it. Keep docx out of server/Edge compilation.
+      config.resolve.alias['docx$'] = require.resolve('./stubs/docx-stub.js');
     } else {
       // Client-side: keep pdfjs-dist real, just fill missing browser polyfills
       config.resolve.fallback = {
