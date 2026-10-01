@@ -15,6 +15,11 @@ const GTM_ID = 'GTM-P5DF8WL7'
 
 // Per-locale SEO title & description
 const localeSeo: Record<AppLocale, { title: string; description: string; ogLocale: string }> = {
+  zh: {
+    title: '免费在线编辑 PDF — 无需安装或注册',
+    description: '在浏览器中即时编辑 PDF 文档，无需安装软件或创建账户。免费使用合并、拆分、转换和签名等工具，文件在设备本地处理，保护您的隐私。',
+    ogLocale: 'zh_CN',
+  },
   en: {
     title: 'Edit PDF Online Free - No Installation, No Signup Required',
     description: 'Edit PDF documents online instantly without installing software or creating an account. Quick, powerful PDF editing in your browser. No downloads, no signup, 100% free and private.',

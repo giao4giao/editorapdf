@@ -33,6 +33,27 @@ type TermsContent = {
 }
 
 const termsContent: Record<AppLocale, TermsContent> = {
+  zh: {
+    title: '服务条款', updated: '最后更新：2026年1月30日',
+    disclaimer: {
+      heading: '免责声明：风险提示', intro: 'EditoraPDF 按“现状”提供，不作任何保证。使用本服务即表示您同意：',
+      items: ['自行承担使用本服务的风险；', '我们不保证 PDF 编辑结果的准确性；', '处理过程中可能发生数据丢失或损坏；', '复杂 PDF 可能显示或编辑不正确；', '应保留原始文件的备份。'],
+    },
+    adNote: { heading: '包含广告的免费服务', text: 'EditoraPDF 完全免费。为支持网站运营，可能展示第三方广告、合作方优惠和推广链接。' },
+    sections: [
+      { heading: '1. 接受条款', content: '使用 EditoraPDF 即表示您同意这些条款。如不同意，请勿使用本服务。' },
+      { heading: '2. 服务说明', content: ['EditoraPDF 是基于浏览器的 PDF 工具，可用于查看、编辑、转换、合并、拆分和导出 PDF。', '大部分处理在浏览器本地完成。您有责任在使用文档前检查处理结果。'] },
+      { heading: '3. 使用规则', content: ['仅处理您有合法权利使用的文件。', '始终保留原始文件备份。', '发送或发布前检查编辑后的文档。', '不得将本服务用于违法目的。'] },
+      { heading: '4. 限制与兼容性', content: ['支持 PDF 文件；加密或受密码保护的文档可能不受支持。', '大型或复杂文档的处理可能较慢。', '需要启用 JavaScript 的现代浏览器。'] },
+      { heading: '5. 保证免责声明', content: '本服务不提供任何明示或默示保证，包括持续运行、无错误、适销性或特定用途适用性的保证。' },
+      { heading: '6. 责任限制', content: '在法律允许的范围内，EditoraPDF 不对因使用或无法使用本服务导致的直接或间接损失、数据丢失、利润损失或其他后果承担责任。' },
+      { heading: '7. 广告与第三方服务', content: '网站可能使用第三方广告或分析服务。我们不对广告或其他链接所指向的第三方网站的内容和政策负责。' },
+      { heading: '8. 知识产权', content: 'EditoraPDF 平台的权利归其所有者所有。您保留通过本服务处理的文件和内容的权利。' },
+      { heading: '9. 服务与条款变更', content: '我们可能更新服务功能和条款，最新版本始终发布在本页面。' },
+      { heading: '10. 联系方式', content: '' },
+    ],
+    contactTitle: '邮箱：', contactEmail: 'hello@editorapdf.com', contactPage: '联系页面：', copyright: '© 2026 EditoraPDF。保留所有权利。', privacyLink: '隐私政策', contactLink: '联系我们',
+  },
   en: {
     title: 'Terms of Service',
     updated: 'Last updated: January 30, 2026',

@@ -7,6 +7,7 @@ import { faqDataFr } from '../data/faq.fr';
 import { faqDataDe } from '../data/faq.de';
 import { faqDataEs } from '../data/faq.es';
 import { faqDataIt } from '../data/faq.it';
+import { faqDataZh } from '../data/faq.zh';
 import { useAppTranslations } from '../i18n/TranslationProvider';
 import type { FAQItem } from '../data/faq';
 import type { AppLocale } from '../../i18n/config';
@@ -18,6 +19,7 @@ const faqByLocale: Record<AppLocale, FAQItem[]> = {
   de: faqDataDe,
   es: faqDataEs,
   it: faqDataIt,
+  zh: faqDataZh,
 };
 
 export default function FAQ() {
@@ -80,7 +82,7 @@ export default function FAQ() {
 
       {/* SEO Keywords (hidden) */}
       <div className="sr-only">
-        <h3>{locale === 'uk' ? 'Популярні запити:' : 'Popular searches:'}</h3>
+        <h3>{locale === 'zh' ? '热门搜索：' : locale === 'uk' ? 'Популярні запити:' : 'Popular searches:'}</h3>
         <ul>
           {items.flatMap(faq => faq.keywords || []).map((keyword, i) => (
             <li key={i}>{keyword}</li>

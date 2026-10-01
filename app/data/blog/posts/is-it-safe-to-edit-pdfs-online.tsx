@@ -123,7 +123,7 @@ const C: Record<AppLocale, Content> = {
   },
   // Translations are injected below (see TRANSLATIONS). Placeholder objects keep the type
   // happy until the build step fills them; the renderer falls back to `en` per-key.
-  uk: {}, de: {}, es: {}, fr: {}, it: {},
+  uk: {}, de: {}, es: {}, fr: {}, it: {}, zh: {},
 } as Record<AppLocale, Content>
 
 function content(locale: AppLocale): Content {

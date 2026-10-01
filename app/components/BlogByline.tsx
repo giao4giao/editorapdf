@@ -11,6 +11,7 @@ const BCP47: Record<AppLocale, string> = {
   es: 'es-ES',
   fr: 'fr-FR',
   it: 'it-IT',
+  zh: 'zh-CN',
 }
 
 export default function BlogByline({

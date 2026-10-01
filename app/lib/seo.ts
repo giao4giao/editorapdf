@@ -34,6 +34,7 @@ const ogLocaleByCode: Record<string, string> = {
   es: 'es_ES',
   fr: 'fr_FR',
   it: 'it_IT',
+  zh: 'zh_CN',
 }
 
 export function getOgLocale(locale: string): string {

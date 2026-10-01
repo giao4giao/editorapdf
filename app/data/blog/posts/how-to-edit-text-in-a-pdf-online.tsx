@@ -205,7 +205,7 @@ const C: Record<AppLocale, Content> = {
   },
   // Translations are injected below (see TRANSLATIONS). Empty objects keep the type happy;
   // each missing key falls back to English at render time.
-  uk: {}, de: {}, es: {}, fr: {}, it: {},
+  uk: {}, de: {}, es: {}, fr: {}, it: {}, zh: {},
 } as Record<AppLocale, Content>
 
 function content(locale: AppLocale): Content {

@@ -36,6 +36,39 @@ type PrivacyContent = {
 }
 
 const privacyContent: Record<AppLocale, PrivacyContent> = {
+  zh: {
+    title: '隐私政策', updated: '最后更新：2026年1月30日',
+    priorityTitle: '您的隐私是我们的首要任务',
+    priorityDesc: 'EditoraPDF 完全在浏览器中处理 PDF。文件不会离开您的设备，也不会上传到我们的服务器。',
+    disclaimer: '重要提示：本服务仅供一般用途。编辑后请检查文档，再正式使用或提交。',
+    sections: [
+      { heading: '1. 我们收集的信息', subsections: [
+        { heading: '1.1 个人信息', content: '使用 EditoraPDF 的核心工具无需注册、创建账户或提交个人信息。' },
+        { heading: '1.2 您的 PDF 文档', content: 'PDF 不上传到我们的服务器，所有处理通过 JavaScript 在浏览器本地完成。', items: ['直接从设备读取文件', '在浏览器内存中编辑', '仅在点击“导出”时保存文档', '文件内容不发送到我们的服务器', '我们无法查看、读取或存储您的 PDF'] },
+        { heading: '1.3 技术信息', content: '访问网站时，可能自动收集不能直接识别您身份的技术信息：', items: ['浏览器类型、版本及语言设置', '设备类型、操作系统及屏幕分辨率', '浏览页面、停留时间及导航操作', 'IP 地址可能以匿名形式用于安全和分析'] },
+        { heading: '1.4 Cookie 与类似技术', content: '我们可能使用 Cookie 维持网站运行、记住语言偏好和进行分析。', items: ['必要 Cookie：支持基本运行', '偏好 Cookie：记住语言和设置', '分析 Cookie：了解网站使用情况', '广告 Cookie：可能用于展示相关广告'] },
+      ] },
+      { heading: '2. 信息的使用方式', content: '收集的有限技术数据用于：', items: ['改进服务和界面', '分析稳定性和性能', '防范滥用和欺诈', '保存本地设置', '评估网站和广告集成效果'] },
+      { heading: '3. 第三方服务与广告', subsections: [
+        { heading: '3.1 Google AdSense', content: '网站可能使用 Google AdSense 展示广告。Google 可能使用 Cookie 等技术进行广告个性化、效果测量和欺诈防范。' },
+        { heading: '3.2 分析', content: '我们可能使用分析工具了解用户访问了哪些页面、会话持续时间及所使用的设备。' },
+        { heading: '3.3 其他第三方服务', content: '我们可能使用第三方托管、内容分发和网站防护服务，这些服务有各自的隐私政策。' },
+      ] },
+      { heading: '4. 数据存储与安全', subsections: [
+        { heading: '4.1 本地存储', content: '浏览器可能保存本地设置、资源缓存及临时界面状态，以提高运行速度。', items: ['缩放比例及界面设置', '语言偏好', '缓存的应用资源', '当前编辑会话的临时状态'] },
+        { heading: '4.2 服务器存储', content: '我们不在服务器存储 PDF 文件。必要时可能保存匿名分析数据、错误日志和安全日志。' },
+        { heading: '4.3 安全', content: '文档不上传到服务器，因此不会因服务器数据泄露而暴露 PDF 内容。我们同时使用 HTTPS 和基本网站安全措施。' },
+      ] },
+      { heading: '5. 数据保留期限', items: ['分析数据：汇总形式最多保留 26 个月', '错误日志：最多保留 90 天，用于诊断问题', '安全日志：最多保留 12 个月，用于防范滥用', '本地存储：保留至您清除浏览器数据'] },
+      { heading: '6. 您的权利与选择', content: '根据您所在国家或地区的规定，您可能有权了解数据处理情况、限制处理、删除某些数据或退出个性化广告。如有隐私问题，请联系 hello@editorapdf.com。' },
+      { heading: '7. Cookie 与广告设置', content: '您可以通过浏览器设置管理 Cookie。禁用某些 Cookie 可能影响部分网站功能，但核心的本地 PDF 处理仍可运行。' },
+      { heading: '8. 儿童隐私', content: '本服务并非专门为 13 岁以下儿童设计，我们不会有意收集儿童的个人数据。' },
+      { heading: '9. 国际用户', content: 'EditoraPDF 在多个国家和地区提供服务。PDF 在浏览器本地处理，不会跨境传输。但第三方分析或广告服务可能根据其政策，在您所在司法辖区之外处理技术数据。' },
+      { heading: '10. 政策变更', content: '我们可能因技术、法律或服务运营的变化定期更新本政策，当前版本始终发布在本页面。' },
+      { heading: '11. 联系方式', content: '' },
+    ],
+    contactTitle: '邮箱：', contactEmail: 'hello@editorapdf.com', contactPage: '联系页面：', copyright: '© 2026 EditoraPDF。保留所有权利。', termsLink: '服务条款', contactLink: '联系我们',
+  },
   en: {
     title: 'Privacy Policy', updated: 'Last updated: January 30, 2026',
     priorityTitle: 'Your Privacy is Our Priority',

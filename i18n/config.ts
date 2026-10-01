@@ -1,5 +1,5 @@
 export const supportedLocales = [
-	'en', 'uk', 'de', 'es', 'fr', 'it'
+	'en', 'uk', 'de', 'es', 'fr', 'it', 'zh'
 ] as const;
 export type AppLocale = typeof supportedLocales[number];
 
@@ -12,6 +12,7 @@ export const localeMeta: Record<AppLocale, { label: string; nativeLabel: string;
 	es: { label: 'Spanish', nativeLabel: 'Español', flag: '🇪🇸' },
 	fr: { label: 'French', nativeLabel: 'Français', flag: '🇫🇷' },
 	it: { label: 'Italian', nativeLabel: 'Italiano', flag: '🇮🇹' },
+	zh: { label: 'Chinese', nativeLabel: '简体中文', flag: '🇨🇳' },
 };
 
 export function isSupportedLocale(input?: string | null): input is AppLocale {

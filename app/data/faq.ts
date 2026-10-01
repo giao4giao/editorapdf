@@ -5,6 +5,8 @@ import { faqDataDe } from './faq.de';
 import { faqDataEs } from './faq.es';
 import { faqDataFr } from './faq.fr';
 import { faqDataIt } from './faq.it';
+import { faqDataZh } from './faq.zh';
+import type { AppLocale } from '../../i18n/config';
 
 export interface FAQItem {
   question: string;
@@ -101,9 +103,10 @@ export const faqData: FAQItem[] = [
 ];
 
 // Generate FAQ Schema for structured data (SEO)
-export function generateFAQSchema(siteUrl: string, locale: 'en' | 'uk' | 'de' | 'es' | 'fr' | 'it' = 'en') {
+export function generateFAQSchema(siteUrl: string, locale: AppLocale = 'en') {
   const byLocale: Record<string, FAQItem[]> = {
     en: faqData, uk: faqDataUk, de: faqDataDe, es: faqDataEs, fr: faqDataFr, it: faqDataIt,
+    zh: faqDataZh,
   };
   const items = byLocale[locale] ?? faqData;
   return {

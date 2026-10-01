@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next'
 import { MIGRATED_BLOG_SLUGS } from './data/blog/migrated'
+import { supportedLocales, defaultLocale } from '../i18n/config'
 
 const baseUrl = 'https://editorapdf.com'
-const defaultLocale = 'en'
-const locales = ['en', 'fr', 'de', 'es', 'it', 'uk']
+const locales = supportedLocales
 
 const migratedBlogSet = new Set<string>(MIGRATED_BLOG_SLUGS)
 

@@ -3,6 +3,11 @@ import type { AppLocale } from '../../../i18n/config'
 // Translated blog-index strings (card titles/descriptions + chrome). Keys mirror C.en in
 // app/components/BlogIndex.tsx; missing keys fall back to en.
 export const TRANSLATIONS: Partial<Record<AppLocale, Record<string, string>>> = {
+  zh: {
+    pageTitle: '博客与资源', pageSubtitle: '掌握 PDF 编辑的技巧、教程和指南', readMore: '阅读更多', badgeNew: '新文章',
+    catGuide: '指南', catPrivacy: '隐私', catSecurity: '安全', catPdfTools: 'PDF 工具', catConverter: '格式转换', catOpenSource: '开源',
+    catTechnical: '技术', catPhilosophy: '理念', catTechnology: '技术', catComparison: '对比', catAnalysis: '分析', catCompliance: '合规',
+  },
   "uk": {
     "pageTitle": "Блог і ресурси",
     "pageSubtitle": "Поради, інструкції та посібники, які допоможуть опанувати редагування PDF",

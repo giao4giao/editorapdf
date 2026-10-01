@@ -10,7 +10,7 @@ import { toolFaqIt } from './toolFaq.it';
 // Per-tool FAQ, keyed by tool id. Mirrors the faq.<locale>.ts convention. The visible
 // <ToolFAQ> accordion and the FAQPage JSON-LD on each tool page both read from here, so
 // the structured data always matches the rendered questions (Google FAQ policy).
-const byLocale: Record<AppLocale, Record<string, FAQItem[]>> = {
+const byLocale: Partial<Record<AppLocale, Record<string, FAQItem[]>>> = {
   en: toolFaqEn,
   uk: toolFaqUk,
   de: toolFaqDe,

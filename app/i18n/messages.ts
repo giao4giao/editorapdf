@@ -6,6 +6,7 @@ import de from '../../i18n/locales/de.json';
 import it from '../../i18n/locales/it.json';
 import es from '../../i18n/locales/es.json';
 import fr from '../../i18n/locales/fr.json';
+import zh from '../../i18n/locales/zh.json';
 
 type Messages = Record<string, string>;
 
@@ -16,6 +17,7 @@ const localeMessages: Record<AppLocale, Messages> = {
 	es,
 	fr,
 	it,
+	zh,
 };
 
 export function getMessages(locale: AppLocale): Messages {
