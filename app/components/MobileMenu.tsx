@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import LanguageSwitcher from './LanguageSwitcher';
 import { usePathname } from 'next/navigation';
 import { useAppTranslations } from '../i18n/TranslationProvider';
 import { isSupportedLocale, type AppLocale } from '../../i18n/config';
@@ -55,7 +56,7 @@ export default function MobileMenu() {
       {/* Hamburger Button - Visible only on mobile */}
       <button
         onClick={toggleMenu}
-        className="flex md:hidden p-2.5 rounded-lg hover:bg-surface-700/50 active:bg-surface-700/70 transition-colors flex-shrink-0 relative z-[100] touch-manipulation min-w-[44px] min-h-[44px] items-center justify-center bg-surface-700/40 border border-surface-600/50 shadow-sm"
+        className="flex xl:hidden p-2.5 rounded-lg hover:bg-surface-700/50 active:bg-surface-700/70 transition-colors flex-shrink-0 relative z-[100] touch-manipulation min-w-[44px] min-h-[44px] items-center justify-center bg-surface-700/40 border border-surface-600/50 shadow-sm"
         aria-label={tr('mobileMenu.toggle', 'Toggle menu')}
         aria-expanded={isOpen}
         type="button"
@@ -86,7 +87,7 @@ export default function MobileMenu() {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-[9998] md:hidden"
+          className="fixed inset-0 bg-black/50 z-[9998] xl:hidden"
           onClick={closeMenu}
           aria-hidden="true"
         />
@@ -94,10 +95,11 @@ export default function MobileMenu() {
 
       {/* Sidebar Menu - Right side, full height, highest z-index */}
       <aside
+        hidden={!isOpen}
         className={`
           fixed top-0 right-0 h-screen w-64 max-w-[85vw] 
           bg-surface-900 border-l border-surface-700/50
-          z-[9999] md:hidden
+          z-[9999] xl:hidden
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
           shadow-2xl
@@ -111,15 +113,10 @@ export default function MobileMenu() {
             <Link
               href={withLocale('/')}
               onClick={closeMenu}
-              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              className="site-brand"
+              aria-label={tr('brand.logoAlt', 'EditoraPDF Logo')}
             >
-              <img
-                src="/logo.svg"
-                alt={tr('brand.logoAlt', 'EditoraPDF Logo')}
-                width={120}
-                height={40}
-                className="h-8 w-auto"
-              />
+              <span>Editora<span className="text-primary-400">PDF</span></span>
             </Link>
             <button
               onClick={closeMenu}
@@ -153,15 +150,11 @@ export default function MobileMenu() {
                     className="flex items-center gap-2 px-4 py-3 rounded-lg text-surface-300 hover:text-white hover:bg-surface-800/50 transition-colors font-medium"
                   >
                     {link.label}
-                    {(link as any).isNew && (
-                      <span className="px-1.5 py-0.5 rounded-full bg-primary-500/15 text-primary-400 text-[10px] font-bold uppercase tracking-wider">
-                        {tr('common.new', 'New')}
-                      </span>
-                    )}
                   </Link>
                 </li>
               ))}
             </ul>
+            <div className="mt-6 pt-4 border-t border-surface-700"><LanguageSwitcher compact /></div>
           </nav>
 
           {/* CTA Button */}

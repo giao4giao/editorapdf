@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useAppTranslations } from '../i18n/TranslationProvider';
 import { supportedLocales, type AppLocale, localeMeta, isSupportedLocale } from '../../i18n/config';
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
   const { locale, t } = useAppTranslations();
   const tr = (key: string, fallback: string) => (t(key) === key ? fallback : t(key));
   const pathname = usePathname();
@@ -81,7 +81,7 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div className="relative" ref={rootRef}>
+    <div className={compact ? 'relative w-full' : 'relative'} ref={rootRef}>
       {!mounted ? (
         <button
           type="button"
@@ -89,7 +89,7 @@ export default function LanguageSwitcher() {
           className="inline-flex items-center gap-2 bg-surface-800/80 border border-surface-600 text-surface-100 rounded-md px-3 py-1.5 text-sm"
         >
           <span>{localeMeta[locale].flag}</span>
-          <span className="hidden sm:inline">{localeMeta[locale].nativeLabel}</span>
+          <span className={compact ? 'inline' : 'hidden sm:inline'}>{localeMeta[locale].nativeLabel}</span>
           <span className="text-surface-400">▾</span>
         </button>
       ) : (
@@ -100,13 +100,13 @@ export default function LanguageSwitcher() {
         className="inline-flex items-center gap-2 bg-surface-800/80 border border-surface-600 text-surface-100 rounded-md px-3 py-1.5 text-sm hover:bg-surface-700/80 transition-colors"
       >
         <span>{localeMeta[currentLocale].flag}</span>
-        <span className="hidden sm:inline">{localeMeta[currentLocale].nativeLabel}</span>
+        <span className={compact ? 'inline' : 'hidden sm:inline'}>{localeMeta[currentLocale].nativeLabel}</span>
         <span className="text-surface-400">▾</span>
       </button>
       )}
 
       {mounted && isOpen && (
-        <div className="absolute right-0 mt-2 w-72 rounded-lg border border-surface-600 bg-surface-900/95 backdrop-blur shadow-xl z-50">
+        <div className={`${compact ? 'w-full' : 'absolute right-0 w-72'} mt-2 rounded-lg border border-surface-600 bg-surface-900 shadow-xl z-50`}>
           <div className="p-2 border-b border-surface-700">
             <input
               type="text"

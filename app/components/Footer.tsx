@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { PenSquare } from 'lucide-react';
 import type { AppLocale } from '../../i18n/config';
 import { getMessages } from '../i18n/messages';
 
@@ -13,15 +13,9 @@ export default function Footer({ locale = 'en' as AppLocale }: { locale?: AppLoc
       <div className="max-w-5xl mx-auto space-y-6">
         {/* Logo */}
         <div className="flex justify-center">
-          <Link href={withLocale('/')} className="flex items-center hover:opacity-80 transition-opacity">
-            <Image 
-              src="/logo.svg" 
-              alt={t('brand.logoAlt')} 
-              width={120} 
-              height={40} 
-              className="h-10 w-auto"
-              priority
-            />
+          <Link href={withLocale('/')} className="site-brand" aria-label={t('brand.logoAlt')}>
+            <span className="site-brand-symbol" aria-hidden="true"><PenSquare size={19} strokeWidth={1.7} /></span>
+            <span>Editora<span className="text-primary-400">PDF</span></span>
           </Link>
         </div>
 
@@ -48,7 +42,7 @@ export default function Footer({ locale = 'en' as AppLocale }: { locale?: AppLoc
             {t('footer.how')}
           </Link>
           <Link href={withLocale('/your-files-stay-private')} className="text-sm text-success-400 hover:text-success-300 transition-colors font-medium">
-            Your Files Stay Private
+            {t('features.private.title')}
           </Link>
           <Link href={withLocale('/about')} className="text-sm text-surface-400 hover:text-primary-400 transition-colors">
             {t('footer.about')}

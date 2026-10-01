@@ -283,14 +283,6 @@ export const availableToolsCount = allTools.length;
 // Export toolCategories for use in routes
 export { toolCategories };
 
-const colorMap: Record<string, { bg: string; border: string; text: string; iconBg: string; hoverBorder: string }> = {
-  primary: { bg: 'bg-primary-500/5', border: 'border-primary-500/20', text: 'text-primary-400', iconBg: 'bg-primary-500/15', hoverBorder: 'hover:border-primary-500/40' },
-  accent:  { bg: 'bg-accent-500/5',  border: 'border-accent-500/20',  text: 'text-accent-400',  iconBg: 'bg-accent-500/15',  hoverBorder: 'hover:border-accent-500/40' },
-  success: { bg: 'bg-success-500/5', border: 'border-success-500/20', text: 'text-success-400', iconBg: 'bg-success-500/15', hoverBorder: 'hover:border-success-500/40' },
-  error:   { bg: 'bg-error-500/5',   border: 'border-error-500/20',   text: 'text-error-400',   iconBg: 'bg-error-500/15',   hoverBorder: 'hover:border-error-500/40' },
-  warning: { bg: 'bg-warning-500/5', border: 'border-warning-500/20', text: 'text-warning-400', iconBg: 'bg-warning-500/15', hoverBorder: 'hover:border-warning-500/40' },
-  info:    { bg: 'bg-info-500/5',    border: 'border-info-500/20',    text: 'text-info-400',    iconBg: 'bg-info-500/15',    hoverBorder: 'hover:border-info-500/40' },
-};
 
 export default function ToolsPanel() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -306,11 +298,11 @@ export default function ToolsPanel() {
   const totalTools = allTools.length;
 
   return (
-    <div className="w-full max-w-5xl mx-auto animate-fade-in">
+    <div className="tools-catalog w-full max-w-5xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-8">
+      <div className="tools-catalog-header">
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('tools.page.title')}</h1>
-        <p className="text-surface-400 text-base max-w-2xl mx-auto mb-4">
+        <p className="text-surface-400 text-base max-w-2xl mb-4">
           {t('tools.page.subtitle')}
         </p>
         <p className="text-xs text-surface-500">
@@ -322,9 +314,10 @@ export default function ToolsPanel() {
       </div>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+      <div className="flex flex-wrap items-center gap-2 mb-8">
         <button
           onClick={() => setActiveCategory(null)}
+          aria-pressed={!activeCategory}
           className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${!activeCategory ? 'bg-primary-500/20 border border-primary-500/40 text-primary-300 shadow-sm' : 'bg-surface-800/40 border border-surface-700/50 text-surface-400 hover:text-surface-200 hover:border-surface-600/50'}`}
         >
           {tr('tools.all', 'All Tools')}
@@ -333,6 +326,7 @@ export default function ToolsPanel() {
           <button
             key={cat.id}
             onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
+            aria-pressed={activeCategory === cat.id}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${activeCategory === cat.id ? 'bg-primary-500/20 border border-primary-500/40 text-primary-300 shadow-sm' : 'bg-surface-800/40 border border-surface-700/50 text-surface-400 hover:text-surface-200 hover:border-surface-600/50'}`}
           >
             {cat.icon}
@@ -349,33 +343,30 @@ export default function ToolsPanel() {
             <div className="flex items-center gap-3 mb-4">
               <div className="flex items-center gap-2 text-surface-300">
                 {category.icon}
-                <h3 className="text-lg font-semibold">{tr(`tools.category.${category.id}`, category.title)}</h3>
+                <h2 className="text-lg font-semibold">{tr(`tools.category.${category.id}`, category.title)}</h2>
               </div>
               <div className="flex-1 h-px bg-surface-700/50"></div>
               <span className="text-xs text-surface-500 font-medium">{category.tools.length} {t('tools.count')}</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {category.tools.map((tool, index) => {
-                const colors = colorMap[tool.color] || colorMap.primary;
+              {category.tools.map((tool) => {
                 const commonProps = {
-                  className: `relative group text-left p-5 rounded-2xl border transition-all duration-200 ${colors.bg} ${colors.border} ${colors.hoverBorder} hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] cursor-pointer animate-fade-in-up`,
-                  style: { animationDelay: `${index * 40}ms` } as React.CSSProperties,
+                  className: 'catalog-tool',
                 };
                 
                 const content = (
                   <>
-                    <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center mb-3 ${colors.text} transition-transform duration-200 group-hover:scale-110`}>
+                    <div className="catalog-tool-icon" aria-hidden="true">
                       {tool.icon}
                     </div>
-                    <h3 className="text-base font-semibold text-white mb-1 group-hover:text-surface-100">
+                    <div>
+                    <h3>
                       {tr(`tools.items.${tool.id}.title`, tool.title)}
                     </h3>
-                    <p className="text-sm text-surface-400 leading-relaxed">
+                    <p>
                       {tr(`tools.items.${tool.id}.desc`, tool.description)}
                     </p>
-                    <div className={`absolute bottom-4 right-4 ${colors.text} opacity-0 group-hover:opacity-100 transition-all duration-200 translate-x-1 group-hover:translate-x-0`}>
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                     </div>
                   </>
                 );

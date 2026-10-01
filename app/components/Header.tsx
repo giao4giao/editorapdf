@@ -25,7 +25,7 @@ export default function Header({ showCloseButton = false, onClose, closeButtonLa
   const currentLocale: AppLocale = firstSeg && isSupportedLocale(firstSeg) ? firstSeg : locale;
   const withLocale = (path: string) => `/${currentLocale}${path}`;
   return (
-    <header className="sticky top-0 z-50 glass border-b border-surface-700/50" role="banner">
+    <header className="site-header sticky top-0 z-50 border-b border-surface-700/50" role="banner">
       <div className="px-6 py-3">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
@@ -33,29 +33,19 @@ export default function Header({ showCloseButton = false, onClose, closeButtonLa
             <MobileMenu />
             
             {/* Logo & Brand */}
-            <Link href={withLocale('/')} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img 
-                src="/logo.svg" 
-                alt={tr('brand.logoAlt', 'EditoraPDF Logo')} 
-                width={120} 
-                height={40} 
-                className="h-10 w-auto"
-                loading="eager"
-                fetchPriority="high"
-              />
+            <Link href={withLocale('/')} className="site-brand" aria-label={tr('brand.logoAlt', 'EditoraPDF Logo')}>
+              <span className="site-brand-symbol" aria-hidden="true"><PenSquare size={19} strokeWidth={1.7} /></span>
+              <span>Editora<span className="text-primary-400">PDF</span></span>
             </Link>
           </div>
           
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-1" aria-label={tr('nav.mainAria', 'Main navigation')}>
+          <nav className="hidden xl:flex items-center gap-1" aria-label={tr('nav.mainAria', 'Main navigation')}>
             <Link href={withLocale('/')} className="nav-link">
               {t('nav.home')}
             </Link>
             <Link href={withLocale('/tools')} className="nav-link flex items-center gap-1.5">
               {t('nav.tools')}
-              <span className="px-1.5 py-0.5 rounded-full bg-primary-500/15 text-primary-400 text-[10px] font-bold uppercase tracking-wider">
-                {tr('common.new', 'New')}
-              </span>
             </Link>
             <Link href={withLocale('/how-it-works')} className="nav-link">
               {t('nav.how')}
