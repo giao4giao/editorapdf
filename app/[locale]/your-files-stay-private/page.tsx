@@ -1,3 +1,4 @@
+import { siteUrl } from '../../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
@@ -11,7 +12,6 @@ import { defaultLocale, isSupportedLocale, normalizeLocale, type AppLocale } fro
 import { localeAlternates, getOgLocale } from '../../lib/seo'
 import { yourFilesContent } from '../../data/yourFilesContent'
 
-const siteUrl = 'https://editorapdf.com'
 
 function resolve(locale: string): { loc: AppLocale; c: Record<string, string> } {
   const loc = (isSupportedLocale(locale) ? normalizeLocale(locale) : defaultLocale) as AppLocale
@@ -256,7 +256,7 @@ export default function LocaleYourFilesPage({ params }: { params: { locale: stri
                         {c['collect.link1']}
                       </Link>
                       <a
-                        href="https://github.com/affsquadDevs/editorapdf"
+                        href="https://github.com/giao4giao/editorapdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm text-surface-400 hover:text-primary-400 transition-colors font-medium"

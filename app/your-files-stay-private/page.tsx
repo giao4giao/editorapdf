@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
@@ -8,7 +9,6 @@ import {
   XCircle, Zap, MonitorSmartphone, MemoryStick, AlertTriangle, CheckCheck
 } from 'lucide-react'
 
-const siteUrl = 'https://editorapdf.com'
 // English-only page served under the locale layout; canonical to the non-redirecting /en URL.
 const pageUrl = `${siteUrl}/en/your-files-stay-private`
 
@@ -305,7 +305,7 @@ export default function YourFilesStayPrivatePage() {
                         Read the full Privacy Policy
                       </Link>
                       <a
-                        href="https://github.com/affsquadDevs/editorapdf"
+                        href="https://github.com/giao4giao/editorapdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm text-surface-400 hover:text-primary-400 transition-colors font-medium"

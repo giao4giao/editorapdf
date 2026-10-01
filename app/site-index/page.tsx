@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
@@ -9,7 +10,6 @@ import {
 import { toolsMeta } from '../data/toolsMeta';
 import { BLOG_POSTS } from '../data/searchIndex';
 
-const siteUrl = 'https://editorapdf.com';
 const pageUrl = `${siteUrl}/site-index`;
 const defaultLocale = 'en';
 

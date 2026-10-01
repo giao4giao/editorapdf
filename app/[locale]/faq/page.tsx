@@ -1,10 +1,10 @@
+import { siteUrl } from '../../lib/site';
 import type { Metadata } from 'next';
 import { metadata as baseMetadata } from '../../faq/page';
 import { localeAlternates, getOgLocale } from '../../lib/seo';
 import { getMessages } from '../../i18n/messages';
 import { normalizeLocale } from '../../../i18n/config';
 
-const siteUrl = 'https://editorapdf.com';
 
 // Localized title/description + locale-aware canonical/hreflang. The FAQ accordion
 // content itself is localized in the FAQ component (per-locale data files).

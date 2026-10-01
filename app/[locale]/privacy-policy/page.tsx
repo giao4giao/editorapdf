@@ -1,3 +1,4 @@
+import { issuesUrl } from '../../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../../components/Header'
@@ -60,14 +61,14 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 安全', content: '文档不上传到服务器，因此不会因服务器数据泄露而暴露 PDF 内容。我们同时使用 HTTPS 和基本网站安全措施。' },
       ] },
       { heading: '5. 数据保留期限', items: ['分析数据：汇总形式最多保留 26 个月', '错误日志：最多保留 90 天，用于诊断问题', '安全日志：最多保留 12 个月，用于防范滥用', '本地存储：保留至您清除浏览器数据'] },
-      { heading: '6. 您的权利与选择', content: '根据您所在国家或地区的规定，您可能有权了解数据处理情况、限制处理、删除某些数据或退出个性化广告。如有隐私问题，请联系 hello@editorapdf.com。' },
+      { heading: '6. 您的权利与选择', content: '根据您所在国家或地区的规定，您可能有权了解数据处理情况、限制处理、删除某些数据或退出个性化广告。如有隐私问题，请联系 github.com/giao4giao/editorapdf/issues。' },
       { heading: '7. Cookie 与广告设置', content: '您可以通过浏览器设置管理 Cookie。禁用某些 Cookie 可能影响部分网站功能，但核心的本地 PDF 处理仍可运行。' },
       { heading: '8. 儿童隐私', content: '本服务并非专门为 13 岁以下儿童设计，我们不会有意收集儿童的个人数据。' },
       { heading: '9. 国际用户', content: 'EditoraPDF 在多个国家和地区提供服务。PDF 在浏览器本地处理，不会跨境传输。但第三方分析或广告服务可能根据其政策，在您所在司法辖区之外处理技术数据。' },
       { heading: '10. 政策变更', content: '我们可能因技术、法律或服务运营的变化定期更新本政策，当前版本始终发布在本页面。' },
       { heading: '11. 联系方式', content: '' },
     ],
-    contactTitle: '邮箱：', contactEmail: 'hello@editorapdf.com', contactPage: '联系页面：', copyright: '© 2026 EditoraPDF。保留所有权利。', termsLink: '服务条款', contactLink: '联系我们',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: '联系页面：', copyright: '© 2026 giao4giao · EditoraPDF。保留所有权利。', termsLink: '服务条款', contactLink: '联系我们',
   },
   en: {
     title: 'Privacy Policy', updated: 'Last updated: January 30, 2026',
@@ -93,15 +94,15 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 Security', content: 'Since documents are not uploaded to the server, there is no risk of PDF compromise through a server data breach. We additionally use HTTPS and basic site security measures.' },
       ]},
       { heading: '5. Data Retention', items: ['Analytics data: may be stored in aggregate form for up to 26 months', 'Error logs: up to 90 days for issue diagnosis', 'Security logs: up to 12 months to prevent abuse', 'Local storage: stored in your browser until you clear the data'] },
-      { heading: '6. Your Rights and Choices', content: 'Depending on your country of residence, you may have the right to access information about data processing, restrict such processing, delete certain data, or opt out of personalized advertising. For privacy inquiries, contact us at hello@editorapdf.com.' },
+      { heading: '6. Your Rights and Choices', content: 'Depending on your country of residence, you may have the right to access information about data processing, restrict such processing, delete certain data, or opt out of personalized advertising. For privacy inquiries, contact us at github.com/giao4giao/editorapdf/issues.' },
       { heading: '7. Cookies and Advertising Settings', content: 'You can manage cookies through your browser settings. Disabling certain cookies may affect some site functionality, but the core local PDF processing will continue to work.' },
       { heading: '8. Children\'s Privacy', content: 'The service is not specifically designed for children under 13. We do not knowingly collect personal data from children.' },
       { heading: '9. International Users', content: 'EditoraPDF is available in various countries. Your PDF files are not transferred between countries as they are processed locally in the browser. However, third-party analytics or advertising services may process technical data outside your jurisdiction according to their own policies.' },
       { heading: '10. Changes to This Policy', content: 'We may periodically update this privacy policy due to changes in technology, law, or service operation. The current version is always published on this page.' },
       { heading: '11. Contact', content: '' },
     ],
-    contactTitle: 'Email:', contactEmail: 'hello@editorapdf.com', contactPage: 'Contact page:',
-    copyright: '© 2026 EditoraPDF. Your privacy matters.', termsLink: 'Terms of Service', contactLink: 'Contact',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Contact page:',
+    copyright: '© 2026 giao4giao · EditoraPDF. Your privacy matters.', termsLink: 'Terms of Service', contactLink: 'Contact',
   },
   uk: {
     title: 'Політика конфіденційності', updated: 'Останнє оновлення: 30 січня 2026',
@@ -127,15 +128,15 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 Безпека', content: 'Оскільки документи не завантажуються на сервер, немає ризику компрометації PDF через серверний витік даних. Додатково ми використовуємо HTTPS та базові заходи безпеки сайту.' },
       ]},
       { heading: '5. Термін зберігання даних', items: ['Аналітичні дані: можуть зберігатися в агрегованому вигляді до 26 місяців', 'Логи помилок: до 90 днів для діагностики проблем', 'Логи безпеки: до 12 місяців для запобігання зловживанням', 'Локальне сховище: зберігається у вашому браузері, доки ви самі не очистите дані'] },
-      { heading: '6. Ваші права та вибір', content: 'Залежно від країни проживання ви можете мати право на доступ до інформації про обробку даних, обмеження такої обробки, видалення окремих даних або відмову від персоналізованої реклами. Для запитів щодо конфіденційності звертайтесь на hello@editorapdf.com.' },
+      { heading: '6. Ваші права та вибір', content: 'Залежно від країни проживання ви можете мати право на доступ до інформації про обробку даних, обмеження такої обробки, видалення окремих даних або відмову від персоналізованої реклами. Для запитів щодо конфіденційності звертайтесь на github.com/giao4giao/editorapdf/issues.' },
       { heading: '7. Cookies та рекламні налаштування', content: 'Ви можете керувати cookies через налаштування браузера. Вимкнення окремих cookies може вплинути на частину функціональності сайту, але основна локальна обробка PDF продовжить працювати.' },
       { heading: '8. Конфіденційність дітей', content: 'Сервіс не призначений спеціально для дітей молодше 13 років. Ми свідомо не збираємо персональні дані дітей.' },
       { heading: '9. Міжнародні користувачі', content: 'EditoraPDF доступний у різних країнах. Ваші PDF-файли не передаються між країнами, бо обробляються локально у браузері. Водночас сторонні аналітичні чи рекламні сервіси можуть обробляти технічні дані за межами вашої юрисдикції відповідно до власних політик.' },
       { heading: '10. Зміни до цієї політики', content: 'Ми можемо періодично оновлювати цю політику конфіденційності через зміни в технологіях, законодавстві або в роботі сервісу. Актуальна версія завжди розміщується на цій сторінці.' },
       { heading: '11. Контакти', content: '' },
     ],
-    contactTitle: 'Електронна пошта:', contactEmail: 'hello@editorapdf.com', contactPage: 'Сторінка контактів:',
-    copyright: '© 2026 EditoraPDF. Ваша приватність має значення.', termsLink: 'Умови використання', contactLink: 'Контакти',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Сторінка контактів:',
+    copyright: '© 2026 giao4giao · EditoraPDF. Ваша приватність має значення.', termsLink: 'Умови використання', contactLink: 'Контакти',
   },
   de: {
     title: 'Datenschutzrichtlinie', updated: 'Zuletzt aktualisiert: 30. Januar 2026',
@@ -161,15 +162,15 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 Sicherheit', content: 'Da Dokumente nicht auf den Server hochgeladen werden, besteht kein Risiko einer PDF-Kompromittierung durch einen Server-Datenleck. Zusätzlich verwenden wir HTTPS und grundlegende Website-Sicherheitsmaßnahmen.' },
       ]},
       { heading: '5. Datenspeicherfristen', items: ['Analysedaten: können in aggregierter Form bis zu 26 Monate gespeichert werden', 'Fehlerprotokolle: bis zu 90 Tage zur Problemdiagnose', 'Sicherheitsprotokolle: bis zu 12 Monate zur Missbrauchsprävention', 'Lokale Speicherung: in Ihrem Browser gespeichert, bis Sie die Daten löschen'] },
-      { heading: '6. Ihre Rechte und Wahlmöglichkeiten', content: 'Je nach Ihrem Wohnland können Sie das Recht haben, Informationen über die Datenverarbeitung abzurufen, diese Verarbeitung einzuschränken, bestimmte Daten zu löschen oder sich von personalisierter Werbung abzumelden. Für Datenschutzanfragen kontaktieren Sie uns unter hello@editorapdf.com.' },
+      { heading: '6. Ihre Rechte und Wahlmöglichkeiten', content: 'Je nach Ihrem Wohnland können Sie das Recht haben, Informationen über die Datenverarbeitung abzurufen, diese Verarbeitung einzuschränken, bestimmte Daten zu löschen oder sich von personalisierter Werbung abzumelden. Für Datenschutzanfragen kontaktieren Sie uns unter github.com/giao4giao/editorapdf/issues.' },
       { heading: '7. Cookies und Werbeeinstellungen', content: 'Sie können Cookies über Ihre Browser-Einstellungen verwalten. Das Deaktivieren bestimmter Cookies kann einige Website-Funktionen beeinträchtigen, aber die lokale PDF-Verarbeitung wird weiterhin funktionieren.' },
       { heading: '8. Datenschutz für Kinder', content: 'Der Dienst ist nicht speziell für Kinder unter 13 Jahren konzipiert. Wir sammeln wissentlich keine persönlichen Daten von Kindern.' },
       { heading: '9. Internationale Nutzer', content: 'EditoraPDF ist in verschiedenen Ländern verfügbar. Ihre PDF-Dateien werden nicht zwischen Ländern übertragen, da sie lokal im Browser verarbeitet werden. Drittanbieter-Analyse- oder Werbedienste können technische Daten jedoch außerhalb Ihrer Jurisdiktion gemäß ihren eigenen Richtlinien verarbeiten.' },
       { heading: '10. Änderungen dieser Richtlinie', content: 'Wir können diese Datenschutzrichtlinie regelmäßig aufgrund von Änderungen in Technologie, Recht oder Servicebetrieb aktualisieren. Die aktuelle Version ist immer auf dieser Seite veröffentlicht.' },
       { heading: '11. Kontakt', content: '' },
     ],
-    contactTitle: 'E-Mail:', contactEmail: 'hello@editorapdf.com', contactPage: 'Kontaktseite:',
-    copyright: '© 2026 EditoraPDF. Ihre Privatsphäre ist uns wichtig.', termsLink: 'Nutzungsbedingungen', contactLink: 'Kontakt',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Kontaktseite:',
+    copyright: '© 2026 giao4giao · EditoraPDF. Ihre Privatsphäre ist uns wichtig.', termsLink: 'Nutzungsbedingungen', contactLink: 'Kontakt',
   },
   fr: {
     title: 'Politique de confidentialité', updated: 'Dernière mise à jour : 30 janvier 2026',
@@ -195,15 +196,15 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 Sécurité', content: 'Comme les documents ne sont pas téléchargés sur le serveur, il n\'y a aucun risque de compromission PDF par une fuite de données serveur. Nous utilisons également HTTPS et des mesures de sécurité de base.' },
       ]},
       { heading: '5. Durée de conservation des données', items: ['Données analytiques : peuvent être conservées sous forme agrégée jusqu\'à 26 mois', 'Journaux d\'erreurs : jusqu\'à 90 jours pour le diagnostic des problèmes', 'Journaux de sécurité : jusqu\'à 12 mois pour prévenir les abus', 'Stockage local : conservé dans votre navigateur jusqu\'à ce que vous effaciez les données'] },
-      { heading: '6. Vos droits et choix', content: 'Selon votre pays de résidence, vous pouvez avoir le droit d\'accéder aux informations sur le traitement des données, de restreindre ce traitement, de supprimer certaines données ou de vous désinscrire de la publicité personnalisée. Pour les demandes liées à la confidentialité, contactez-nous à hello@editorapdf.com.' },
+      { heading: '6. Vos droits et choix', content: 'Selon votre pays de résidence, vous pouvez avoir le droit d\'accéder aux informations sur le traitement des données, de restreindre ce traitement, de supprimer certaines données ou de vous désinscrire de la publicité personnalisée. Pour les demandes liées à la confidentialité, contactez-nous à github.com/giao4giao/editorapdf/issues.' },
       { heading: '7. Cookies et paramètres publicitaires', content: 'Vous pouvez gérer les cookies via les paramètres de votre navigateur. La désactivation de certains cookies peut affecter certaines fonctionnalités du site, mais le traitement local de base des PDF continuera de fonctionner.' },
       { heading: '8. Confidentialité des enfants', content: 'Le service n\'est pas spécifiquement conçu pour les enfants de moins de 13 ans. Nous ne collectons pas sciemment de données personnelles auprès des enfants.' },
       { heading: '9. Utilisateurs internationaux', content: 'EditoraPDF est disponible dans différents pays. Vos fichiers PDF ne sont pas transférés entre pays car ils sont traités localement dans le navigateur. Cependant, les services d\'analyse ou de publicité tiers peuvent traiter des données techniques en dehors de votre juridiction selon leurs propres politiques.' },
       { heading: '10. Modifications de cette politique', content: 'Nous pouvons mettre à jour périodiquement cette politique de confidentialité en raison de changements technologiques, législatifs ou opérationnels. La version actuelle est toujours publiée sur cette page.' },
       { heading: '11. Contact', content: '' },
     ],
-    contactTitle: 'E-mail :', contactEmail: 'hello@editorapdf.com', contactPage: 'Page de contact :',
-    copyright: '© 2026 EditoraPDF. Votre vie privée compte.', termsLink: 'Conditions d\'utilisation', contactLink: 'Contact',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Page de contact :',
+    copyright: '© 2026 giao4giao · EditoraPDF. Votre vie privée compte.', termsLink: 'Conditions d\'utilisation', contactLink: 'Contact',
   },
   es: {
     title: 'Política de privacidad', updated: 'Última actualización: 30 de enero de 2026',
@@ -229,15 +230,15 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 Seguridad', content: 'Como los documentos no se cargan en el servidor, no hay riesgo de compromiso de PDF a través de una filtración de datos del servidor. Adicionalmente usamos HTTPS y medidas básicas de seguridad del sitio.' },
       ]},
       { heading: '5. Retención de datos', items: ['Datos analíticos: pueden almacenarse en forma agregada hasta 26 meses', 'Registros de errores: hasta 90 días para diagnóstico de problemas', 'Registros de seguridad: hasta 12 meses para prevenir abusos', 'Almacenamiento local: almacenado en su navegador hasta que usted borre los datos'] },
-      { heading: '6. Sus derechos y opciones', content: 'Según su país de residencia, puede tener derecho a acceder a información sobre el procesamiento de datos, restringir dicho procesamiento, eliminar ciertos datos u optar por no recibir publicidad personalizada. Para consultas de privacidad, contáctenos en hello@editorapdf.com.' },
+      { heading: '6. Sus derechos y opciones', content: 'Según su país de residencia, puede tener derecho a acceder a información sobre el procesamiento de datos, restringir dicho procesamiento, eliminar ciertos datos u optar por no recibir publicidad personalizada. Para consultas de privacidad, contáctenos en github.com/giao4giao/editorapdf/issues.' },
       { heading: '7. Cookies y configuración publicitaria', content: 'Puede administrar las cookies a través de la configuración de su navegador. Deshabilitar ciertas cookies puede afectar algunas funcionalidades del sitio, pero el procesamiento local de PDF seguirá funcionando.' },
       { heading: '8. Privacidad de los niños', content: 'El servicio no está diseñado específicamente para niños menores de 13 años. No recopilamos a sabiendas datos personales de niños.' },
       { heading: '9. Usuarios internacionales', content: 'EditoraPDF está disponible en varios países. Sus archivos PDF no se transfieren entre países ya que se procesan localmente en el navegador. Sin embargo, los servicios de análisis o publicidad de terceros pueden procesar datos técnicos fuera de su jurisdicción según sus propias políticas.' },
       { heading: '10. Cambios en esta política', content: 'Podemos actualizar periódicamente esta política de privacidad debido a cambios en tecnología, legislación u operación del servicio. La versión actual siempre se publica en esta página.' },
       { heading: '11. Contacto', content: '' },
     ],
-    contactTitle: 'Correo electrónico:', contactEmail: 'hello@editorapdf.com', contactPage: 'Página de contacto:',
-    copyright: '© 2026 EditoraPDF. Su privacidad importa.', termsLink: 'Términos de servicio', contactLink: 'Contacto',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Página de contacto:',
+    copyright: '© 2026 giao4giao · EditoraPDF. Su privacidad importa.', termsLink: 'Términos de servicio', contactLink: 'Contacto',
   },
   it: {
     title: 'Informativa sulla privacy', updated: 'Ultimo aggiornamento: 30 gennaio 2026',
@@ -263,15 +264,15 @@ const privacyContent: Record<AppLocale, PrivacyContent> = {
         { heading: '4.3 Sicurezza', content: 'Poiché i documenti non vengono caricati sul server, non c\'è rischio di compromissione dei PDF attraverso una violazione dei dati del server. Utilizziamo inoltre HTTPS e misure di sicurezza di base del sito.' },
       ]},
       { heading: '5. Conservazione dei dati', items: ['Dati analitici: possono essere archiviati in forma aggregata fino a 26 mesi', 'Log degli errori: fino a 90 giorni per la diagnosi dei problemi', 'Log di sicurezza: fino a 12 mesi per prevenire gli abusi', 'Archiviazione locale: archiviata nel tuo browser finché non cancelli i dati'] },
-      { heading: '6. I tuoi diritti e scelte', content: 'A seconda del tuo paese di residenza, potresti avere il diritto di accedere alle informazioni sul trattamento dei dati, limitare tale trattamento, eliminare determinati dati o rinunciare alla pubblicità personalizzata. Per richieste sulla privacy, contattaci all\'indirizzo hello@editorapdf.com.' },
+      { heading: '6. I tuoi diritti e scelte', content: 'A seconda del tuo paese di residenza, potresti avere il diritto di accedere alle informazioni sul trattamento dei dati, limitare tale trattamento, eliminare determinati dati o rinunciare alla pubblicità personalizzata. Per richieste sulla privacy, contattaci all\'indirizzo github.com/giao4giao/editorapdf/issues.' },
       { heading: '7. Cookie e impostazioni pubblicitarie', content: 'Puoi gestire i cookie tramite le impostazioni del tuo browser. La disabilitazione di alcuni cookie può influire su alcune funzionalità del sito, ma l\'elaborazione locale di base dei PDF continuerà a funzionare.' },
       { heading: '8. Privacy dei minori', content: 'Il servizio non è specificamente progettato per bambini di età inferiore a 13 anni. Non raccogliamo consapevolmente dati personali dai bambini.' },
       { heading: '9. Utenti internazionali', content: 'EditoraPDF è disponibile in vari paesi. I tuoi file PDF non vengono trasferiti tra paesi poiché vengono elaborati localmente nel browser. Tuttavia, i servizi di analisi o pubblicità di terze parti possono elaborare dati tecnici al di fuori della tua giurisdizione secondo le proprie politiche.' },
       { heading: '10. Modifiche a questa policy', content: 'Possiamo aggiornare periodicamente questa informativa sulla privacy a causa di cambiamenti nella tecnologia, nella legge o nel funzionamento del servizio. La versione attuale è sempre pubblicata su questa pagina.' },
       { heading: '11. Contatto', content: '' },
     ],
-    contactTitle: 'Email:', contactEmail: 'hello@editorapdf.com', contactPage: 'Pagina contatti:',
-    copyright: '© 2026 EditoraPDF. La tua privacy è importante.', termsLink: 'Termini di servizio', contactLink: 'Contatto',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Pagina contatti:',
+    copyright: '© 2026 giao4giao · EditoraPDF. La tua privacy è importante.', termsLink: 'Termini di servizio', contactLink: 'Contatto',
   },
 }
 
@@ -338,7 +339,7 @@ export default function LocalePrivacyPolicyPage({ params }: { params: { locale: 
                   <Mail size={20} strokeWidth={2} className="text-primary-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">{c.contactTitle}</strong>{' '}
-                    <a href={`mailto:${c.contactEmail}`} className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
+                    <a href={c.contactEmail} className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
                       {c.contactEmail}
                       <ExternalLink size={14} strokeWidth={2} />
                     </a>
@@ -351,7 +352,7 @@ export default function LocalePrivacyPolicyPage({ params }: { params: { locale: 
                   <div>
                     <strong className="text-white">{c.contactPage}</strong>{' '}
                     <Link href={withLocale('/contact')} className="text-primary-400 hover:text-primary-300 transition-colors">
-                      editorapdf.com/contact
+                      {withLocale('/contact')}
                     </Link>
                   </div>
                 </li>

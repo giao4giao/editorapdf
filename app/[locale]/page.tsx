@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import Script from 'next/script';
 import { generateFAQSchema } from '../data/faq';
 import Header from '../components/Header';
@@ -8,7 +9,6 @@ import type { AppLocale } from '../../i18n/config';
 import { getMessages } from '../i18n/messages';
 import { localeAlternates, pageOpenGraph } from '../lib/seo';
 
-const siteUrl = 'https://editorapdf.com';
 
 // Canonical + hreflang for the locale home (was provided by the [locale] layout's
 // headers()-based metadata; now per-page so the route can be statically rendered).

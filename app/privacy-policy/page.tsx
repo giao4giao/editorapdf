@@ -1,3 +1,4 @@
+import { issuesUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../components/Header'
@@ -241,8 +242,8 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>
               To exercise these rights, please contact us at{' '}
-              <a href="mailto:hello@affsquad.com" className="text-primary-400 hover:text-primary-300">
-                hello@affsquad.com
+              <a href={issuesUrl} className="text-primary-400 hover:text-primary-300">
+                GitHub Issues
               </a>.
             </p>
 
@@ -294,8 +295,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at{' '}
-              <a href="mailto:hello@affsquad.com" className="text-primary-400 hover:text-primary-300">
-                hello@affsquad.com
+              <a href={issuesUrl} className="text-primary-400 hover:text-primary-300">
+                GitHub Issues
               </a>
               {' '}and we will take steps to remove such information.
             </p>
@@ -325,8 +326,8 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>
               To exercise these rights, please contact us at{' '}
-              <a href="mailto:hello@affsquad.com" className="text-primary-400 hover:text-primary-300">
-                hello@affsquad.com
+              <a href={issuesUrl} className="text-primary-400 hover:text-primary-300">
+                GitHub Issues
               </a>
               {' '}with "California Privacy Rights" in the subject line.
             </p>
@@ -345,8 +346,8 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>
               To exercise these rights, please contact us at{' '}
-              <a href="mailto:hello@affsquad.com" className="text-primary-400 hover:text-primary-300">
-                hello@affsquad.com
+              <a href={issuesUrl} className="text-primary-400 hover:text-primary-300">
+                GitHub Issues
               </a>.
             </p>
 
@@ -372,9 +373,9 @@ export default function PrivacyPolicyPage() {
                 <li className="flex items-start gap-3">
                   <Mail size={20} strokeWidth={2} className="text-primary-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Email:</strong>{' '}
-                    <a href="mailto:hello@affsquad.com" className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
-                      hello@affsquad.com
+                    <strong className="text-white">GitHub Issues:</strong>{' '}
+                    <a href={issuesUrl} className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
+                      GitHub Issues
                       <ExternalLink size={14} strokeWidth={2} />
                     </a>
                   </div>
@@ -386,7 +387,7 @@ export default function PrivacyPolicyPage() {
                   <div>
                     <strong className="text-white">Contact Page:</strong>{' '}
                     <Link href="/contact" className="text-primary-400 hover:text-primary-300 transition-colors">
-                      editorapdf.com/contact
+                      /en/contact
                     </Link>
                   </div>
                 </li>
@@ -399,7 +400,7 @@ export default function PrivacyPolicyPage() {
             <div className="not-prose mt-12 pt-8 border-t border-surface-700">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-surface-500">
-                  © 2026 EditoraPDF. Your privacy matters.
+                  © 2026 giao4giao · EditoraPDF. Your privacy matters.
                 </p>
                 <div className="flex gap-4">
                   <Link href="/terms" className="text-sm text-surface-400 hover:text-primary-400 transition-colors">

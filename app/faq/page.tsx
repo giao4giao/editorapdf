@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
@@ -7,7 +8,6 @@ import Header from '../components/Header'
 import { getMessages } from '../i18n/messages'
 import { normalizeLocale } from '../../i18n/config'
 
-const siteUrl = 'https://editorapdf.com'
 
 export const metadata: Metadata = {
   // Bare title — the layout's title.template adds the "| EditoraPDF" brand once
@@ -86,7 +86,7 @@ export default function FAQPage({ params }: { params?: { locale?: string } }) {
                   {t('faq.contactUs', 'Contact us')}
                 </Link>
                 <a
-                  href="https://github.com/affsquadDevs/editorapdf"
+                  href="https://github.com/giao4giao/editorapdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary btn-md inline-flex"

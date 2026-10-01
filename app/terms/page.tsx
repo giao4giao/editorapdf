@@ -1,3 +1,4 @@
+import { issuesUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../components/Header'
@@ -117,9 +118,9 @@ export default function TermsPage() {
                 <li className="flex items-start gap-3">
                   <Mail size={20} strokeWidth={2} className="text-primary-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white">Email:</strong>{' '}
-                    <a href="mailto:hello@editorapdf.com" className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
-                      hello@editorapdf.com
+                    <strong className="text-white">GitHub Issues:</strong>{' '}
+                    <a href={issuesUrl} className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
+                      GitHub Issues
                       <ExternalLink size={14} strokeWidth={2} />
                     </a>
                   </div>
@@ -131,7 +132,7 @@ export default function TermsPage() {
                   <div>
                     <strong className="text-white">Contact page:</strong>{' '}
                     <Link href="/en/contact" className="text-primary-400 hover:text-primary-300 transition-colors">
-                      editorapdf.com/contact
+                      /en/contact
                     </Link>
                   </div>
                 </li>
@@ -141,7 +142,7 @@ export default function TermsPage() {
             <div className="not-prose mt-12 pt-8 border-t border-surface-700">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-surface-500">
-                  © 2026 EditoraPDF. All rights reserved.
+                  © 2026 giao4giao · EditoraPDF. All rights reserved.
                 </p>
                 <div className="flex gap-4">
                   <Link href="/en/privacy-policy" className="text-sm text-surface-400 hover:text-primary-400 transition-colors">

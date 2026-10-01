@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import type { Metadata, Viewport } from 'next'
 import { notFound } from 'next/navigation'
 import Footer from '../components/Footer'
@@ -7,11 +8,7 @@ import { getMessages } from '../i18n/messages'
 
 export const runtime = 'edge';
 
-const siteUrl = 'https://editorapdf.com'
 const siteName = 'EditoraPDF'
-
-// Google Tag Manager Container ID (handled in root layout only)
-const GTM_ID = 'GTM-P5DF8WL7'
 
 // Per-locale SEO title & description
 const localeSeo: Record<AppLocale, { title: string; description: string; ogLocale: string }> = {
@@ -97,8 +94,6 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       title: seo.title,
       description: seo.description,
       images: [`${siteUrl}/og/og-image.png`],
-      creator: '@editora_pdf',
-      site: '@editora_pdf',
     },
     robots: {
       index: true,
@@ -153,13 +148,8 @@ export default function LocaleLayout({
     image: `${siteUrl}/og/og-image.png`,
     description: seo.description,
     foundingDate: '2026',
-    sameAs: [
-      'https://www.instagram.com/editora_pdf',
-      'https://www.facebook.com/people/Editorapdf/61587362633003/',
-      'https://www.youtube.com/@EditoraPDF',
-      'https://www.threads.com/@editora_pdf',
-    ],
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'hello@affsquad.com', availableLanguage: ['English', 'Ukrainian', 'German', 'Spanish', 'French', 'Italian'] },
+    sameAs: ['https://github.com/giao4giao/editorapdf'],
+    contactPoint: { '@type': 'ContactPoint', contactType: 'project support', url: 'https://github.com/giao4giao/editorapdf/issues', availableLanguage: ['Chinese', 'English', 'Ukrainian', 'German', 'Spanish', 'French', 'Italian'] },
     publishingPrinciples: `${siteUrl}/terms`,
     privacyPolicy: `${siteUrl}/privacy-policy`,
     termsOfService: `${siteUrl}/terms`,
@@ -176,7 +166,7 @@ export default function LocaleLayout({
     publisher: { '@type': 'Organization', name: 'EditoraPDF', logo: { '@type': 'ImageObject', url: `${siteUrl}/logo.svg` } },
     inLanguage: seo.ogLocale.replace('_', '-'),
     copyrightYear: 2026,
-    copyrightHolder: { '@type': 'Organization', name: 'EditoraPDF' },
+    copyrightHolder: { '@type': 'Person', name: 'giao4giao' },
   };
 
   const itemListJsonLd = {

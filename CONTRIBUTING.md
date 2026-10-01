@@ -260,9 +260,7 @@ perf: optimize thumbnail rendering performance
 
 ## Community
 
-- **GitHub Issues**: [Report bugs and request features](https://github.com/affsquadDevs/editorapdf/issues)
-- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/affsquadDevs/editorapdf/discussions)
-- **Email**: hello@affsquad.com
+- **GitHub Issues**: [Report bugs and request features](https://github.com/giao4giao/editorapdf/issues)
 
 ## Recognition
 

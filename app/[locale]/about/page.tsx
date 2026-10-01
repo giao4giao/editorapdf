@@ -1,3 +1,4 @@
+import ForkInfo from '../../components/ForkInfo';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../../components/Header'
@@ -67,6 +68,7 @@ export default function AboutLocalePage({ params }: { params: { locale: string }
             </p>
           </div>
 
+          <div className="mb-8"><ForkInfo locale={locale} /></div>
           {/* What is */}
           <section className="mb-16 animate-fade-in delay-100" aria-labelledby="what-is-heading">
             <div className="card p-8 md:p-10 bg-gradient-to-br from-primary-500/5 via-surface-800/60 to-accent-500/5 border-primary-500/20">
@@ -231,7 +233,7 @@ export default function AboutLocalePage({ params }: { params: { locale: string }
                   </p>
                   <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start">
                     <a
-                      href="https://github.com/affsquadDevs/editorapdf"
+                      href="https://github.com/giao4giao/editorapdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary btn-md inline-flex items-center gap-2"
@@ -240,7 +242,7 @@ export default function AboutLocalePage({ params }: { params: { locale: string }
                       {t('about.oss.github')}
                     </a>
                     <a
-                      href="https://github.com/affsquadDevs/editorapdf/issues"
+                      href="https://github.com/giao4giao/editorapdf/issues"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-secondary btn-md inline-flex items-center gap-2"

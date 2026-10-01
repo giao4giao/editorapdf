@@ -1,6 +1,6 @@
+import { siteUrl } from './site';
 import { supportedLocales, defaultLocale } from '../../i18n/config'
 
-const siteUrl = 'https://editorapdf.com'
 
 /**
  * Locale-aware canonical + hreflang alternates for a page, computed from the route's

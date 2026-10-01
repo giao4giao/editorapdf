@@ -1,5 +1,7 @@
 'use client';
 
+import { siteUrl } from '../lib/site';
+
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -46,7 +48,6 @@ const ExportButton = dynamic(() => import('../components/ExportButton'), {
   ssr: false,
 });
 
-const siteUrl = 'https://editorapdf.com';
 
 type ActiveTab = 'editor' | 'tools';
 

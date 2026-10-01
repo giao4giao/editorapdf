@@ -1,3 +1,4 @@
+import { issuesUrl } from '../../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../../components/Header'
@@ -52,7 +53,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. 服务与条款变更', content: '我们可能更新服务功能和条款，最新版本始终发布在本页面。' },
       { heading: '10. 联系方式', content: '' },
     ],
-    contactTitle: '邮箱：', contactEmail: 'hello@editorapdf.com', contactPage: '联系页面：', copyright: '© 2026 EditoraPDF。保留所有权利。', privacyLink: '隐私政策', contactLink: '联系我们',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: '联系页面：', copyright: '© 2026 giao4giao · EditoraPDF。保留所有权利。', privacyLink: '隐私政策', contactLink: '联系我们',
   },
   en: {
     title: 'Terms of Service',
@@ -84,7 +85,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. Changes to Service and Terms', content: 'We may update the functionality of the service and change these terms. The current version is always published on this page.' },
       { heading: '10. Contact', content: '' },
     ],
-    contactTitle: 'Email:', contactEmail: 'hello@editorapdf.com', contactPage: 'Contact page:', copyright: '© 2026 EditoraPDF. All rights reserved.', privacyLink: 'Privacy Policy', contactLink: 'Contact Us',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Contact page:', copyright: '© 2026 giao4giao · EditoraPDF. All rights reserved.', privacyLink: 'Privacy Policy', contactLink: 'Contact Us',
   },
   uk: {
     title: 'Умови використання',
@@ -116,7 +117,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. Зміни в сервісі та умовах', content: 'Ми можемо оновлювати функціональність сервісу та змінювати ці умови. Актуальна редакція завжди публікується на цій сторінці.' },
       { heading: '10. Контакти', content: '' },
     ],
-    contactTitle: 'Електронна пошта:', contactEmail: 'hello@editorapdf.com', contactPage: 'Сторінка контактів:', copyright: '© 2026 EditoraPDF. Усі права захищено.', privacyLink: 'Політика конфіденційності', contactLink: 'Зв\'язатися з нами',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Сторінка контактів:', copyright: '© 2026 giao4giao · EditoraPDF. Усі права захищено.', privacyLink: 'Політика конфіденційності', contactLink: 'Зв\'язатися з нами',
   },
   de: {
     title: 'Nutzungsbedingungen',
@@ -148,7 +149,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. Änderungen am Dienst und den Bedingungen', content: 'Wir können die Funktionalität des Dienstes aktualisieren und diese Bedingungen ändern. Die aktuelle Version wird immer auf dieser Seite veröffentlicht.' },
       { heading: '10. Kontakt', content: '' },
     ],
-    contactTitle: 'E-Mail:', contactEmail: 'hello@editorapdf.com', contactPage: 'Kontaktseite:', copyright: '© 2026 EditoraPDF. Alle Rechte vorbehalten.', privacyLink: 'Datenschutzrichtlinie', contactLink: 'Kontakt aufnehmen',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Kontaktseite:', copyright: '© 2026 giao4giao · EditoraPDF. Alle Rechte vorbehalten.', privacyLink: 'Datenschutzrichtlinie', contactLink: 'Kontakt aufnehmen',
   },
   fr: {
     title: 'Conditions d\'utilisation',
@@ -180,7 +181,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. Modifications du service et des conditions', content: 'Nous pouvons mettre à jour les fonctionnalités du service et modifier ces conditions. La version actuelle est toujours publiée sur cette page.' },
       { heading: '10. Contact', content: '' },
     ],
-    contactTitle: 'E-mail :', contactEmail: 'hello@editorapdf.com', contactPage: 'Page de contact :', copyright: '© 2026 EditoraPDF. Tous droits réservés.', privacyLink: 'Politique de confidentialité', contactLink: 'Nous contacter',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Page de contact :', copyright: '© 2026 giao4giao · EditoraPDF. Tous droits réservés.', privacyLink: 'Politique de confidentialité', contactLink: 'Nous contacter',
   },
   es: {
     title: 'Términos de servicio',
@@ -212,7 +213,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. Cambios en el servicio y los términos', content: 'Podemos actualizar la funcionalidad del servicio y cambiar estos términos. La versión actual siempre se publica en esta página.' },
       { heading: '10. Contacto', content: '' },
     ],
-    contactTitle: 'Correo electrónico:', contactEmail: 'hello@editorapdf.com', contactPage: 'Página de contacto:', copyright: '© 2026 EditoraPDF. Todos los derechos reservados.', privacyLink: 'Política de privacidad', contactLink: 'Contáctenos',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Página de contacto:', copyright: '© 2026 giao4giao · EditoraPDF. Todos los derechos reservados.', privacyLink: 'Política de privacidad', contactLink: 'Contáctenos',
   },
   it: {
     title: 'Termini di servizio',
@@ -244,7 +245,7 @@ const termsContent: Record<AppLocale, TermsContent> = {
       { heading: '9. Modifiche al servizio e ai termini', content: 'Possiamo aggiornare la funzionalità del servizio e modificare questi termini. La versione attuale è sempre pubblicata su questa pagina.' },
       { heading: '10. Contatto', content: '' },
     ],
-    contactTitle: 'Email:', contactEmail: 'hello@editorapdf.com', contactPage: 'Pagina contatti:', copyright: '© 2026 EditoraPDF. Tutti i diritti riservati.', privacyLink: 'Informativa sulla privacy', contactLink: 'Contattaci',
+    contactTitle: 'GitHub Issues:', contactEmail: issuesUrl, contactPage: 'Pagina contatti:', copyright: '© 2026 giao4giao · EditoraPDF. Tutti i diritti riservati.', privacyLink: 'Informativa sulla privacy', contactLink: 'Contattaci',
   },
 }
 
@@ -313,7 +314,7 @@ export default function LocaleTermsPage({ params }: { params: { locale: string }
                   <Mail size={20} strokeWidth={2} className="text-primary-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white">{c.contactTitle}</strong>{' '}
-                    <a href={`mailto:${c.contactEmail}`} className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
+                    <a href={c.contactEmail} className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-1">
                       {c.contactEmail}
                       <ExternalLink size={14} strokeWidth={2} />
                     </a>
@@ -326,7 +327,7 @@ export default function LocaleTermsPage({ params }: { params: { locale: string }
                   <div>
                     <strong className="text-white">{c.contactPage}</strong>{' '}
                     <Link href={withLocale('/contact')} className="text-primary-400 hover:text-primary-300 transition-colors">
-                      editorapdf.com/contact
+                      {withLocale('/contact')}
                     </Link>
                   </div>
                 </li>

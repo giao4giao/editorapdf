@@ -1,75 +1,79 @@
-# EditoraPDF
+# EditoraPDF — giao4giao fork
 
 > Privacy-first online PDF editor and toolkit. Edit, organize, convert, secure, and optimize PDF documents directly in your browser — no installation, no account required. All file processing happens locally on your device.
 
 EditoraPDF is a free, open-source web application for working with PDF files. It runs entirely in the browser using WebAssembly-based PDF engines. No files are ever uploaded to a server. The product is designed for individuals, students, professionals, legal users, and teams who need reliable, private PDF workflows.
 
+Maintainer: [giao4giao](https://github.com/giao4giao)
+Repository: [giao4giao/editorapdf](https://github.com/giao4giao/editorapdf)
+Upstream: [affsquadDevs/editorapdf](https://github.com/affsquadDevs/editorapdf)
+
 ## Key Pages
 
-- [Homepage](https://editorapdf.com/): Product overview and main editor entry point
-- [PDF Editor](https://editorapdf.com/edit-pdf): Full-featured in-browser PDF editor
-- [All PDF Tools](https://editorapdf.com/en/tools): Complete list of available tools
-- [Blog](https://editorapdf.com/blog): Educational articles on PDF workflows, privacy, and document management
-- [About](https://editorapdf.com/about): Company background and mission
-- [Privacy Policy](https://editorapdf.com/privacy-policy): How EditoraPDF handles data
-- [Contact](https://editorapdf.com/contact): Support and contact information
+- [Homepage](/): Product overview and main editor entry point
+- [PDF Editor](/en/edit): Full-featured in-browser PDF editor
+- [All PDF Tools](/en/tools): Complete list of available tools
+- [Blog](/blog): Educational articles on PDF workflows, privacy, and document management
+- [About](/about): Fork background and project information
+- [Privacy Policy](/privacy-policy): How EditoraPDF handles data
+- [Contact](/contact): Support and contact information
 
 ## PDF Tools
 
 ### Organize & Pages
 
-- [Merge PDF](https://editorapdf.com/tools/merge): Combine multiple PDF files into one document
-- [Split PDF](https://editorapdf.com/tools/split): Split a PDF into separate files by page ranges
-- [Delete Pages](https://editorapdf.com/tools/delete-pages): Remove specific pages from a PDF
-- [Extract Pages](https://editorapdf.com/tools/extract-pages): Extract specific pages into a new PDF
-- [Reorder Pages](https://editorapdf.com/tools/reorder): Drag and drop to rearrange PDF pages
-- [Rotate Pages](https://editorapdf.com/tools/rotate): Rotate all or specific pages
-- [Insert Blank Pages](https://editorapdf.com/tools/insert-blank): Add empty pages at specific positions
-- [Duplicate Pages](https://editorapdf.com/tools/duplicate-pages): Duplicate pages within a PDF
-- [Reverse Page Order](https://editorapdf.com/tools/reverse-order): Flip the order of all pages
-- [Split by Size](https://editorapdf.com/tools/split-by-size): Split PDF so each part fits a file size limit
-- [Split by Bookmarks](https://editorapdf.com/tools/split-by-bookmarks): Split PDF by bookmark or chapter structure
+- [Merge PDF](/tools/merge): Combine multiple PDF files into one document
+- [Split PDF](/tools/split): Split a PDF into separate files by page ranges
+- [Delete Pages](/tools/delete-pages): Remove specific pages from a PDF
+- [Extract Pages](/tools/extract-pages): Extract specific pages into a new PDF
+- [Reorder Pages](/tools/reorder): Drag and drop to rearrange PDF pages
+- [Rotate Pages](/tools/rotate): Rotate all or specific pages
+- [Insert Blank Pages](/tools/insert-blank): Add empty pages at specific positions
+- [Duplicate Pages](/tools/duplicate-pages): Duplicate pages within a PDF
+- [Reverse Page Order](/tools/reverse-order): Flip the order of all pages
+- [Split by Size](/tools/split-by-size): Split PDF so each part fits a file size limit
+- [Split by Bookmarks](/tools/split-by-bookmarks): Split PDF by bookmark or chapter structure
 
 ### Security & Protection
 
-- [Digital Signature](https://editorapdf.com/tools/sign): Add a digital signature or e-sign a PDF
-- [Redact PDF](https://editorapdf.com/tools/redact): Permanently black out sensitive information
-- [Sanitize PDF](https://editorapdf.com/tools/remove-hidden-data): Remove hidden data, metadata, and scripts
-- [Certificate Sign](https://editorapdf.com/tools/certificate): Sign PDF with an X.509 digital certificate
+- [Digital Signature](/tools/sign): Add a digital signature or e-sign a PDF
+- [Redact PDF](/tools/redact): Permanently black out sensitive information
+- [Sanitize PDF](/tools/remove-hidden-data): Remove hidden data, metadata, and scripts
+- [Certificate Sign](/tools/certificate): Sign PDF with an X.509 digital certificate
 
 ### Convert
 
-- [PDF to Images](https://editorapdf.com/tools/pdf-to-images): Convert PDF pages to PNG, JPEG, or WebP
-- [Images to PDF](https://editorapdf.com/tools/images-to-pdf): Combine images into a PDF
-- [PDF to Word](https://editorapdf.com/tools/pdf-to-word): Convert PDF to editable DOCX
-- [PDF to Excel](https://editorapdf.com/tools/pdf-to-excel): Extract tables from PDF to XLSX
-- [PDF to Text](https://editorapdf.com/tools/pdf-to-text): Extract all text content from PDF
-- [PDF to CSV](https://editorapdf.com/tools/pdf-to-csv): Extract tabular data to CSV
-- [PDF to HTML](https://editorapdf.com/tools/pdf-to-html): Convert PDF to a web page
-- [PDF to Markdown](https://editorapdf.com/tools/pdf-to-markdown): Convert PDF content to Markdown
+- [PDF to Images](/tools/pdf-to-images): Convert PDF pages to PNG, JPEG, or WebP
+- [Images to PDF](/tools/images-to-pdf): Combine images into a PDF
+- [PDF to Word](/tools/pdf-to-word): Convert PDF to editable DOCX
+- [PDF to Excel](/tools/pdf-to-excel): Extract tables from PDF to XLSX
+- [PDF to Text](/tools/pdf-to-text): Extract all text content from PDF
+- [PDF to CSV](/tools/pdf-to-csv): Extract tabular data to CSV
+- [PDF to HTML](/tools/pdf-to-html): Convert PDF to a web page
+- [PDF to Markdown](/tools/pdf-to-markdown): Convert PDF content to Markdown
 
 ### Edit & Enhance
 
-- [Compress PDF](https://editorapdf.com/tools/compress): Reduce file size while maintaining quality
-- [Add Watermark](https://editorapdf.com/tools/add-watermark): Overlay text or image watermark on pages
-- [Add Page Numbers](https://editorapdf.com/tools/page-numbers): Insert page numbers with custom positioning
-- [Crop Pages](https://editorapdf.com/tools/crop): Crop or trim PDF page margins
-- [Resize Pages](https://editorapdf.com/tools/resize): Change page size (A4, Letter, custom)
-- [Grayscale PDF](https://editorapdf.com/tools/grayscale): Convert colored PDF to black and white
-- [Invert Colors](https://editorapdf.com/tools/invert-colors): Invert PDF colors for dark mode reading
-- [Flatten PDF](https://editorapdf.com/tools/flatten): Flatten form fields and annotations into content
-- [Remove Annotations](https://editorapdf.com/tools/remove-annotations): Strip all comments, highlights, and notes
+- [Compress PDF](/tools/compress): Reduce file size while maintaining quality
+- [Add Watermark](/tools/add-watermark): Overlay text or image watermark on pages
+- [Add Page Numbers](/tools/page-numbers): Insert page numbers with custom positioning
+- [Crop Pages](/tools/crop): Crop or trim PDF page margins
+- [Resize Pages](/tools/resize): Change page size (A4, Letter, custom)
+- [Grayscale PDF](/tools/grayscale): Convert colored PDF to black and white
+- [Invert Colors](/tools/invert-colors): Invert PDF colors for dark mode reading
+- [Flatten PDF](/tools/flatten): Flatten form fields and annotations into content
+- [Remove Annotations](/tools/remove-annotations): Strip all comments, highlights, and notes
 
 ### Content & Media
 
-- [Extract Images](https://editorapdf.com/tools/extract-images): Pull out all embedded images from a PDF
-- [Remove Images](https://editorapdf.com/tools/remove-images): Strip all images from PDF, keep text only
-- [Optimize Images](https://editorapdf.com/tools/optimize-images): Downscale and optimize images inside PDF
-- [Add QR Code](https://editorapdf.com/tools/add-qr-code): Insert QR codes with links or text onto pages
-- [Add Barcode](https://editorapdf.com/tools/add-barcode): Insert barcodes (Code128, EAN, UPC) into PDF
-- [Add Bookmarks](https://editorapdf.com/tools/add-bookmarks): Create or edit bookmarks and table of contents
-- [Add Hyperlinks](https://editorapdf.com/tools/add-hyperlinks): Add or edit clickable links in a PDF
-- [Embed Attachments](https://editorapdf.com/tools/add-attachments): Embed files inside a PDF
+- [Extract Images](/tools/extract-images): Pull out all embedded images from a PDF
+- [Remove Images](/tools/remove-images): Strip all images from PDF, keep text only
+- [Optimize Images](/tools/optimize-images): Downscale and optimize images inside PDF
+- [Add QR Code](/tools/add-qr-code): Insert QR codes with links or text onto pages
+- [Add Barcode](/tools/add-barcode): Insert barcodes (Code128, EAN, UPC) into PDF
+- [Add Bookmarks](/tools/add-bookmarks): Create or edit bookmarks and table of contents
+- [Add Hyperlinks](/tools/add-hyperlinks): Add or edit clickable links in a PDF
+- [Embed Attachments](/tools/add-attachments): Embed files inside a PDF
 
 ## Privacy & Security
 

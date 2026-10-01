@@ -52,7 +52,7 @@ export const faqDataUk: FAQItem[] = [
   },
   {
     question: 'Чи справді EditoraPDF безкоштовний і з відкритим кодом?',
-    answer: 'Так. EditoraPDF — 100% open‑source під ліцензією MIT. Код доступний на GitHub: https://github.com/affsquadDevs/editorapdf.',
+    answer: 'Так. EditoraPDF — 100% open‑source під ліцензією MIT. Код доступний на GitHub: https://github.com/giao4giao/editorapdf.',
   },
   {
     question: 'Який найкращий безкоштовний open‑source PDF‑редактор?',

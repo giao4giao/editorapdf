@@ -1,10 +1,10 @@
+import { siteUrl } from '../../lib/site';
 import type { Metadata } from 'next'
 import BlogIndex from '../../components/BlogIndex'
 import { localeAlternates, pageOpenGraph } from '../../lib/seo'
 import { getMessages } from '../../i18n/messages'
 import { supportedLocales, normalizeLocale, type AppLocale } from '../../../i18n/config'
 
-const siteUrl = 'https://editorapdf.com'
 const BLOG_TITLE = 'Blog - Tips & Guides'
 const BLOG_DESC =
   'Learn PDF editing tips, tricks, and best practices. Stay updated with the latest features and tutorials for EditoraPDF.'

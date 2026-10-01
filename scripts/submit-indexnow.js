@@ -2,7 +2,7 @@
 /**
  * Submit URLs to IndexNow (Bing, Yandex, Seznam, and other participating engines).
  *
- * By default it pulls EVERY URL from the live sitemap (https://editorapdf.com/sitemap.xml),
+ * By default it pulls EVERY URL from the live sitemap (https://editorapdf.171818.xyz/sitemap.xml),
  * so all localized blog posts, tool pages, and main pages are submitted — not a hardcoded
  * subset. Run it after a deploy that adds/updates content.
  *
@@ -10,12 +10,12 @@
  *   npm run submit-indexnow                      # submit all URLs from the sitemap
  *   node scripts/submit-indexnow.js <url> [...]  # submit only the given URL(s)
  *
- * The IndexNow key is hosted at https://editorapdf.com/<KEY>.txt (public/<KEY>.txt) and
+ * The IndexNow key is hosted at https://editorapdf.171818.xyz/<KEY>.txt (public/<KEY>.txt) and
  * must stay in sync with INDEXNOW_KEY below.
  */
 
 const INDEXNOW_KEY = '2364b546c4a34edda494ccea10f3431b';
-const SITE_URL = 'https://editorapdf.com';
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://editorapdf.171818.xyz').replace(/\/+$/, '');
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 // IndexNow shares a submission across all participating engines, but we also hit Bing

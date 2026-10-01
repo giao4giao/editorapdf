@@ -1,3 +1,4 @@
+import { siteUrl } from '../../lib/site';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import Header from '../../components/Header';
@@ -7,7 +8,6 @@ import { supportedLocales, defaultLocale, normalizeLocale } from '../../../i18n/
 import { getMessages } from '../../i18n/messages';
 import { getOgLocale } from '../../lib/seo';
 
-const siteUrl = 'https://editorapdf.com';
 
 export function generateMetadata({
   params,
@@ -47,8 +47,6 @@ export function generateMetadata({
       title: `${metaTitle} | EditoraPDF`,
       description: metaDesc,
       images: [`${siteUrl}/og/og-image.png`],
-      creator: '@editora_pdf',
-      site: '@editora_pdf',
     },
     alternates: {
       canonical: url,

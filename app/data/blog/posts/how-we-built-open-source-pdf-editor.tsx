@@ -1,3 +1,4 @@
+import { siteUrl } from '../../../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../../../components/Header'
@@ -6,7 +7,6 @@ import { getMessages } from '../../../i18n/messages'
 import { localeAlternates, getOgLocale } from '../../../lib/seo'
 import type { AppLocale } from '../../../../i18n/config'
 
-const siteUrl = 'https://editorapdf.com'
 const slug = 'how-we-built-open-source-pdf-editor'
 const postPath = `/blog/${slug}`
 const ogImage = '/og/og-image.png'
@@ -42,7 +42,7 @@ const C: Record<AppLocale, Content> = {
     fq2q: 'Why did you choose Next.js for a PDF editor?',
     fq2a: 'Next.js provides excellent performance, SEO capabilities, static export support, and great developer experience. The App Router makes it easy to build fast, SEO-friendly applications.',
     fq3q: 'Is EditoraPDF really open source?',
-    fq3a: 'Yes, EditoraPDF is 100% open source under the MIT License. The complete source code is available on GitHub at https://github.com/affsquadDevs/editorapdf',
+    fq3a: 'Yes, EditoraPDF is 100% open source under the MIT License. The complete source code is available on GitHub at https://github.com/giao4giao/editorapdf',
     fq4q: 'How does client-side PDF processing work?',
     fq4a: 'PDF.js renders PDFs to HTML canvas in the browser, while pdf-lib manipulates the PDF structure. All processing happens locally in the user browser using JavaScript, ensuring privacy and security.',
 
@@ -202,7 +202,7 @@ const C: Record<AppLocale, Content> = {
     resStat3L: 'Open source license',
     resStat4L: 'Forever free',
     resP2a: 'The codebase is available at ',
-    resP2link: 'github.com/affsquadDevs/editorapdf',
+    resP2link: 'github.com/giao4giao/editorapdf',
     resP2b: ' under the MIT License.',
 
     // Learnings
@@ -237,7 +237,7 @@ const C: Record<AppLocale, Content> = {
     fv2a: 'Next.js provides excellent performance, SEO capabilities, static export support, and great developer experience. The App Router makes it easy to build fast, SEO-friendly applications that can be deployed anywhere.',
     fv3q: 'Is EditoraPDF really open source?',
     fv3a1: 'Yes, EditoraPDF is 100% open source under the MIT License. The complete source code is available on GitHub at ',
-    fv3aLink: 'github.com/affsquadDevs/editorapdf',
+    fv3aLink: 'github.com/giao4giao/editorapdf',
     fv4q: 'How does client-side PDF processing work?',
     fv4a: "PDF.js renders PDFs to HTML canvas in the browser, while pdf-lib manipulates the PDF structure. All processing happens locally in the user's browser using JavaScript, ensuring complete privacy and security without any server uploads.",
     fv5q: 'Can I use EditoraPDF code in my own project?',
@@ -416,7 +416,7 @@ export function Article({ locale }: { locale: AppLocale }) {
           {/* GitHub CTA */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="https://github.com/affsquadDevs/editorapdf"
+              href="https://github.com/giao4giao/editorapdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary btn-md"
@@ -427,7 +427,7 @@ export function Article({ locale }: { locale: AppLocale }) {
               {c.ctaViewSource}
             </a>
             <a
-              href="https://github.com/affsquadDevs/editorapdf/stargazers"
+              href="https://github.com/giao4giao/editorapdf/stargazers"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary btn-md"
@@ -737,7 +737,7 @@ actualY = normalizedY * pageHeight * zoom`}
               </div>
 
               <p className="text-surface-300 leading-relaxed">
-                {c.resP2a}<a href="https://github.com/affsquadDevs/editorapdf" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline font-semibold">{c.resP2link}</a>{c.resP2b}
+                {c.resP2a}<a href="https://github.com/giao4giao/editorapdf" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline font-semibold">{c.resP2link}</a>{c.resP2b}
               </p>
             </section>
 
@@ -790,7 +790,7 @@ actualY = normalizedY * pageHeight * zoom`}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <a
-                  href="https://github.com/affsquadDevs/editorapdf"
+                  href="https://github.com/giao4giao/editorapdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-6 bg-surface-800/50 border border-surface-700 hover:border-primary-500/50 rounded-lg transition-colors group"
@@ -800,7 +800,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 </a>
 
                 <a
-                  href="https://github.com/affsquadDevs/editorapdf/issues"
+                  href="https://github.com/giao4giao/editorapdf/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-6 bg-surface-800/50 border border-surface-700 hover:border-accent-500/50 rounded-lg transition-colors group"
@@ -810,7 +810,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 </a>
 
                 <a
-                  href="https://github.com/affsquadDevs/editorapdf/blob/master/CONTRIBUTING.md"
+                  href="https://github.com/giao4giao/editorapdf/blob/master/CONTRIBUTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-6 bg-surface-800/50 border border-surface-700 hover:border-success-500/50 rounded-lg transition-colors group"
@@ -820,7 +820,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 </a>
 
                 <a
-                  href="https://editorapdf.com/edit"
+                  href={L('/edit')}
                   className="block p-6 bg-surface-800/50 border border-surface-700 hover:border-warning-500/50 rounded-lg transition-colors group"
                 >
                   <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-warning-300">{c.giTryH}</h4>
@@ -851,7 +851,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">{c.fv3q}</h3>
                   <p className="text-surface-300 leading-relaxed">
-                    {c.fv3a1}<a href="https://github.com/affsquadDevs/editorapdf" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline">{c.fv3aLink}</a>
+                    {c.fv3a1}<a href="https://github.com/giao4giao/editorapdf" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline">{c.fv3aLink}</a>
                   </p>
                 </div>
 
@@ -872,7 +872,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">{c.fv6q}</h3>
                   <p className="text-surface-300 leading-relaxed">
-                    {c.fv6a1}<a href="https://github.com/affsquadDevs/editorapdf/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline">{c.fv6aLink}</a>{c.fv6a2}
+                    {c.fv6a1}<a href="https://github.com/giao4giao/editorapdf/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline">{c.fv6aLink}</a>{c.fv6a2}
                   </p>
                 </div>
               </div>
@@ -888,7 +888,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 {c.concP2}
               </p>
               <p className="text-surface-300 leading-relaxed">
-                {c.concP3a}<a href="https://github.com/affsquadDevs/editorapdf" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline font-semibold">{c.concP3link}</a>{c.concP3b}
+                {c.concP3a}<a href="https://github.com/giao4giao/editorapdf" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 underline font-semibold">{c.concP3link}</a>{c.concP3b}
               </p>
             </section>
           </div>
@@ -917,7 +917,7 @@ actualY = normalizedY * pageHeight * zoom`}
                 © {new Date().getFullYear()} EditoraPDF. {t('blog.rights', 'All rights reserved.')}
               </p>
               <a
-                href="https://github.com/affsquadDevs/editorapdf"
+                href="https://github.com/giao4giao/editorapdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-medium hover:bg-primary-500/20 transition-colors"

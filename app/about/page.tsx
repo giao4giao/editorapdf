@@ -1,3 +1,5 @@
+import ForkInfo from '../components/ForkInfo';
+import { siteUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../components/Header'
@@ -7,7 +9,6 @@ import {
   Github, Mail, MessageSquare, Award, Rocket, Eye
 } from 'lucide-react'
 
-const siteUrl = 'https://editorapdf.com'
 
 export const metadata: Metadata = {
   title: 'About Us — Free Privacy-First PDF Editor | EditoraPDF',
@@ -25,8 +26,6 @@ export const metadata: Metadata = {
     title: 'About Us — Free Privacy-First PDF Editor | EditoraPDF',
     description: 'Learn about EditoraPDF — a free, open-source, privacy-focused online PDF editor.',
     images: [`${siteUrl}/og/og-image.png`],
-    creator: '@editora_pdf',
-    site: '@editora_pdf',
   },
 }
 
@@ -54,6 +53,7 @@ export default function AboutPage() {
             </p>
           </div>
 
+          <div className="mb-8"><ForkInfo /></div>
           {/* What is EditoraPDF */}
           <section className="mb-16 animate-fade-in delay-100" aria-labelledby="what-is-heading">
             <div className="card p-8 md:p-10 bg-gradient-to-br from-primary-500/5 via-surface-800/60 to-accent-500/5 border-primary-500/20">
@@ -325,7 +325,7 @@ export default function AboutPage() {
                   </p>
                   <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start">
                     <a
-                      href="https://github.com/affsquadDevs/editorapdf"
+                      href="https://github.com/giao4giao/editorapdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary btn-md inline-flex items-center gap-2"
@@ -334,7 +334,7 @@ export default function AboutPage() {
                       View on GitHub
                     </a>
                     <a
-                      href="https://github.com/affsquadDevs/editorapdf/issues"
+                      href="https://github.com/giao4giao/editorapdf/issues"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-secondary btn-md inline-flex items-center gap-2"

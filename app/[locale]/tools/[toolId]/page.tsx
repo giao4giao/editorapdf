@@ -1,3 +1,4 @@
+import { siteUrl } from '../../../lib/site';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { toolsMeta } from '../../../data/toolsMeta';
@@ -8,7 +9,6 @@ import { getOgLocale } from '../../../lib/seo';
 import ToolPageClient from './ToolPageClient';
 import RelatedArticles from '../../../components/RelatedArticles';
 
-const siteUrl = 'https://editorapdf.com';
 const defaultLocale = 'en';
 
 // Localized tool name + description (from the per-tool i18n keys, which are fully
@@ -92,8 +92,6 @@ export function generateMetadata({
       title,
       description,
       images: [`${siteUrl}/og/og-image.png`],
-      creator: '@editora_pdf',
-      site: '@editora_pdf',
     },
     alternates: {
       canonical: url,

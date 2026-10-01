@@ -1,3 +1,4 @@
+import { siteUrl } from '../../lib/site';
 import { NextRequest, NextResponse } from 'next/server';
 import { submitToIndexNow } from '@/app/lib/indexnow';
 
@@ -11,12 +12,12 @@ export const runtime = 'edge';
  * 
  * Request body (JSON):
  * {
- *   "urls": ["https://editorapdf.com/page1", "https://editorapdf.com/page2"]
+ *   "urls": ["https://your-site.example/page1", "https://your-site.example/page2"]
  * }
  * 
  * Or single URL:
  * {
- *   "url": "https://editorapdf.com/page1"
+ *   "url": "https://your-site.example/page1"
  * }
  */
 export async function POST(request: NextRequest) {
@@ -47,11 +48,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate URLs are from the same domain
-    const siteUrl = 'https://editorapdf.com';
     const invalidUrls = urls.filter(url => {
       try {
         const parsed = new URL(url);
-        return !parsed.hostname.includes('editorapdf.com');
+        return parsed.origin !== new URL(siteUrl).origin;
       } catch {
         return true;
       }
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     if (invalidUrls.length > 0) {
       return NextResponse.json(
         { 
-          error: 'All URLs must belong to editorapdf.com domain',
+          error: `All URLs must belong to ${new URL(siteUrl).origin}`,
           invalidUrls 
         },
         { status: 400 }
@@ -115,12 +115,12 @@ export async function GET() {
     },
     example: {
       single: {
-        url: 'https://editorapdf.com/page',
+        url: `${siteUrl}/page`,
       },
       multiple: {
         urls: [
-          'https://editorapdf.com/page1',
-          'https://editorapdf.com/page2',
+          `${siteUrl}/page1`,
+          `${siteUrl}/page2`,
         ],
       },
     },

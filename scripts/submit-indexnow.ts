@@ -11,7 +11,7 @@
 
 import { submitSitemapToIndexNow, submitToIndexNow } from '../app/lib/indexnow';
 
-const SITE_URL = 'https://editorapdf.com';
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://editorapdf.171818.xyz').replace(/\/+$/, '');
 
 async function main() {
   console.log('🚀 Submitting sitemap to IndexNow...\n');

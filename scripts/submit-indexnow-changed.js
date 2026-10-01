@@ -19,7 +19,7 @@
 const { execSync } = require('child_process');
 
 const KEY = '2364b546c4a34edda494ccea10f3431b';
-const SITE = 'https://editorapdf.com';
+const SITE = (process.env.NEXT_PUBLIC_SITE_URL || 'https://editorapdf.171818.xyz').replace(/\/+$/, '');
 const LOCALES = ['en', 'uk', 'de', 'es', 'fr', 'it'];
 const ENDPOINTS = ['https://api.indexnow.org/IndexNow', 'https://www.bing.com/indexnow'];
 // Localized single pages that map 1:1 to a route segment.
@@ -96,7 +96,7 @@ if (dryRun) {
 }
 
 (async () => {
-  const body = { host: 'editorapdf.com', key: KEY, keyLocation: `${SITE}/${KEY}.txt`, urlList };
+  const body = { host: new URL(SITE).hostname, key: KEY, keyLocation: `${SITE}/${KEY}.txt`, urlList };
   let anyOk = false;
   for (const ep of ENDPOINTS) {
     try {

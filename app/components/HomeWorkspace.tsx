@@ -1,3 +1,4 @@
+import ForkInfo from './ForkInfo';
 import Link from 'next/link';
 import { ArrowRight, FilePlus2, Scissors, RotateCw, PenTool, Image as ImageIcon, FileText, Table, Minimize2, Lock, GripVertical, EyeOff, Droplets } from 'lucide-react';
 import type { AppLocale } from '../../i18n/config';
@@ -87,8 +88,8 @@ export default function HomeWorkspace({ locale }: { locale: AppLocale }) {
       </section>
 
       <section className="workspace-source" aria-labelledby="opensource-heading">
-        <div><h2 id="opensource-heading">{t('oss.title')}</h2><p>{t('oss.desc')}</p></div>
-        <a href="https://github.com/affsquadDevs/editorapdf" target="_blank" rel="noopener noreferrer" className="btn-secondary btn-md">{t('oss.view')}<ArrowRight size={16} /></a>
+        <div><ForkInfo locale={locale} /><h2 id="opensource-heading">{t('oss.title')}</h2><p>{t('oss.desc')}</p></div>
+        <a href="https://github.com/giao4giao/editorapdf" target="_blank" rel="noopener noreferrer" className="btn-secondary btn-md">{t('oss.view')}<ArrowRight size={16} /></a>
       </section>
       <aside className="workspace-limits" aria-labelledby="limitations-heading">
         <h2 id="limitations-heading">{t('limits.title')}</h2>

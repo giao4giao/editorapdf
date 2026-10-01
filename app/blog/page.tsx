@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import BlogIndex from '../components/BlogIndex'
 
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     // Blog content is English-only; consolidate all locale variants to the /en URL
     // (non-redirecting) instead of the locale-less /blog (which 307-redirects).
-    canonical: 'https://editorapdf.com/en/blog',
+    canonical: `${siteUrl}/en/blog`,
   },
 }
 

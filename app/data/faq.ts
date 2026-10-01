@@ -77,7 +77,7 @@ export const faqData: FAQItem[] = [
   },
   {
     question: 'Is EditoraPDF really free and open source?',
-    answer: 'Yes! EditoraPDF is 100% free and open source under MIT License. The complete source code is available on GitHub at https://github.com/affsquadDevs/editorapdf. You can view, modify, and contribute to the code.',
+    answer: 'Yes! EditoraPDF is 100% free and open source under MIT License. The complete source code is available on GitHub at https://github.com/giao4giao/editorapdf. You can view, modify, and contribute to the code.',
     keywords: ['open source pdf editor', 'free open source pdf tool', 'github pdf editor', 'MIT license pdf editor'],
   },
   {

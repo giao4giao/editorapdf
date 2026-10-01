@@ -1,3 +1,4 @@
+import { siteUrl } from '../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '../components/Header'
@@ -8,7 +9,6 @@ import {
   Trash2, GripVertical, Eye, Clock, Server
 } from 'lucide-react'
 
-const siteUrl = 'https://editorapdf.com'
 
 export const metadata: Metadata = {
   title: 'How It Works — Edit PDF Online Without Installation | EditoraPDF',
@@ -26,8 +26,6 @@ export const metadata: Metadata = {
     title: 'How It Works — Edit PDF Online Without Installation | EditoraPDF',
     description: 'Learn how EditoraPDF works. Simple, fast, and secure PDF editing entirely in your browser.',
     images: [`${siteUrl}/og/og-image.png`],
-    creator: '@editora_pdf',
-    site: '@editora_pdf',
   },
 }
 

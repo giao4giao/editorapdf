@@ -1,7 +1,7 @@
+import { siteUrl as baseUrl } from './lib/site';
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://editorapdf.com'
 
   return {
     rules: [

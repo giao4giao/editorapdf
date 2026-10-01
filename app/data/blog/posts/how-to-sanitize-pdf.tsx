@@ -1,3 +1,4 @@
+import { siteUrl } from '../../../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,7 +8,6 @@ import { getMessages } from '../../../i18n/messages'
 import { localeAlternates, getOgLocale } from '../../../lib/seo'
 import type { AppLocale } from '../../../../i18n/config'
 
-const siteUrl = 'https://editorapdf.com'
 const slug = 'how-to-sanitize-pdf'
 const postPath = `/blog/${slug}`
 const heroImage = '/blog/How to Sanitize PDF Files Online_ Complete Guide to Removing Hidden Data and Metadata.png'

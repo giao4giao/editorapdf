@@ -1,24 +1,14 @@
 /* TEAM */
-Developer: EditoraPDF Team
-Site: https://editorapdf.com
-Location: Global
+Fork maintainer: giao4giao
+GitHub: https://github.com/giao4giao
+Repository: https://github.com/giao4giao/editorapdf
 
-/* SITE */
-Last update: 2026/01/29
-Standards: HTML5, CSS3, JavaScript ES6+
-Components: Next.js, React, TypeScript
-Software: Visual Studio Code, Cursor AI
-
-/* THANKS */
-PDF.js - Mozilla Foundation
-pdf-lib - Community
-Tailwind CSS - Tailwind Labs
-Zustand - Community
+/* UPSTREAM */
+Original project: EditoraPDF by affsquadDevs / EditoraPDF Team
+Source: https://github.com/affsquadDevs/editorapdf
+License: MIT (see LICENSE for the original copyright notice)
 
 /* BUILT WITH */
-Framework: Next.js 14
-Language: TypeScript
-Styling: Tailwind CSS
-State: Zustand
-PDF Rendering: PDF.js
-PDF Export: pdf-lib
+Next.js 14, React 18, TypeScript, Tailwind CSS, Zustand
+PDF rendering: Mozilla PDF.js
+PDF export: pdf-lib

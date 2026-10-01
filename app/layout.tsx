@@ -1,3 +1,4 @@
+import { siteUrl } from './lib/site';
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Script from 'next/script'
@@ -5,13 +6,10 @@ import Footer from './components/Footer'
 
 export const runtime = 'edge';
 
-const siteUrl = 'https://editorapdf.com' // Replace with your actual domain
 const siteName = 'EditoraPDF'
 const siteDescription = 'Edit PDF documents online instantly without installing software or creating an account. Quick, powerful PDF editing in your browser. No downloads, no signup, 100% free and private.'
 const siteTitle = 'Edit PDF Online Free - No Installation, No Signup Required | EditoraPDF'
 
-// Google Tag Manager Container ID
-const GTM_ID = 'GTM-P5DF8WL7'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -178,9 +176,9 @@ export const metadata: Metadata = {
     'validate PDF',
     'PDF validation',
   ],
-  authors: [{ name: 'EditoraPDF Team', url: siteUrl }],
-  creator: 'EditoraPDF',
-  publisher: 'EditoraPDF',
+  authors: [{ name: 'giao4giao', url: 'https://github.com/giao4giao' }],
+  creator: 'giao4giao',
+  publisher: 'giao4giao',
   formatDetection: {
     email: false,
     address: false,
@@ -207,8 +205,6 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     images: [`${siteUrl}/og/og-image.png`],
-    creator: '@editora_pdf',
-    site: '@editora_pdf',
   },
   robots: {
     index: true,
@@ -259,9 +255,6 @@ export const metadata: Metadata = {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'format-detection': 'telephone=no',
-    'geo.region': 'US',
-    'geo.placename': 'United States',
-    'ICBM': '39.8283, -98.5795',
   },
 }
 
@@ -329,7 +322,7 @@ export default function RootLayout({
     name: 'EditoraPDF - Open Source PDF Editor',
     description: 'Free and open-source online PDF editor built with Next.js, TypeScript, and PDF.js. Edit PDFs entirely in your browser with complete privacy - no uploads, no signup required.',
     text: 'A client-side PDF editor that runs entirely in your browser. Built with Next.js 14, TypeScript, PDF.js, and pdf-lib. Features text editing, image insertion, shape drawing, page management, and instant export.',
-    codeRepository: 'https://github.com/affsquadDevs/editorapdf',
+    codeRepository: 'https://github.com/giao4giao/editorapdf',
     codeSampleType: 'full solution',
     programmingLanguage: {
       '@type': 'ComputerLanguage',
@@ -350,8 +343,8 @@ export default function RootLayout({
     },
     author: {
       '@type': 'Organization',
-      name: 'EditoraPDF Team',
-      url: siteUrl,
+      name: 'giao4giao',
+      url: 'https://github.com/giao4giao',
     },
     license: 'https://opensource.org/licenses/MIT',
     softwareVersion: '1.0.0',
@@ -379,15 +372,9 @@ export default function RootLayout({
       {
         '@type': 'Organization',
         name: 'GitHub Community',
-        url: 'https://github.com/affsquadDevs/editorapdf/graphs/contributors',
+        url: 'https://github.com/giao4giao/editorapdf/graphs/contributors',
       },
     ],
-    sponsor: {
-      '@type': 'Organization',
-      name: 'AffSquad',
-      url: 'https://affsquad.com',
-      email: 'hello@affsquad.com',
-    },
   }
 
   // Static <html lang="en"> so every route can be statically/edge-rendered (no headers()).
@@ -396,44 +383,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager - Load after page is interactive to improve performance */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-        {/* Google AdSense — lazyOnload: ads are below the fold, so defer until the
-            browser is idle to protect LCP/INP/TBT instead of competing during load. */}
-        <Script
-          id="adsense-script"
-          async
-          strategy="lazyOnload"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2980943706375055"
-          crossOrigin="anonymous"
-        />
-        {/* End Google AdSense */}
-        {/* Trustpilot TrustBox script — below-fold footer widget; lazyOnload to keep it
-            off the critical path. */}
-        <Script
-          id="trustpilot-script"
-          strategy="lazyOnload"
-          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-        />
-        {/* End Trustpilot TrustBox script */}
-        
         {/* Performance:
             - Fonts are self-hosted via next/font, so no need to preconnect to fonts.googleapis.com/fonts.gstatic.com
             - Avoid eager preconnect to third parties on mobile (can hurt LCP); keep only dns-prefetch */}
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://widget.trustpilot.com" />
         
         {/* Preload critical resources for faster LCP */}
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" fetchPriority="high" />
@@ -447,16 +399,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         {/* Additional SEO meta tags */}
         <meta name="language" content="English" />
-        <meta name="geo.region" content="US" />
-        <meta name="geo.placename" content="United States" />
         <meta name="coverage" content="Worldwide" />
         <meta name="distribution" content="Global" />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="7 days" />
         <meta name="expires" content="never" />
-        <meta name="copyright" content="EditoraPDF" />
-        <meta name="reply-to" content="hello@affsquad.com" />
-        <meta name="owner" content="EditoraPDF" />
+        <meta name="copyright" content="giao4giao" />
+        <meta name="owner" content="giao4giao" />
         <meta name="url" content={siteUrl} />
         <meta name="identifier-URL" content={siteUrl} />
         <meta name="directory" content="submission" />
@@ -467,8 +416,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="MobileOptimized" content="320" />
         {/* apple-itunes-app: add once App Store listing is available */}
         
-        {/* OpenSearch */}
-        <link rel="search" type="application/opensearchdescription+xml" title={siteName} href={`${siteUrl}/opensearch.xml`} />
         
         {/*
           NOTE: Hand-written og:* / twitter:* / article:tag / og:see_also tags were
@@ -520,16 +467,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /> */}
       </head>
       <body className="antialiased">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
+
         
         {/* Skip to main content link for accessibility */}
         <a

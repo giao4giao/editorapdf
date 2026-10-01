@@ -1,3 +1,4 @@
+import { siteUrl as SITE_URL } from './site';
 /**
  * IndexNow API utility for real-time URL indexing
  * Supports Bing, Yandex, and other IndexNow-compatible search engines
@@ -10,7 +11,6 @@ const INDEXNOW_API_ENDPOINTS = [
 ] as const;
 
 const INDEXNOW_KEY = 'd6a52731014140d19cdd5a2b8bba4abb';
-const SITE_URL = 'https://editorapdf.com';
 
 export interface IndexNowRequest {
   host: string;

@@ -1,3 +1,4 @@
+import { siteUrl } from '../../../lib/site';
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
@@ -11,7 +12,6 @@ import {
   AlertTriangle, CheckCircle2, MemoryStick,
 } from 'lucide-react'
 
-const siteUrl = 'https://editorapdf.com'
 const slug = 'how-to-edit-pdfs-offline-in-browser'
 const postPath = `/blog/${slug}`
 const ogImage = '/og/og-image.png'

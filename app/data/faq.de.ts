@@ -52,7 +52,7 @@ export const faqDataDe: FAQItem[] = [
   },
   {
     question: 'Ist EditoraPDF wirklich kostenlos und Open Source?',
-    answer: 'Ja! EditoraPDF ist 100% kostenlos und Open Source unter MIT-Lizenz. Der vollständige Quellcode ist auf GitHub verfügbar: https://github.com/affsquadDevs/editorapdf. Sie können den Code ansehen, ändern und dazu beitragen.',
+    answer: 'Ja! EditoraPDF ist 100% kostenlos und Open Source unter MIT-Lizenz. Der vollständige Quellcode ist auf GitHub verfügbar: https://github.com/giao4giao/editorapdf. Sie können den Code ansehen, ändern und dazu beitragen.',
   },
   {
     question: 'Was ist der beste kostenlose Open-Source-PDF-Editor?',

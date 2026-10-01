@@ -1,14 +1,18 @@
 # EditoraPDF - Free Open-Source PDF Editor
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+This fork is maintained by [giao4giao](https://github.com/giao4giao). It adds Simplified Chinese support, a refreshed interface, and Cloudflare build fixes. The original project is [affsquadDevs/EditoraPDF](https://github.com/affsquadDevs/editorapdf); its MIT license and original copyright notice are retained.
+
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/affsquadDevs/editorapdf?style=social)](https://github.com/affsquadDevs/editorapdf)
+[![GitHub Stars](https://img.shields.io/github/stars/giao4giao/editorapdf?style=social)](https://github.com/giao4giao/editorapdf)
 
-[**Live Demo**](https://editorapdf.com) · [**Report Bug**](https://github.com/affsquadDevs/editorapdf/issues) · [**Request Feature**](https://github.com/affsquadDevs/editorapdf/issues) · [**Contributing**](CONTRIBUTING.md)
+[**Live Site**](https://editorapdf.171818.xyz) · [**Report Bug**](https://github.com/giao4giao/editorapdf/issues) · [**Request Feature**](https://github.com/giao4giao/editorapdf/issues) · [**Contributing**](CONTRIBUTING.md)
 
 </div>
 
@@ -35,7 +39,7 @@ All processing happens **locally on your device**. Your PDF files never leave yo
 
 ```bash
 # Clone the repository
-git clone https://github.com/affsquadDevs/editorapdf.git
+git clone https://github.com/giao4giao/editorapdf.git
 cd editorapdf
 
 # Install dependencies
@@ -111,7 +115,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
 
 ```bash
 # Clone the repo
-git clone https://github.com/affsquadDevs/editorapdf.git
+git clone https://github.com/giao4giao/editorapdf.git
 cd editorapdf
 
 # Install dependencies
@@ -121,24 +125,24 @@ npm install
 npm run dev
 ```
 
-### Production Build
+### Local production preview
 
 ```bash
-# Build optimized production bundle
-npm run build
-
-# Start production server
+npx next build
 npm run start
 ```
 
-### Static Export (for Vercel, Netlify, etc.)
+### Cloudflare Pages
+
+`npm run build` runs the Cloudflare Pages adapter; it is different from a local Next.js build. Use `.vercel/output/static` as the Pages output directory. Set `NEXT_PUBLIC_SITE_URL` to `https://editorapdf.171818.xyz` (or your new public Pages URL or custom domain) in Cloudflare's build environment before building. Copy `.env.example` to `.env.local` for local configuration.
 
 ```bash
-# Generate static export
 npm run build
-
-# Deploy the 'out' directory to your hosting provider
+# Optional manual deployment with your own Cloudflare account:
+npm run deploy
 ```
+
+The project uses Edge routes and is not a plain static `out` export. On Windows, the next-on-pages adapter may require a compatible Linux/WSL environment; Cloudflare's Linux build environment is the deployment path used by this fork. See [中文部署说明](README.zh-CN.md#cloudflare-pages-部署).
 
 ---
 
@@ -332,7 +336,7 @@ Please read our [**Contributing Guide**](CONTRIBUTING.md) to get started.
 
 ### Ways to Contribute
 
-- 🐛 **Report bugs** and suggest features via [GitHub Issues](https://github.com/affsquadDevs/editorapdf/issues)
+- 🐛 **Report bugs** and suggest features via [GitHub Issues](https://github.com/giao4giao/editorapdf/issues)
 - 💻 **Submit pull requests** with bug fixes or new features
 - 📖 **Improve documentation** and add examples
 - ⭐ **Star the repo** to show your support
@@ -362,17 +366,12 @@ EditoraPDF is built on the shoulders of giants:
 
 ## 🌐 Community & Support
 
-- **Website**: [editorapdf.com](https://editorapdf.com)
-- **GitHub**: [github.com/affsquadDevs/editorapdf](https://github.com/affsquadDevs/editorapdf)
-- **Issues**: [Report bugs or request features](https://github.com/affsquadDevs/editorapdf/issues)
-- **Email**: hello@affsquad.com
+- **Maintainer**: [giao4giao](https://github.com/giao4giao)
+- **Repository**: [giao4giao/editorapdf](https://github.com/giao4giao/editorapdf)
+- **Issues**: [Report bugs or request features](https://github.com/giao4giao/editorapdf/issues)
+- **中文说明**: [README.zh-CN.md](README.zh-CN.md)
 
-### Follow Us
-
-- [Instagram](https://www.instagram.com/editora_pdf)
-- [Facebook](https://www.facebook.com/people/Editorapdf/61587362633003/)
-- [YouTube](https://www.youtube.com/@EditoraPDF)
-- [Threads](https://www.threads.com/@editora_pdf)
+This fork does not use the upstream maintainer's email, social profiles, Trustpilot widget, analytics container, or advertising account. Add your own integrations if needed.
 
 ---
 
@@ -391,8 +390,8 @@ Every bit of support helps the project grow and improve!
 
 <div align="center">
 
-**Made with ❤️ by the EditoraPDF Team**
+**Maintained by giao4giao · Based on EditoraPDF by affsquadDevs / EditoraPDF Team**
 
-[Website](https://editorapdf.com) · [GitHub](https://github.com/affsquadDevs/editorapdf) · [Contributing](CONTRIBUTING.md)
+[GitHub](https://github.com/giao4giao/editorapdf) · [Contributing](CONTRIBUTING.md)
 
 </div>
